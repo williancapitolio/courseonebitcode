@@ -136,3 +136,24 @@
     text-align: center;
     padding: 10px;
 }
+
+.logoFooter {
+    width: 180px;
+}
+
+.footer {
+    width: 100%;
+    min-height: 40px;
+    background-color: #292929;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+    gap: 15px;
+}
+
+.footerAnchor {
+    color: white;
+    text-decoration: none;
+}
