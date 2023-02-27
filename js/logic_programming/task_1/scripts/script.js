@@ -26,14 +26,14 @@ alert("Exercício 1");
 alert("Para Cadastro de Recrutas - Digite 1 \nPara Calculadora de 4 Operações - Digite 2");
 
 
-let number = prompt("Insira o número 1 ou número 2:");
+let choice = prompt("Insira o número 1 ou número 2:");
 
-switch (number) {
+switch (choice) {
     case "1":
-        let firstName = prompt("Insira seu nome:")
-        let secondName = prompt("Insira seu sobrenome:")
-        let studyField = prompt("Insira seu campo de estudo:")
-        let yearBirth = prompt("Insira seu ano de nascimento:")
+        let firstName = prompt("Insira seu nome:");
+        let secondName = prompt("Insira seu sobrenome:");
+        let studyField = prompt("Insira seu campo de estudo:");
+        let yearBirth = prompt("Insira seu ano de nascimento:");
         alert(
             "Nome completo:" + firstName + " " + secondName +
             "\n" + "Campo de estudos: " + studyField +
@@ -46,7 +46,7 @@ switch (number) {
         let secondNumber = prompt("Insira o segundo número:");
         alert(
             "Quatro operações" +
-            "\n" + "Soma: " + (parseInt(firstNumber) + parseInt(secondNumber)) +
+            "\n" + "Soma: " + (parseFloat(firstNumber) + parseFloat(secondNumber)) +
             "\n" + "Subtração: " + (firstNumber - secondNumber) +
             "\n" + "Multiplicação: " + (firstNumber * secondNumber) +
             "\n" + "Divisão: " + (firstNumber / secondNumber)
@@ -54,6 +54,6 @@ switch (number) {
         break;
 
     default:
-        alert("Opção inválida!")
+        alert("Opção inválida!");
     break;
-}
+};
