@@ -49,7 +49,7 @@ switch (choice) {
         let defensorName = prompt("Digite o nome do personagem defensor:");
         let defensorHealthPointsPrompt = prompt("Digite a quantidade de pontos de vida do " + defensorName + ":");
         let defensorPowerPrompt = prompt("Digite o poder de defesa do " + defensorName + ":");
-        let defensorHaveShild = confirm("O defensor possui um escudo? (S/N)");
+        let defensorHaveShild = confirm("O defensor possui um escudo? (OK para Sim / Cancelar para não)");
         let attackerPower = parseFloat(attackerPowerPrompt);
         let defensorHealthPoints = parseFloat(defensorHealthPointsPrompt);
         let defensorPower = parseFloat(defensorPowerPrompt);
