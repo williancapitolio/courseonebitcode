@@ -41,28 +41,22 @@ const choiceNumeric = parseFloat(choice);
 
 switch (choiceNumeric) {
     case 1:
-        valueNumeric /= 1000;
-        alert("A conversão resultou em " + valueNumeric + " milímetros (mm).");
+        alert("A conversão de " + valueNumeric + " metros(m) resultou em " + valueNumeric * 1000 + " milímetros (mm).");
         break;
     case 2:
-        valueNumeric /= 100;
-        alert("A conversão resultou em " + valueNumeric + " centímetros (cm).");
+        alert("A conversão de " + valueNumeric + " metros(m) resultou em " + valueNumeric * 100 + " centímetros (cm).");
         break;
     case 3:
-        valueNumeric /= 10;
-        alert("A conversão resultou em " + valueNumeric + " decímetros (dm).");
+        alert("A conversão de " + valueNumeric + " metros(m) resultou em " + valueNumeric * 10 + " decímetros (dm).");
         break;
     case 4:
-        valueNumeric *= 10;
-        alert("A conversão resultou em " + valueNumeric + " decâmetros (dam).");
+        alert("A conversão de " + valueNumeric + " metros(m) resultou em " + valueNumeric / 10 + " decâmetros (dam).");
         break;
     case 5:
-        valueNumeric *= 100;
-        alert("A conversão resultou em " + valueNumeric + " hectômetros (hm).");
+        alert("A conversão de " + valueNumeric + " metros(m) resultou em " + valueNumeric / 100 + " hectômetros (hm).");
         break;
     case 6:
-        valueNumeric *= 1000;
-        alert("A conversão resultou em " + valueNumeric + " quilômetros (km).");
+        alert("A conversão de " + valueNumeric + " metros(m) resultou em " + valueNumeric / 1000 + " quilômetros (km).");
         break;
     case 7:
         alert("Finalizando...");
