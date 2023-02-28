@@ -51,23 +51,25 @@ switch (choice) {
         let defensorPowerPrompt = prompt("Digite o poder de defesa do " + defensorName + ":");
         let defensorHaveShild = confirm("O defensor possui um escudo? (S/N)");
         let attackerPower = parseFloat(attackerPowerPrompt);
-        let defensorHealthPoints = parseFloat(defensorHealthPointsPrompt)
-        let defensorPower = parseFloat(defensorPowerPrompt)
+        let defensorHealthPoints = parseFloat(defensorHealthPointsPrompt);
+        let defensorPower = parseFloat(defensorPowerPrompt);
         let damageDone = 0;
         if (attackerPower > defensorPower && !defensorHaveShild) {
             damageDone = attackerPower - defensorPower;
         } else if (attackerPower > defensorPower && defensorHaveShild) {
             damageDone = attackerPower - defensorPower;
-            damageDone = damageDone / 2;
+            damageDone /= 2;
         } else if (attackerPower <= defensorPower) {
             damageDone = 0;
         };
         let defensorHealthPointsLeft = defensorHealthPoints - damageDone;
-        let verifyShield = defensorHaveShild ? " e possui um escudo" : " e não possui um escudo"
+        let verifyShield = defensorHaveShild ? " e possui um escudo" : " e não possui um escudo";
         alert(
             "O dano causado foi de " + damageDone + " pontos.\n" +
             "\n" + attackerName + ", o atacante, possui " + attackerPower + " pontos de poder de ataque" +
-            "\n" + defensorName + ", o defensor, possui " + defensorHealthPointsLeft + " pontos de vida sobrando, " + defensorPower + " pontos de poder de defesa" + verifyShield
+            "\n" + defensorName + ", o defensor, possui " +
+            defensorHealthPointsLeft + " pontos de vida sobrando, " +
+            defensorPower + " pontos de poder de defesa" + verifyShield
         );
         break;
 
@@ -76,6 +78,6 @@ switch (choice) {
         break;
 
     default:
-        alert("Digite uma opção válida!")
+        alert("Digite uma opção válida!");
         location.reload();
 };
