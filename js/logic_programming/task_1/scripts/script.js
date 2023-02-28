@@ -22,15 +22,13 @@ Após calcular os resultados o programa deve exibi-los na tela.
 
 "use strict";
 
-alert(
+let choice = prompt(
     "Exercício 1\n" +
     "\nDigite 1 - Para Cadastro de Recrutas" +
     "\nDigite 2 - Para Calculadora de 4 Operações" +
-    "\nDigite 3 - Para finalizar o programa"
+    "\nDigite 3 - Para finalizar o programa" +
+    "\n\nDigite sua opção:"
 );
-
-
-let choice = prompt("Insira sua opção:");
 
 switch (choice) {
     case "1":
@@ -43,10 +41,12 @@ switch (choice) {
             location.reload();
         } else {
             alert(
-                "Nome completo: " + firstName + " " + secondName +
+                "Recruta cadastrado com sucesso!\n" +
+                "\nNome completo: " + firstName + " " + secondName +
                 "\n" + "Campo de estudos: " + studyField +
                 "\n" + "Idade: " + (2023 - yearBirth)
             );
+            location.reload();
         };
         break;
 
@@ -64,6 +64,7 @@ switch (choice) {
                 "\n" + "Multiplicação: " + (firstNumber * secondNumber) +
                 "\n" + "Divisão: " + (firstNumber / secondNumber)
             );
+            location.reload();
         };
         break;
 
