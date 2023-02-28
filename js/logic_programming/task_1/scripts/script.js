@@ -69,7 +69,8 @@ switch (choice) {
         break;
 
     case "3":
-        alert("Programa finalizado!");
+        let confirm = window.confirm("Confirma essa ação?");
+        confirm ? alert("Programa finalizado!") : location.reload();
         break;
 
     default:
