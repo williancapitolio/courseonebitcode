@@ -22,11 +22,15 @@ Após calcular os resultados o programa deve exibi-los na tela.
 
 "use strict";
 
-alert("Exercício 1");
-alert("Para Cadastro de Recrutas - Digite 1 \nPara Calculadora de 4 Operações - Digite 2");
+alert(
+    "Exercício 1\n" +
+    "\nDigite 1 - Para Cadastro de Recrutas" +
+    "\nDigite 2 - Para Calculadora de 4 Operações" +
+    "\nDigite 3 - Para finalizar o programa"
+);
 
 
-let choice = prompt("Insira o número 1 ou número 2:");
+let choice = prompt("Insira sua opção:");
 
 switch (choice) {
     case "1":
@@ -34,26 +38,40 @@ switch (choice) {
         let secondName = prompt("Insira seu sobrenome:");
         let studyField = prompt("Insira seu campo de estudo:");
         let yearBirth = prompt("Insira seu ano de nascimento:");
-        alert(
-            "Nome completo:" + firstName + " " + secondName +
-            "\n" + "Campo de estudos: " + studyField +
-            "\n" + "Idade: " + (2023 - yearBirth)
-        );
+        if (!firstName && !secondName && !studyField && !yearBirth) {
+            alert("Digite em todos os campos!");
+            location.reload();
+        } else {
+            alert(
+                "Nome completo: " + firstName + " " + secondName +
+                "\n" + "Campo de estudos: " + studyField +
+                "\n" + "Idade: " + (2023 - yearBirth)
+            );
+        };
         break;
 
     case "2":
         let firstNumber = prompt("Insira o primeiro número:");
         let secondNumber = prompt("Insira o segundo número:");
-        alert(
-            "Quatro operações" +
-            "\n" + "Soma: " + (parseFloat(firstNumber) + parseFloat(secondNumber)) +
-            "\n" + "Subtração: " + (firstNumber - secondNumber) +
-            "\n" + "Multiplicação: " + (firstNumber * secondNumber) +
-            "\n" + "Divisão: " + (firstNumber / secondNumber)
-        );
+        if (!firstNumber && !secondNumber) {
+            alert("Digite em todos os campos!");
+            location.reload();
+        } else {
+            alert(
+                "Quatro operações" +
+                "\n" + "Soma: " + (parseFloat(firstNumber) + parseFloat(secondNumber)) +
+                "\n" + "Subtração: " + (firstNumber - secondNumber) +
+                "\n" + "Multiplicação: " + (firstNumber * secondNumber) +
+                "\n" + "Divisão: " + (firstNumber / secondNumber)
+            );
+        };
+        break;
+
+    case "3":
+        alert("Programa finalizado!");
         break;
 
     default:
-        alert("Opção inválida!");
-    break;
+        alert("Digite uma opção válida!");
+        location.reload();
 };
