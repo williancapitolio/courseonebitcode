@@ -12,27 +12,24 @@ deve exibir o nome do turista, quantas e quais cidades ele visitou.
 "use strict";
 
 const touristName = prompt("Exerício 3 - Visitando Novas Cidades\n\nDigite o nome do turista:");
-let count = 0;
 let visited = true;
-let cityName = "";
+let count = 0;
 let citiesVisited = "";
-let helper = ", "
 
 while (visited) {
-    cityName = prompt("Digite o nome de uma cidade:");
+    let cityName = prompt("Digite o nome de uma cidade:");
     if (cityName) {
-        cityName = cityName + helper;
         visited = confirm("Você já visitou essa cidade?");
         if (!visited) break;
         count++;
-        citiesVisited += cityName;
+        citiesVisited += cityName + ", ";
     } else {
         alert("Nome da cidade não poder estar em branco!");
     };
 };
 
 //citiesVisited = citiesVisited.slice(0, citiesVisited.length -2);
-citiesVisited = citiesVisited.replace(/..$/, '.');
+citiesVisited = citiesVisited.replace(/..$/, '.'); // get two last strings and replace for dot ( . )
 
 citiesVisited.length === 0 ? alert(
     "O turista " + touristName +
