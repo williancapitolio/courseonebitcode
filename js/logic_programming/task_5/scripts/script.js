@@ -101,7 +101,11 @@ switch (op) {
                     break;
             };
         } while (opti !== 3);
-        money < 0 ? alert("Não restou dinheiro e está negativado em: R$ " + money) : alert("O dinheiro restante é de: R$ " + money);1
+        money < 0 ? alert(
+            "Não restou dinheiro e está negativado em: R$ " + money
+        ) : alert(
+            "A quantidade de dinheiro restante é de: R$ " + money
+        );
         break;
     case 3:
         alert("Encerrando...");
