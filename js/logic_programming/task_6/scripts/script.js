@@ -33,7 +33,7 @@ do {
     let result = "";
     switch (op) {
         case 1:
-            let number = parseFloat(prompt("Digite um número"));
+            let number = parseFloat(prompt("Digite um número:"));
             for (let i = 1; i <= 20; i++) {
                 result += number + " * " + i + " = " + number * i + "\n";
             };
