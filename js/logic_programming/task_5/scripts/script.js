@@ -63,7 +63,6 @@ switch (op) {
                     break;
                 default:
                     alert("Opção inválida!");
-                    break;
             };
         } while (opt !== 5);
         break;
@@ -96,7 +95,6 @@ switch (op) {
                     break;
                 default:
                     alert("Opção inválida!");
-                    break;
             };
         } while (opti !== 3);
         money < 0 ? alert(
