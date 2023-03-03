@@ -35,7 +35,7 @@ do {
         case 1:
             let number = parseFloat(prompt("Digite um número"));
             for (let i = 1; i <= 20; i++) {
-                result += number + " * " + i + " = " + number * i + "\n"
+                result += number + " * " + i + " = " + number * i + "\n";
             };
             alert(
                 "Tabuada de 20 do número " + number + "\n" + result
