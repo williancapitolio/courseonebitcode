@@ -38,7 +38,8 @@ do {
                 result += number + " * " + i + " = " + number * i + "\n";
             };
             alert(
-                "Tabuada de 20 do número " + number + "\n" + result
+                "Tabuada de 20 do número " + number + ":" +
+                "\n" + result
             );
             break;
         case 2:
