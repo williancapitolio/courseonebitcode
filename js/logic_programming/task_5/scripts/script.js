@@ -72,7 +72,6 @@ switch (op) {
         let moneyPrompt = prompt("Controle Financeiro\n" +
             "\nDigite a quantidade inicial de dinheiro: ");
         let money = parseFloat(moneyPrompt);
-        //let moneyLeft = 0;
         do {
             const optiPrompt = prompt(
                 "Quantidade atual: " + money + " R$\n" +
@@ -86,7 +85,6 @@ switch (op) {
                     let moneyAddPrompt = prompt("Quantos R$ deseja adicionar?");
                     let moneyAdd = parseFloat(moneyAddPrompt);
                     money += moneyAdd;
-                    console.log(money);
                     break;
                 case 2:
                     let moneyRemovePrompt = prompt("Quantos R$ deseja remover?");
