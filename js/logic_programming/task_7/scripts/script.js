@@ -48,7 +48,7 @@ do {
 
         case 1:
             do {
-                op1 = parseFloat(
+                patientsArray.length > 0 ? op1 = parseFloat(
                     prompt(
                         "Fila de Espera" +
                         "\n" +
@@ -59,19 +59,40 @@ do {
                         "\nDigite 2 - Para Consultar Paciente" +
                         "\nDigite 3 - Para Sair"
                     )
+                ) : op1 = parseFloat(
+                    prompt(
+                        "Fila de Espera" +
+                        "\n" +
+                        "\nNenhum paciente na fila de espera!" +
+                        "\n" +
+                        "\nDigite 1 - Para Novo Paciente" +
+                        "\nDigite 2 - Para Consultar Paciente" +
+                        "\nDigite 3 - Para Sair"
+                    )
                 );
 
                 switch (op1) {
                     case 1:
                         patientName = prompt("Digite o nome do paciente:");
-                        patientPosition ++;
-                        patientsArray.push(" " + patientPosition + "º " + patientName);
-                        alert("Paciente: " + patientName + " adicionado na fila de espera!");
+                        if (patientName) {
+                            patientPosition++;
+                            patientsArray.push(" " + patientPosition + "º " + patientName);
+                            alert("Paciente: " + patientName + " adicionado na fila de espera!");
+                        } else {
+                            alert("Não foi digitado nenhum nome!");
+                        };
                         break;
 
                     case 2:
-                        patientRemoved = patientsArray.shift().slice(4);
-                        alert("Paciente consultado: " + patientRemoved);
+                        patientRemoved = patientsArray.shift()//.slice(4);
+                        console.log(patientRemoved)
+                        if (patientRemoved) {
+                            patientRemoved = patientRemoved.slice(4);
+                            console.log(patientRemoved)
+                            alert("Paciente consultado: " + patientRemoved);
+                        } else {
+                            alert("Nenhum paciente na fila de espera!");
+                        };
                         break;
 
                     case 3:
@@ -80,7 +101,7 @@ do {
 
                     default:
                         alert("Opção inválida!");
-                        
+
                 };
             } while (op1 !== 3);
             break;
