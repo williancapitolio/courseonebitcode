@@ -80,6 +80,7 @@ do {
 
                     default:
                         alert("Opção inválida!");
+                        
                 };
             } while (op1 !== 3);
             break;
