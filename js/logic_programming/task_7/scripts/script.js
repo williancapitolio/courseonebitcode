@@ -27,7 +27,7 @@ let op;
 
 let op1;
 let patientsArray = [];
-let patient;
+let patientName;
 let patientPosition = 0;
 let patientRemoved;
 
@@ -50,9 +50,11 @@ do {
             do {
                 op1 = parseFloat(
                     prompt(
-                        "Fila de Espera\n" +
+                        "Fila de Espera" +
+                        "\n" +
                         "\nPacientes na fila de espera:" +
-                        "\n" + patientsArray + "\n" +
+                        "\n-" + patientsArray +
+                        "\n" +
                         "\nDigite 1 - Para Novo Paciente" +
                         "\nDigite 2 - Para Consultar Paciente" +
                         "\nDigite 3 - Para Sair"
@@ -61,10 +63,10 @@ do {
 
                 switch (op1) {
                     case 1:
-                        patient = prompt("Digite o nome do paciente:");
+                        patientName = prompt("Digite o nome do paciente:");
                         patientPosition ++;
-                        patientsArray.push(" " + patientPosition + "º " + patient);
-                        alert("Paciente: " + patient + " adicionado na fila de espera!");
+                        patientsArray.push(" " + patientPosition + "º " + patientName);
+                        alert("Paciente: " + patientName + " adicionado na fila de espera!");
                         break;
 
                     case 2:
