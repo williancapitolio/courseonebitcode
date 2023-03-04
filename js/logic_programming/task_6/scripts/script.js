@@ -43,6 +43,16 @@ do {
             );
             break;
         case 2:
+            let word = prompt("Digite uma palavra:");
+            let wordReverse = "";
+            for (let i = word.length - 1; i >= 0; i--) {
+                wordReverse += word[i];
+            };
+            wordReverse === word ? alert(
+                "A palavra " + wordReverse + " é um palíndromo!"
+            ) : alert(
+                "A palavra " + word + " não é um palíndromo, pois ela ao contrário fica " + wordReverse
+            );
             break;
         case 3:
             alert("Encerrando...");
