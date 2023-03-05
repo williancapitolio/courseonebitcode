@@ -32,12 +32,16 @@ let patientPosition = 0;
 let patientRemoved;
 
 let op2;
+let cardsArray = [];
+let cardName;
+let cardRemoved;
 
 
 do {
     op = parseFloat(
         prompt(
-            "Exercício 7\n" +
+            "Exercício 7" +
+            "\n" +
             "\nDigite 1 - Para Fila de Espera" +
             "\nDigite 2 - para Pilha de Cartas" +
             "\nDigite 3 - para Encerrar"
@@ -84,11 +88,9 @@ do {
                         break;
 
                     case 2:
-                        patientRemoved = patientsArray.shift()//.slice(4);
-                        console.log(patientRemoved)
+                        patientRemoved = patientsArray.shift();
                         if (patientRemoved) {
                             patientRemoved = patientRemoved.slice(4);
-                            console.log(patientRemoved)
                             alert("Paciente consultado: " + patientRemoved);
                         } else {
                             alert("Nenhum paciente na fila de espera!");
@@ -107,6 +109,39 @@ do {
             break;
 
         case 2:
+            do {
+                op2 = parseFloat(
+                    prompt(
+                        "Pilha de cartas" +
+                        "\n" +
+                        "\nQuantidade de cartas no baralho: " + cardsArray.length +
+                        "\n" + cardsArray +
+                        "\n" +
+                        "\nDigite 1 - Para Adicionar Carta" +
+                        "\nDigite 2 - Para Puxar Carta" +
+                        "\nDigite 3 - Para Sair"
+                    )
+                );
+                switch (op2) {
+                    case 1:
+                        cardName = prompt("Digite o nome da carta:");
+                        cardsArray.push(cardName);
+                        break;
+
+                    case 2:
+                        cardRemoved = cardsArray.pop();
+                        alert("Carta removida: " + cardRemoved);
+                        break;
+
+                    case 3:
+                        alert("Saindo...");
+                        break;
+
+                    default:
+                        alert("Opção inválida!");
+
+                };
+            } while (op2 !== 3);
             break;
 
         case 3:
