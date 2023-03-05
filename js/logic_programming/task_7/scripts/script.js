@@ -110,12 +110,22 @@ do {
 
         case 2:
             do {
-                op2 = parseFloat(
+                cardsArray.length > 0 ? op2 = parseFloat(
                     prompt(
                         "Pilha de cartas" +
                         "\n" +
                         "\nQuantidade de cartas no baralho: " + cardsArray.length +
-                        "\n" + cardsArray +
+                        "\n-" + cardsArray +
+                        "\n" +
+                        "\nDigite 1 - Para Adicionar Carta" +
+                        "\nDigite 2 - Para Puxar Carta" +
+                        "\nDigite 3 - Para Sair"
+                    )
+                ) : op2 = parseFloat(
+                    prompt(
+                        "Pilha de cartas" +
+                        "\n" +
+                        "\nQuantidade de cartas no baralho: " + cardsArray.length +
                         "\n" +
                         "\nDigite 1 - Para Adicionar Carta" +
                         "\nDigite 2 - Para Puxar Carta" +
@@ -125,12 +135,12 @@ do {
                 switch (op2) {
                     case 1:
                         cardName = prompt("Digite o nome da carta:");
-                        cardsArray.push(cardName);
+                        cardName ? cardsArray.push(" " + cardName) : alert("Nenhuma carta digitada!");
                         break;
 
                     case 2:
                         cardRemoved = cardsArray.pop();
-                        alert("Carta removida: " + cardRemoved);
+                        cardRemoved ? alert("Carta removida:" + cardRemoved) : alert("O baralho está vazio!");
                         break;
 
                     case 3:
