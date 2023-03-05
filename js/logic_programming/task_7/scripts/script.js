@@ -36,7 +36,6 @@ let cardsArray = [];
 let cardName;
 let cardRemoved;
 
-
 do {
     op = parseFloat(
         prompt(
