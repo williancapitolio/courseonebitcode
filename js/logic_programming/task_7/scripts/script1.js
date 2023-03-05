@@ -52,9 +52,11 @@ do {
         case 1:
             do {
                 patients = "";
+                
                 for (let i = 0; i < patientsArray.length; i++) {
                     patients += (i + 1) + "º - " + patientsArray[i] + "\n";
                 };
+
                 patientsArray.length > 0 ? op1 = parseFloat(
                     prompt(
                         "Fila de Espera" +
@@ -123,6 +125,7 @@ do {
                         "\nDigite 3 - Para Sair"
                     )
                 );
+                
                 switch (op2) {
                     case 1:
                         cardName = prompt("Digite o nome da carta:");
