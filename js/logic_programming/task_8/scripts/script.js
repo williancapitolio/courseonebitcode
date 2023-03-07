@@ -25,18 +25,20 @@ let owner;
 let numberOfRooms;
 let numberOfBathrooms;
 let hasGarage;
+let imobleDelete;
+let imobleDeleteArray;
 
 do {
     immobles = "";
 
     for (let i = 0; i < immobilesArray.length; i++) {
         immobles += "Imóvel " + (i + 1) +
-        " - Proprietário(a): " + immobilesArray[i].owner +
-        ", Quantidade de quartos: " + immobilesArray[i].numberOfRooms +
-        ", Quantidade de banheiros: " + immobilesArray[i].numberOfBathrooms +
-        ", Possui garagem: " + immobilesArray[i].hasGarage +"." +
-        "\n" +
-        "\n"
+            " - Proprietário(a): " + immobilesArray[i].owner +
+            ", Quantidade de quartos: " + immobilesArray[i].numberOfRooms +
+            ", Quantidade de banheiros: " + immobilesArray[i].numberOfBathrooms +
+            ", Possui garagem: " + immobilesArray[i].hasGarage + "." +
+            "\n" +
+            "\n"
     };
 
     op = parseFloat(
@@ -47,7 +49,8 @@ do {
             "\n" +
             "\nDigite 1 - Para Cadastrar Imóvel" +
             "\nDigite 2 - Para Listar Imóveis" +
-            "\nDigite 3 - Para Sair"
+            "\nDigite 3 - Para Exluir Imóvel" +
+            "\nDigite 4 - Para Sair"
         )
     );
 
@@ -77,6 +80,28 @@ do {
             break;
 
         case 3:
+            if (immobilesArray.length > 0) {
+                imobleDelete = parseFloat(
+                    prompt(
+                        "Digite o número do imóvel que deseja excluir:" +
+                        "\n" +
+                        "\n" + immobles
+                    )
+                );
+                imobleDelete -= 1;
+                imobleDeleteArray = immobilesArray[imobleDelete];
+                if (imobleDeleteArray) {
+                    immobilesArray.splice(imobleDelete, 1);
+                    alert("Imóvel " + (imobleDelete + 1) + " apagado com sucesso!");
+                } else {
+                    alert("Nenhum imóvel com esse número!");
+                };
+            } else {
+                alert("Nenhum imóvel cadastrado!");
+            };
+            break;
+
+        case 4:
             alert("Saindo...");
             break;
 
@@ -86,4 +111,4 @@ do {
     };
 
 
-} while (op !== 3);
+} while (op !== 4);
