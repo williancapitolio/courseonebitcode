@@ -25,8 +25,8 @@ let owner;
 let numberOfRooms;
 let numberOfBathrooms;
 let hasGarage;
-let imobleDelete;
-let imobleDeleteArray;
+let immobileDelete;
+let immobileDeleteArray;
 
 do {
     immobles = "";
@@ -81,18 +81,18 @@ do {
 
         case 3:
             if (immobilesArray.length > 0) {
-                imobleDelete = parseFloat(
+                immobileDelete = parseFloat(
                     prompt(
                         "Digite o número do imóvel que deseja excluir:" +
                         "\n" +
                         "\n" + immobles
                     )
                 );
-                imobleDelete -= 1;
-                imobleDeleteArray = immobilesArray[imobleDelete];
-                if (imobleDeleteArray) {
-                    immobilesArray.splice(imobleDelete, 1);
-                    alert("Imóvel " + (imobleDelete + 1) + " apagado com sucesso!");
+                immobileDelete -= 1;
+                immobileDeleteArray = immobilesArray[immobileDelete];
+                if (immobileDeleteArray) {
+                    immobilesArray.splice(immobileDelete, 1);
+                    alert("Imóvel " + (immobileDelete + 1) + " apagado com sucesso!");
                 } else {
                     alert("Nenhum imóvel com esse número!");
                 };
