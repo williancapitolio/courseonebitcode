@@ -27,41 +27,7 @@ let minorBase;
 let pi = 3.14;
 let ray;
 
-function triangleArea(base, heigth) {
-    return base * heigth / 2;
-};
-
-function rectangleArea(base, heigth) {
-    return base * heigth;
-};
-
-function squareArea(side) {
-    return side * side;
-};
-
-function trapezedArea(biggerBase, minorBase, heigth) {
-    return (biggerBase + minorBase) * heigth / 2;
-};
-
-function circleArea(ray) {
-    return pi * (ray * ray);
-};
-
-do {
-
-    op = parseFloat(
-        prompt(
-            "Exercício 9 - Calculadora Geométrica" +
-            "\n" +
-            "\nDigite 1 - Para cálculo da Área do Triangulo" +
-            "\nDigite 2 - Para cálculo da Área do Retangulo" +
-            "\nDigite 3 - Para cálculo da Área do Quadrado" +
-            "\nDigite 4 - Para cálculo da Área do Trapézio" +
-            "\nDigite 5 - Para cálculo da Área do Círculo" +
-            "\nDigite 6 - Para Sair"
-        )
-    );
-
+function chosenOption(op) {
     switch (op) {
 
         case 1:
@@ -101,5 +67,43 @@ do {
             alert("Opção inválida!");
 
     };
+};
+
+function triangleArea(base, heigth) {
+    return base * heigth / 2;
+};
+
+function rectangleArea(base, heigth) {
+    return base * heigth;
+};
+
+function squareArea(side) {
+    return side * side;
+};
+
+function trapezedArea(biggerBase, minorBase, heigth) {
+    return (biggerBase + minorBase) * heigth / 2;
+};
+
+function circleArea(ray) {
+    return pi * (ray * ray);
+};
+
+do {
+
+    op = parseFloat(
+        prompt(
+            "Exercício 9 - Calculadora Geométrica" +
+            "\n" +
+            "\nDigite 1 - Para cálculo da Área do Triangulo" +
+            "\nDigite 2 - Para cálculo da Área do Retangulo" +
+            "\nDigite 3 - Para cálculo da Área do Quadrado" +
+            "\nDigite 4 - Para cálculo da Área do Trapézio" +
+            "\nDigite 5 - Para cálculo da Área do Círculo" +
+            "\nDigite 6 - Para Sair"
+        )
+    );
+
+    chosenOption(op);
 
 } while (op !== 6);
