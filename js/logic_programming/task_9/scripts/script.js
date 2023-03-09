@@ -24,7 +24,6 @@ let heigth;
 let side;
 let biggerBase;
 let minorBase;
-let pi = 3.14;
 let radius;
 
 function loopMenu() {
@@ -126,7 +125,7 @@ function trapezeArea(biggerBase, minorBase, heigth) {
 };
 
 function circleArea(radius) {
-    return pi * (radius * radius);
+    return 3.14 * (radius * radius);
 };
 
 loopMenu();
