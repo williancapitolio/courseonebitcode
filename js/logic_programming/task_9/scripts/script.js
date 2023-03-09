@@ -54,30 +54,39 @@ function chosenOption(op) {
 
         case 1:
             base = parseFloat(prompt("Digite o valor da base:"));
+            base = validateData(base);
             heigth = parseFloat(prompt("Digite o valor da altura:"));
+            heigth = validateData(heigth);
             alert("Área do Triangulo: " + triangleArea(base, heigth));
             break;
 
         case 2:
             base = parseFloat(prompt("Digite o valor da base:"));
+            base = validateData(base);
             heigth = parseFloat(prompt("Digite o valor da altura:"));
+            heigth = validateData(heigth);
             alert("Área do Retangulo: " + rectangleArea(base, heigth));
             break;
 
         case 3:
             side = parseFloat(prompt("Digite o valor do lado:"));
+            side = validateData(side);
             alert("Área do Quadrado: " + squareArea(side, side));
             break;
 
         case 4:
             biggerBase = parseFloat(prompt("Digite o valor da base maior:"));
+            biggerBase = validateData(biggerBase);
             minorBase = parseFloat(prompt("Digite o valor da base menor:"));
+            minorBase = validateData(minorBase);
             heigth = parseFloat(prompt("Digite o valor da altura:"));
-            alert("Área do Trapézio: " + trapezedArea(biggerBase, minorBase, heigth));
+            heigth = validateData(heigth);
+            alert("Área do Trapézio: " + trapezeArea(biggerBase, minorBase, heigth));
             break;
 
         case 5:
             radius = parseFloat(prompt("Digite o valor do raio:"));
+            radius = validateData(radius);
             alert("Área do Círculo: " + circleArea(radius));
             break;
 
@@ -89,6 +98,15 @@ function chosenOption(op) {
             alert("Opção inválida!");
 
     };
+};
+
+function validateData(data) {
+    do {
+        if (isNaN(data)) {
+            data = parseFloat(prompt("Campo não preenchido!" + "\n\nNova tentativa:"));
+        };
+    } while (isNaN(data));
+    return data;
 };
 
 function triangleArea(base, heigth) {
@@ -103,7 +121,7 @@ function squareArea(side) {
     return side * side;
 };
 
-function trapezedArea(biggerBase, minorBase, heigth) {
+function trapezeArea(biggerBase, minorBase, heigth) {
     return (biggerBase + minorBase) * heigth / 2;
 };
 
