@@ -25,7 +25,29 @@ let side;
 let biggerBase;
 let minorBase;
 let pi = 3.14;
-let ray;
+let radius;
+
+function loopMenu() {
+    do {
+        getOption();
+        chosenOption(op);
+    } while (op !== 6);
+};
+
+function getOption() {
+    return op = parseFloat(
+        prompt(
+            "Exercício 9 - Calculadora Geométrica" +
+            "\n" +
+            "\nDigite 1 - Para cálculo da Área do Triangulo" +
+            "\nDigite 2 - Para cálculo da Área do Retangulo" +
+            "\nDigite 3 - Para cálculo da Área do Quadrado" +
+            "\nDigite 4 - Para cálculo da Área do Trapézio" +
+            "\nDigite 5 - Para cálculo da Área do Círculo" +
+            "\nDigite 6 - Para Sair"
+        )
+    );
+};
 
 function chosenOption(op) {
     switch (op) {
@@ -55,8 +77,8 @@ function chosenOption(op) {
             break;
 
         case 5:
-            ray = parseFloat(prompt("Digite o valor do raio:"));
-            alert("Área do Círculo: " + circleArea(ray));
+            radius = parseFloat(prompt("Digite o valor do raio:"));
+            alert("Área do Círculo: " + circleArea(radius));
             break;
 
         case 6:
@@ -85,25 +107,8 @@ function trapezedArea(biggerBase, minorBase, heigth) {
     return (biggerBase + minorBase) * heigth / 2;
 };
 
-function circleArea(ray) {
-    return pi * (ray * ray);
+function circleArea(radius) {
+    return pi * (radius * radius);
 };
 
-do {
-
-    op = parseFloat(
-        prompt(
-            "Exercício 9 - Calculadora Geométrica" +
-            "\n" +
-            "\nDigite 1 - Para cálculo da Área do Triangulo" +
-            "\nDigite 2 - Para cálculo da Área do Retangulo" +
-            "\nDigite 3 - Para cálculo da Área do Quadrado" +
-            "\nDigite 4 - Para cálculo da Área do Trapézio" +
-            "\nDigite 5 - Para cálculo da Área do Círculo" +
-            "\nDigite 6 - Para Sair"
-        )
-    );
-
-    chosenOption(op);
-
-} while (op !== 6);
+loopMenu();
