@@ -55,12 +55,13 @@ function getOp() {
 };
 
 function loopActions(op, vacancies) {
+    const vacancy = {};
     switch (op) {
         case 1:
             listAvailableJobs(vacancies);
             break;
         case 2:
-            createNewVacancy(vacancies);
+            createNewVacancy(vacancies, vacancy);
             break;
         case 3:
             viewVacancy(vacancies);
@@ -79,10 +80,22 @@ function loopActions(op, vacancies) {
     };
 };
 
-function listAvailableJobs(vacancies) { };
+function listAvailableJobs(vacancies) {
+    if (vacancies.length > 0) {
+        alert("Vagas disponíveis");
+        vacancies.forEach(function (vacancy, i) {
+            alert(
+                "Vaga número: " + (i + 1) +
+                "\nNome da vaga: " + vacancy.name +
+                "\nQuantidade de candidatos inscritos: " + vacancy.candidates.length
+            );
+        });
+    } else {
+        alert("Nenhuma vaga disponível!");
+    };
+};
 
-function createNewVacancy(vacancies) {
-    const vacancy = {};
+function createNewVacancy(vacancies, vacancy) {
     vacancy.name = prompt("Digite o nome da vaga:");
     vacancy.desc = prompt("Digite a descrição da vaga:");
     vacancy.deadline = prompt("Digite a data limite da vaga:")
@@ -92,7 +105,7 @@ function createNewVacancy(vacancies) {
         "\n" +
         "\nNome da vaga: " + vacancy.name +
         "\nDescrição da vaga: " + vacancy.desc +
-        "\nData limite da vaga: " + vacancy.deadline
+        "\nData limite para inscrição a vaga:: " + vacancy.deadline
     ) ? vacancies.push(vacancy) : alert(
         "Criação de nova vaga cancelada!"
     );
