@@ -111,10 +111,57 @@ function createNewVacancy(vacancies, vacancy) {
     );
 };
 
-function viewVacancy(vacancies) { };
+function viewVacancy(vacancies) {
+    const index = getIndexOfVacancy(vacancies);
+    if (index) {
+        if (vacancies[index]) {
+            const getVacancy = vacancies.find(function (vacancy) {
+                return vacancy.name === vacancies[index].name;
+            });
+            getVacancy.candidates.length > 0 ? alert(
+                "Informações da vaga" +
+                "\n" +
+                "\nNome: " + getVacancy.name +
+                "\nDescrição: " + getVacancy.desc +
+                "\nData limite para inscrição: " + getVacancy.deadline +
+                "\nQuantidade de candidatos inscritos: " + getVacancy.candidates.length +
+                "\nNome dos candidatos: " + getVacancy.candidates
+            ) : alert(
+                "Informações da vaga" +
+                "\n" +
+                "\nNome: " + getVacancy.name +
+                "\nDescrição: " + getVacancy.desc +
+                "\nData limite para inscrição: " + getVacancy.deadline +
+                "\nQuantidade de candidatos inscritos: 0"
+            );
+        } else {
+            alert("Digite um número válido!");
+        };
+    };
+};
 
 function registerCandidateForVacancy(vacancies) { };
 
 function deleteVacancy(vacancies) { };
+
+function getIndexOfVacancy(vacancies) {
+    if (vacancies.length > 0) {
+        let getIndexes = "";
+        let indexVacancy = "";
+        getIndexes = vacancies.map(function (vacancy, i) {
+            return getIndexes = "Vaga número " + (i + 1) + " - " + vacancy.name + "\n";
+        });
+        indexVacancy = prompt(
+            "Lista de vagas" +
+            "\n" + getIndexes +
+            "\nDigite o número da vaga"
+        );
+        indexVacancy -= 1;
+        return indexVacancy;
+    } else {
+        alert("Nenhuma vaga disponível!");
+        return false;
+    };
+};
 
 loopMenu();
