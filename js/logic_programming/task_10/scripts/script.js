@@ -31,10 +31,11 @@ sempre que possível, como os objetos, arrays e funções.
 "use strict";
 
 function loopMenu() {
+    const vacancies = [];
     let op;
     do {
         op = getOp();
-        loopActions(op);
+        loopActions(op, vacancies);
     } while (op !== 6);
 };
 
@@ -53,22 +54,22 @@ function getOp() {
     );
 };
 
-function loopActions(op) {
+function loopActions(op, vacancies) {
     switch (op) {
         case 1:
-            listAvailableJobs();
+            listAvailableJobs(vacancies);
             break;
         case 2:
-            createNewVacancy();
+            createNewVacancy(vacancies);
             break;
         case 3:
-            viewVacancy();
+            viewVacancy(vacancies);
             break;
         case 4:
-            registerCandidateForVacancy();
+            registerCandidateForVacancy(vacancies);
             break;
         case 5:
-            deleteVacancy();
+            deleteVacancy(vacancies);
             break;
         case 6:
             alert("Saindo...");
@@ -78,14 +79,29 @@ function loopActions(op) {
     };
 };
 
-function listAvailableJobs() {};
+function listAvailableJobs(vacancies) { };
 
-function createNewVacancy() {};
+function createNewVacancy(vacancies) {
+    const vacancy = {};
+    vacancy.name = prompt("Digite o nome da vaga:");
+    vacancy.desc = prompt("Digite a descrição da vaga:");
+    vacancy.deadline = prompt("Digite a data limite da vaga:")
+    vacancy.candidates = [];
+    confirm(
+        "Confirme as informações" +
+        "\n" +
+        "\nNome da vaga: " + vacancy.name +
+        "\nDescrição da vaga: " + vacancy.desc +
+        "\nData limite da vaga: " + vacancy.deadline
+    ) ? vacancies.push(vacancy) : alert(
+        "Criação de nova vaga cancelada!"
+    );
+};
 
-function viewVacancy() {};
+function viewVacancy(vacancies) { };
 
-function registerCandidateForVacancy() {};
+function registerCandidateForVacancy(vacancies) { };
 
-function deleteVacancy() {};
+function deleteVacancy(vacancies) { };
 
 loopMenu();
