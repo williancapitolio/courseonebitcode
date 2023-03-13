@@ -142,7 +142,17 @@ function viewVacancy(vacancies) {
 
 function registerCandidateForVacancy(vacancies) { };
 
-function deleteVacancy(vacancies) { };
+function deleteVacancy(vacancies) {
+    const index = getIndexOfVacancy(vacancies);
+    if (index) {
+        if (vacancies[index]) {
+            vacancies.splice(index, 1);
+            alert("Vaga número " + (index + 1) + " excluída com sucesso!");
+        } else {
+            alert("Digite um número válido!")
+        };
+    };
+};
 
 function getIndexOfVacancy(vacancies) {
     if (vacancies.length > 0) {
