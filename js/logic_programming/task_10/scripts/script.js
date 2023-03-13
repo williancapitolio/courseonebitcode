@@ -55,13 +55,12 @@ function getOp() {
 };
 
 function loopActions(op, vacancies) {
-    const vacancy = {};
     switch (op) {
         case 1:
             listAvailableJobs(vacancies);
             break;
         case 2:
-            createNewVacancy(vacancies, vacancy);
+            createNewVacancy(vacancies);
             break;
         case 3:
             viewVacancy(vacancies);
@@ -95,7 +94,8 @@ function listAvailableJobs(vacancies) {
     };
 };
 
-function createNewVacancy(vacancies, vacancy) {
+function createNewVacancy(vacancies) {
+    const vacancy = {};
     vacancy.name = prompt("Digite o nome da vaga:");
     vacancy.desc = prompt("Digite a descrição da vaga:");
     vacancy.deadline = prompt("Digite a data limite da vaga:")
@@ -125,7 +125,7 @@ function viewVacancy(vacancies) {
                 "\nDescrição: " + getVacancy.desc +
                 "\nData limite para inscrição: " + getVacancy.deadline +
                 "\nQuantidade de candidatos inscritos: " + getVacancy.candidates.length +
-                "\nNome dos candidatos: " + getVacancy.candidates
+                "\nNome dos candidatos inscritos: " + getVacancy.candidates
             ) : alert(
                 "Informações da vaga" +
                 "\n" +
@@ -135,12 +135,23 @@ function viewVacancy(vacancies) {
                 "\nQuantidade de candidatos inscritos: 0"
             );
         } else {
-            alert("Digite um número válido!")
+            alert("Digite um número válido!");
         };
     };
 };
 
-function registerCandidateForVacancy(vacancies) { };
+function registerCandidateForVacancy(vacancies) {
+    const index = getIndexOfVacancy(vacancies);
+    if (index || index === 0) {
+        if (vacancies[index]) {
+            const candidate = prompt("Digite o nome do candidato:");
+            vacancies[index].candidates.push(candidate);
+            alert("Candidato " + candidate + " inscrito com sucesso na vaga número " + (index + 1));
+        } else {
+            alert("Digite um número válido!");
+        };
+    };
+};
 
 function deleteVacancy(vacancies) {
     const index = getIndexOfVacancy(vacancies);
@@ -149,7 +160,7 @@ function deleteVacancy(vacancies) {
             vacancies.splice(index, 1);
             alert("Vaga número " + (index + 1) + " excluída com sucesso!");
         } else {
-            alert("Digite um número válido!")
+            alert("Digite um número válido!");
         };
     };
 };
