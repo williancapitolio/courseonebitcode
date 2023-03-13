@@ -113,7 +113,7 @@ function createNewVacancy(vacancies, vacancy) {
 
 function viewVacancy(vacancies) {
     const index = getIndexOfVacancy(vacancies);
-    if (index) {
+    if (index || index === 0) {
         if (vacancies[index]) {
             const getVacancy = vacancies.find(function (vacancy) {
                 return vacancy.name === vacancies[index].name;
@@ -135,7 +135,7 @@ function viewVacancy(vacancies) {
                 "\nQuantidade de candidatos inscritos: 0"
             );
         } else {
-            alert("Digite um número válido!");
+            alert("Digite um número válido!")
         };
     };
 };
@@ -144,7 +144,7 @@ function registerCandidateForVacancy(vacancies) { };
 
 function deleteVacancy(vacancies) {
     const index = getIndexOfVacancy(vacancies);
-    if (index) {
+    if (index || index === 0) {
         if (vacancies[index]) {
             vacancies.splice(index, 1);
             alert("Vaga número " + (index + 1) + " excluída com sucesso!");
@@ -167,6 +167,7 @@ function getIndexOfVacancy(vacancies) {
             "\nDigite o número da vaga"
         );
         indexVacancy -= 1;
+        parseFloat(indexVacancy);
         return indexVacancy;
     } else {
         alert("Nenhuma vaga disponível!");
