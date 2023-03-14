@@ -40,12 +40,12 @@ function selectPlayer() {
     );
 
     if (!confirmSelectPlayer) {
-        alert("Escalação cancelada!");
+        alert("Jogador não escalado!");
         return;
     };
 
     players.push(player);
-    alert("Escalação confirmada!");
+    alert("Jogador escalado!");
 
     document.getElementById("player-position").value = "";
     document.getElementById("player-name").value = "";
@@ -55,11 +55,23 @@ function selectPlayer() {
 };
 
 function removePlayer() {
+    if (!players.length > 0) {
+        alert("Nenhum jogador escalado!");
+        return;
+    };
+
     const numberToDelete = document.getElementById("player-number-remove").value;
 
     const playerToDelete = players.findIndex(function (index) {
         return index.number === numberToDelete;
     });
+
+    players.splice(playerToDelete, 1);
+
+    const formListSection = document.getElementById("players-list");
+    const ul = document.getElementsByTagName("ul");
+
+    formListSection.removeChild(ul[playerToDelete]);
 
     document.getElementById("player-number-remove").value = "";
 };
@@ -73,8 +85,7 @@ function listPlayers() {
 
     players.forEach(function (player, i) {
         liPlayer = document.createElement("li");
-        liPlayer.textContent = "# " + (i + 1) +
-            " - Posição: " + player.position +
+        liPlayer.textContent = "Posição: " + player.position +
             ", Nome: " + player.name +
             ", Número: " + player.number;
     });
