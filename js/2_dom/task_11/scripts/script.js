@@ -56,12 +56,12 @@ function selectPlayer() {
 
 function removePlayer() {
     const numberToDelete = document.getElementById("player-number-remove").value;
-    
-    const playerToDelete = players.findIndex(function(index) {
+
+    const playerToDelete = players.findIndex(function (index) {
         return index.number === numberToDelete;
     });
 
-
+    document.getElementById("player-number-remove").value = "";
 };
 
 function listPlayers() {
