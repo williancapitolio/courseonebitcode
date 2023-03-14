@@ -115,23 +115,20 @@ function viewVacancy(vacancies) {
     const index = getIndexOfVacancy(vacancies);
     if (index || index === 0) {
         if (vacancies[index]) {
-            const getVacancy = vacancies.find(function (vacancy) {
-                return vacancy.name === vacancies[index].name;
-            });
-            getVacancy.candidates.length > 0 ? alert(
+            vacancies[index].candidates.length > 0 ? alert(
                 "Informações da vaga" +
                 "\n" +
-                "\nNome: " + getVacancy.name +
-                "\nDescrição: " + getVacancy.desc +
-                "\nData limite para inscrição: " + getVacancy.deadline +
-                "\nQuantidade de candidatos inscritos: " + getVacancy.candidates.length +
-                "\nNome dos candidatos inscritos: " + getVacancy.candidates
+                "\nNome: " + vacancies[index].name +
+                "\nDescrição: " + vacancies[index].desc +
+                "\nData limite para inscrição: " + vacancies[index].deadline +
+                "\nQuantidade de candidatos inscritos: " + vacancies[index].candidates.length +
+                "\nNome dos candidatos inscritos: " + vacancies[index].candidates
             ) : alert(
                 "Informações da vaga" +
                 "\n" +
-                "\nNome: " + getVacancy.name +
-                "\nDescrição: " + getVacancy.desc +
-                "\nData limite para inscrição: " + getVacancy.deadline +
+                "\nNome: " + vacancies[index].name +
+                "\nDescrição: " + vacancies[index].desc +
+                "\nData limite para inscrição: " + vacancies[index].deadline +
                 "\nQuantidade de candidatos inscritos: 0"
             );
         } else {
@@ -141,15 +138,36 @@ function viewVacancy(vacancies) {
 };
 
 function registerCandidateForVacancy(vacancies) {
-    const index = getIndexOfVacancy(vacancies);
-    if (index || index === 0) {
-        if (vacancies[index]) {
-            const candidate = prompt("Digite o nome do candidato:");
-            vacancies[index].candidates.push(candidate);
-            alert("Candidato " + candidate + " inscrito com sucesso na vaga número " + (index + 1));
+    if (vacancies.length > 0) {
+        const candidate = prompt("Digite o nome do candidato:");
+        if (candidate) {
+            const index = getIndexOfVacancy(vacancies);
+            if (vacancies[index]) {
+                const confirmRegister = confirm(
+                    "Deseja cadastrar o candidato " + candidate +
+                    " na vaga número " + (index + 1) +
+                    " - " + vacancies[index].name + "?"
+                );
+                if (confirmRegister) {
+                    vacancies[index].candidates.push(candidate);
+                    alert(
+                        "Candidato " + candidate +
+                        " registrado com sucesso na vaga número " + (index + 1) +
+                        " - " + vacancies[index].name
+                    );
+                } else {
+                    alert(
+                        "Registro de candidato cancelado!"
+                    );
+                };
+            } else {
+                alert("Digite um número válido!");
+            };
         } else {
-            alert("Digite um número válido!");
+            alert("Digite um nome válido!");
         };
+    } else {
+        alert("Nenhuma vaga disponível!");
     };
 };
 
@@ -157,8 +175,20 @@ function deleteVacancy(vacancies) {
     const index = getIndexOfVacancy(vacancies);
     if (index || index === 0) {
         if (vacancies[index]) {
-            vacancies.splice(index, 1);
-            alert("Vaga número " + (index + 1) + " excluída com sucesso!");
+            const confirmDelete = confirm(
+                "Deseja realmente excluir a vaga número " + (index + 1) +
+                " - " + vacancies[index].name + "?"
+            );
+            if (confirmDelete) {
+                vacancies.splice(index, 1);
+                alert(
+                    "Vaga número " + (index + 1) + " excluída com sucesso!"
+                );
+            } else {
+                alert(
+                    "Exclusão de vaga cancelada!"
+                );
+            };
         } else {
             alert("Digite um número válido!");
         };
