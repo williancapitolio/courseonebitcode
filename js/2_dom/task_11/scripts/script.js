@@ -22,3 +22,64 @@ Dica: lembrando que é possível acessar o texto de um input através da proprie
 */
 
 "use strict";
+
+const players = [];
+
+function selectPlayer() {
+    const player = {};
+
+    player.position = document.getElementById("player-position").value;
+    player.name = document.getElementById("player-name").value;
+    player.number = document.getElementById("player-number").value;
+
+    const confirmSelectPlayer = confirm(
+        "Confirme a escalação: " +
+        "\nPosição: " + player.position +
+        "\nNome: " + player.name +
+        "\nNúmero: " + player.number
+    );
+
+    if (!confirmSelectPlayer) {
+        alert("Escalação cancelada!");
+        return;
+    };
+
+    players.push(player);
+    alert("Escalação confirmada!");
+
+    document.getElementById("player-position").value = "";
+    document.getElementById("player-name").value = "";
+    document.getElementById("player-number").value = "";
+
+    listPlayers();
+};
+
+function removePlayer() {
+    const numberToDelete = document.getElementById("player-number-remove").value;
+    
+    const playerToDelete = players.findIndex(function(index) {
+        return index.number === numberToDelete;
+    });
+
+
+};
+
+function listPlayers() {
+    const formListSection = document.getElementById("players-list");
+
+    const ul = document.createElement("ul");
+
+    let liPlayer = ""
+
+    players.forEach(function (player, i) {
+        liPlayer = document.createElement("li");
+        liPlayer.textContent = "# " + (i + 1) +
+            " - Posição: " + player.position +
+            ", Nome: " + player.name +
+            ", Número: " + player.number;
+    });
+
+    ul.appendChild(liPlayer);
+
+    formListSection.append(ul);
+};
