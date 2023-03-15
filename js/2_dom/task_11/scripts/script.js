@@ -32,11 +32,27 @@ function selectPlayer() {
     player.name = document.getElementById("player-name").value;
     player.number = document.getElementById("player-number").value;
 
-    if (!player.position || !player.name || !player.number) {
+    if (!player.position) {
         alert(
-            "Erro: Preencha todos os campos!"
+            "Erro: Preencha o campo Posição!"
         );
         document.getElementById("player-position").focus();
+        return;
+    };
+
+    if (!player.name) {
+        alert(
+            "Erro: Preencha o campo Nome!"
+        );
+        document.getElementById("player-name").focus();
+        return;
+    };
+
+    if (!player.number) {
+        alert(
+            "Erro: Preencha o campo Número!"
+        );
+        document.getElementById("player-number").focus();
         return;
     };
 
