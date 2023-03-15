@@ -32,8 +32,27 @@ function selectPlayer() {
     player.name = document.getElementById("player-name").value;
     player.number = document.getElementById("player-number").value;
 
+    if (!player.position || !player.name || !player.number) {
+        alert(
+            "Erro: Preencha todos os campos!"
+        );
+        return;
+    };
+
+    const verifyNumber = players.find(function (playerNumber) {
+        return playerNumber.number === player.number;
+    });
+
+    if (verifyNumber) {
+        alert(
+            "Erro: Este número já está sendo utilizado!"
+        );
+        return;
+    };
+
     const confirmSelectPlayer = confirm(
-        "Confirme a escalação: " +
+        "Confirmação: Confirme a escalação: " +
+        "\n" +
         "\nPosição: " + player.position +
         "\nNome: " + player.name +
         "\nNúmero: " + player.number
@@ -41,14 +60,15 @@ function selectPlayer() {
 
     if (!confirmSelectPlayer) {
         alert(
-            "Jogador não escalado!"
+            "Não confirmado: Jogador não escalado!"
         );
         return;
     };
 
     players.push(player);
+
     alert(
-        "Jogador escalado!"
+        "Sucesso: Jogador escalado!"
     );
 
     document.getElementById("player-position").value = "";
@@ -61,7 +81,7 @@ function selectPlayer() {
 function removePlayer() {
     if (!players.length > 0) {
         alert(
-            "Nenhum jogador escalado!"
+            "Erro: Nenhum jogador escalado!"
         );
         return;
     };
@@ -70,7 +90,7 @@ function removePlayer() {
 
     if (!numberToDelete) {
         alert(
-            "Preencha o número do jogador que deseja remover!"
+            "Erro: Preencha o número do jogador que deseja remover!"
         );
         return;
     };
@@ -81,20 +101,20 @@ function removePlayer() {
 
     if (!players[playerToDelete]) {
         alert(
-            "Jogador não encontrado!"
+            "Erro: Jogador não encontrado!"
         );
         return;
     };
 
     const confirmDelete = confirm(
-        "Deseja realmente remover o jogador " +
+        "Confirmação: Realmente deseja remover o jogador " +
         players[playerToDelete].name +
         "?"
     );
 
     if (!confirmDelete) {
         alert(
-            "Jogador " +
+            "Não confirmado: Jogador " +
             players[playerToDelete].name +
             " não removido!"
         );
@@ -109,7 +129,7 @@ function removePlayer() {
     formListSection.removeChild(ul[playerToDelete]);
 
     alert(
-        "Jogador removido!"
+        "Sucesso: Jogador removido!"
     );
 
     document.getElementById("player-number-remove").value = "";
@@ -120,9 +140,9 @@ function listPlayers() {
 
     const ul = document.createElement("ul");
 
-    let liPlayer = ""
+    let liPlayer = "";
 
-    players.forEach(function (player, i) {
+    players.forEach(function (player) {
         liPlayer = document.createElement("li");
         liPlayer.textContent = "Posição: " + player.position +
             ", Nome: " + player.name +
