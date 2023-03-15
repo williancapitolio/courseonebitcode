@@ -36,6 +36,7 @@ function selectPlayer() {
         alert(
             "Erro: Preencha todos os campos!"
         );
+        document.getElementById("player-position").focus();
         return;
     };
 
@@ -47,6 +48,7 @@ function selectPlayer() {
         alert(
             "Erro: Este número já está sendo utilizado!"
         );
+        document.getElementById("player-number").focus();
         return;
     };
 
@@ -83,6 +85,7 @@ function removePlayer() {
         alert(
             "Erro: Nenhum jogador escalado!"
         );
+        document.getElementById("player-position").focus();
         return;
     };
 
@@ -92,6 +95,7 @@ function removePlayer() {
         alert(
             "Erro: Preencha o número do jogador que deseja remover!"
         );
+        document.getElementById("player-number-remove").focus();
         return;
     };
 
@@ -101,8 +105,11 @@ function removePlayer() {
 
     if (!players[playerToDelete]) {
         alert(
-            "Erro: Jogador não encontrado!"
+            "Erro: Jogador com número '" +
+            numberToDelete +
+            "' não encontrado!"
         );
+        document.getElementById("player-number-remove").focus();
         return;
     };
 
@@ -118,6 +125,7 @@ function removePlayer() {
             players[playerToDelete].name +
             " não removido!"
         );
+        document.getElementById("player-number-remove").focus();
         return;
     };
 

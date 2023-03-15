@@ -10,45 +10,51 @@
 </head>
 
 <body>
-    <main>
+    <header>
         <h1>Exercício 11</h1>
         <hr>
+
         <h2>Escalação do Time</h2>
         <hr>
+    </header>
+    <main>
         <section id="select-player">
             <h3>Escalar um jogador</h3>
 
             <label for="player-position">Posição: </label>
-            <input type="text" name="player-position" id="player-position">
+            <input type="text" name="player-position" id="player-position" placeholder="Posição do jogador">
             <br><br>
 
             <label for="player-name">Nome: </label>
-            <input type="text" name="player-name" id="player-name">
+            <input type="text" name="player-name" id="player-name" placeholder="Nome do jogador">
             <br><br>
 
             <label for="player-number">Número: </label>
-            <input type="text" name="player-number" id="player-number">
+            <input type="text" name="player-number" id="player-number" placeholder="Número do jogador">
             <br><br>
 
             <button onclick="selectPlayer()">Escalar Jogador</button>
             <br><br>
-
             <hr>
         </section>
         <section id="player-remove">
             <h3>Remover um jogador</h3>
 
             <label for="player-number-remove">Número: </label>
-            <input type="text" name="player-number-remove" id="player-number-remove">
+            <input type="text" name="player-number-remove" id="player-number-remove" placeholder="Número do jogador">
             <button onclick="removePlayer()">Remover jogador</button>
             <br><br>
-            
             <hr>
         </section>
         <section id="players-list">
             <h3>Listar jogadores</h3>
         </section>
     </main>
+    <footer>
+        <br>
+        <hr>
+        <h2>Exercício 11</h2>
+    </footer>
 </body>
 
 </html>
