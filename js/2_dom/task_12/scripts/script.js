@@ -22,4 +22,13 @@ funcionar sem acionar um recarregamento.
 
 "use strict";
 
+const devForm = document.getElementById("dev-form");
 
+devForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+});
+
+const devInfo = document.getElementById("dev-info");
+
+devInfo.addEventListener("click", function (event) {
+});
