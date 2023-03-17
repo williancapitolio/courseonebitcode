@@ -22,12 +22,12 @@ funcionar sem acionar um recarregamento.
 
 "use strict";
 
+let count = 0;
+
 const devForm = document.getElementById("dev-form");
 
 devForm.addEventListener("submit", function (event) {
     event.preventDefault();
-
-    const devName = event.target.devname.value;
 
     addTechnology();
 
@@ -36,22 +36,22 @@ devForm.addEventListener("submit", function (event) {
 
 function addTechnology() {
     const labelTechnologyName = document.createElement("label");
-    labelTechnologyName.setAttribute("for", "technology-name");
+    labelTechnologyName.setAttribute("for", "technology-name-" + count);
     labelTechnologyName.innerText = "Tecnologia: ";
 
     const inputTechnologyName = document.createElement("input");
     inputTechnologyName.type = "text";
-    inputTechnologyName.name = "technology-name";
-    inputTechnologyName.id = "technology-name";
+    inputTechnologyName.name = "technology-name-" + count;
+    inputTechnologyName.id = "technology-name-" + count;
     inputTechnologyName.placeholder = "Digite o nome da tecnologia";
 
     const labelExperience = document.createElement("label");
-    labelExperience.setAttribute("for", "technology-experience");
+    labelExperience.setAttribute("for", "technology-experience-" + count);
     labelExperience.innerText = "Tempo de experiência";
 
     const inputRadioFirst = document.createElement("input");
     inputRadioFirst.type = "radio";
-    inputRadioFirst.name = "technology-experience";
+    inputRadioFirst.name = "technology-experience-" + count;
     inputRadioFirst.id = "first";
     inputRadioFirst.value = "0-2 anos";
     const labelRadioFirst = document.createElement("label");
@@ -60,7 +60,7 @@ function addTechnology() {
 
     const inputRadioSecond = document.createElement("input");
     inputRadioSecond.type = "radio";
-    inputRadioSecond.name = "technology-experience";
+    inputRadioSecond.name = "technology-experience-" + count;
     inputRadioSecond.id = "second";
     inputRadioSecond.value = "3-4 anos";
     const labelRadioSecond = document.createElement("label");
@@ -69,7 +69,7 @@ function addTechnology() {
 
     const inputRadioThird = document.createElement("input");
     inputRadioThird.type = "radio";
-    inputRadioThird.name = "technology-experience";
+    inputRadioThird.name = "technology-experience-" + count;
     inputRadioThird.id = "third";
     inputRadioThird.value = "5+ anos";
     const labelRadioThird = document.createElement("label");
@@ -121,6 +121,8 @@ function addTechnology() {
     listTechnologies.appendChild(document.createElement("br"));
 
     devTechnologies.appendChild(listTechnologies);
+
+    count++;
 };
 
 function cancelAddTechnology() {
@@ -132,3 +134,14 @@ function cancelAddTechnology() {
         });
     });
 };
+
+const addDevBtn = document.getElementById("add-dev-btn");
+
+addDevBtn.addEventListener("click", function (event) {
+    console.log(event.target.parentNode);
+    /* const devName = document.getElementById("dev-form").devname.value;
+    //console.log(devName);
+    const technologiesName = document.querySelectorAll(".list-technologies").technology-namer.value;
+    console.log(technologiesName)
+    //const technologiesRadio */
+});
