@@ -135,20 +135,24 @@ function cancelAddTechnology() {
     });
 };
 
-const addDevBtn = document.getElementById("add-dev-btn");
-
 let devData = [];
+
+const addDevBtn = document.getElementById("add-dev-btn");
 
 addDevBtn.addEventListener("click", function (event) {
     const devName = event.target.parentNode.children["dev-form"].children["devname"].value;
 
+    devData.push(devName);
+
     const listTechnologies = document.querySelectorAll(".list-technologies");
 
-    let technologyNames = {};
+    listTechnologies.forEach(function (element) {
+        let technologyNames = {};
 
-    listTechnologies.forEach(function (element, index) {
-            technologyNames[index] = element.children["technology-name"].value;
+        technologyNames.technologyName = element.children["technology-name"].value;
+
+        devData.push(technologyNames);
     });
-    devData.push(devName, technologyNames);
+
     console.log(devData)
 });
