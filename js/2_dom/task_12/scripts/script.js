@@ -138,7 +138,7 @@ function cancelAddTechnology() {
 const addDevBtn = document.getElementById("add-dev-btn");
 
 addDevBtn.addEventListener("click", function (event) {
-    console.log(event.target.parentNode);
+    console.log(event.target.parentNode.children["dev-form"]);
     /* const devName = document.getElementById("dev-form").devname.value;
     //console.log(devName);
     const technologiesName = document.querySelectorAll(".list-technologies").technology-namer.value;
