@@ -36,13 +36,13 @@ devForm.addEventListener("submit", function (event) {
 
 function addTechnology() {
     const labelTechnologyName = document.createElement("label");
-    labelTechnologyName.setAttribute("for", "technology-name-" + count);
+    labelTechnologyName.setAttribute("for", "technology-name");
     labelTechnologyName.innerText = "Tecnologia: ";
 
     const inputTechnologyName = document.createElement("input");
     inputTechnologyName.type = "text";
-    inputTechnologyName.name = "technology-name-" + count;
-    inputTechnologyName.id = "technology-name-" + count;
+    inputTechnologyName.name = "technology-name";
+    inputTechnologyName.id = "technology-name";
     inputTechnologyName.placeholder = "Digite o nome da tecnologia";
 
     const labelExperience = document.createElement("label");
@@ -137,12 +137,18 @@ function cancelAddTechnology() {
 
 const addDevBtn = document.getElementById("add-dev-btn");
 
+let devData = [];
+
 addDevBtn.addEventListener("click", function (event) {
-    const devForm = event.target.parentNode.children["dev-form"];
-    console.log(devForm);
-    /* const devName = document.getElementById("dev-form").devname.value;
-    //console.log(devName);
-    const technologiesName = document.querySelectorAll(".list-technologies").technology-namer.value;
-    console.log(technologiesName)
-    //const technologiesRadio */
+    const devName = event.target.parentNode.children["dev-form"].children["devname"].value;
+
+    const listTechnologies = document.querySelectorAll(".list-technologies");
+
+    let technologyNames = {};
+
+    listTechnologies.forEach(function (element, index) {
+            technologyNames[index] = element.children["technology-name"].value;
+    });
+    devData.push(devName, technologyNames);
+    console.log(devData)
 });
