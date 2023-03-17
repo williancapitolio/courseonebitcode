@@ -30,6 +30,8 @@ devForm.addEventListener("submit", function (event) {
     const devName = event.target.devname.value;
 
     addTechnology();
+
+    cancelAddTechnology();
 });
 
 function addTechnology() {
@@ -74,33 +76,59 @@ function addTechnology() {
     labelRadioThird.setAttribute("for", "third");
     labelRadioThird.innerText = "5+ anos";
 
+    const btnCancel = document.createElement("input");
+    btnCancel.type = "button";
+    btnCancel.value = "Cancelar";
+    btnCancel.className = "btn-cancel-add";
+
+    const listTechnologies = document.createElement("div");
+    listTechnologies.className = "list-technologies";
+    listTechnologies.id = "list-technologies";
+
+    const radioDiv = document.createElement("div");
+    radioDiv.className = "radio-div";
+    radioDiv.id = "radio-div";
+
     const devTechnologies = document.getElementById("dev-technologies");
 
-    devTechnologies.appendChild(labelTechnologyName);
-    devTechnologies.appendChild(inputTechnologyName);
-    devTechnologies.appendChild(document.createElement("br"));
-    devTechnologies.appendChild(document.createElement("br"));
+    listTechnologies.appendChild(labelTechnologyName);
+    listTechnologies.appendChild(inputTechnologyName);
+    listTechnologies.appendChild(document.createElement("br"));
+    listTechnologies.appendChild(document.createElement("br"));
 
-    devTechnologies.appendChild(labelExperience);
-    devTechnologies.appendChild(document.createElement("br"));
+    radioDiv.appendChild(labelExperience);
+    radioDiv.appendChild(document.createElement("br"));
 
-    devTechnologies.appendChild(inputRadioFirst);
-    devTechnologies.appendChild(labelRadioFirst);
-    devTechnologies.appendChild(document.createElement("br"));
+    radioDiv.appendChild(inputRadioFirst);
+    radioDiv.appendChild(labelRadioFirst);
+    radioDiv.appendChild(document.createElement("br"));
 
-    devTechnologies.appendChild(inputRadioSecond);
-    devTechnologies.appendChild(labelRadioSecond);
-    devTechnologies.appendChild(document.createElement("br"));
+    radioDiv.appendChild(inputRadioSecond);
+    radioDiv.appendChild(labelRadioSecond);
+    radioDiv.appendChild(document.createElement("br"));
 
-    devTechnologies.appendChild(inputRadioThird);
-    devTechnologies.appendChild(labelRadioThird);
-    devTechnologies.appendChild(document.createElement("br"));
+    radioDiv.appendChild(inputRadioThird);
+    radioDiv.appendChild(labelRadioThird);
+    radioDiv.appendChild(document.createElement("br"));
+    radioDiv.appendChild(document.createElement("br"));
 
-    devTechnologies.appendChild(document.createElement("br"));
-    devTechnologies.appendChild(document.createElement("br"));
+    listTechnologies.appendChild(radioDiv);
+
+    listTechnologies.appendChild(btnCancel);
+    listTechnologies.appendChild(document.createElement("br"));
+
+    listTechnologies.appendChild(document.createElement("br"));
+    listTechnologies.appendChild(document.createElement("br"));
+
+    devTechnologies.appendChild(listTechnologies);
 };
 
-const devInfo = document.getElementById("dev-info");
+function cancelAddTechnology() {
+    const getBtnsCancel = document.querySelectorAll(".btn-cancel-add");
 
-devInfo.addEventListener("click", function (event) {
-});
+    getBtnsCancel.forEach(function (element, index) {
+        getBtnsCancel[index].addEventListener("click", function () {
+            element.parentNode.remove();
+        });
+    });
+};
