@@ -85,9 +85,9 @@ function addTechnology() {
     listTechnologies.className = "list-technologies";
     listTechnologies.id = "list-technologies";
 
-    const radioDiv = document.createElement("div");
-    radioDiv.className = "radio-div";
-    radioDiv.id = "radio-div";
+    //const radioDiv = document.createElement("div");
+    //radioDiv.className = "radio-div";
+    //radioDiv.id = "radio-div";
 
     const devTechnologies = document.getElementById("dev-technologies");
 
@@ -96,23 +96,23 @@ function addTechnology() {
     listTechnologies.appendChild(document.createElement("br"));
     listTechnologies.appendChild(document.createElement("br"));
 
-    radioDiv.appendChild(labelExperience);
-    radioDiv.appendChild(document.createElement("br"));
+    listTechnologies.appendChild(labelExperience);
+    listTechnologies.appendChild(document.createElement("br"));
 
-    radioDiv.appendChild(inputRadioFirst);
-    radioDiv.appendChild(labelRadioFirst);
-    radioDiv.appendChild(document.createElement("br"));
+    listTechnologies.appendChild(inputRadioFirst);
+    listTechnologies.appendChild(labelRadioFirst);
+    listTechnologies.appendChild(document.createElement("br"));
 
-    radioDiv.appendChild(inputRadioSecond);
-    radioDiv.appendChild(labelRadioSecond);
-    radioDiv.appendChild(document.createElement("br"));
+    listTechnologies.appendChild(inputRadioSecond);
+    listTechnologies.appendChild(labelRadioSecond);
+    listTechnologies.appendChild(document.createElement("br"));
 
-    radioDiv.appendChild(inputRadioThird);
-    radioDiv.appendChild(labelRadioThird);
-    radioDiv.appendChild(document.createElement("br"));
-    radioDiv.appendChild(document.createElement("br"));
+    listTechnologies.appendChild(inputRadioThird);
+    listTechnologies.appendChild(labelRadioThird);
+    listTechnologies.appendChild(document.createElement("br"));
+    listTechnologies.appendChild(document.createElement("br"));
 
-    listTechnologies.appendChild(radioDiv);
+    //listTechnologies.appendChild(radioDiv);
 
     listTechnologies.appendChild(btnCancel);
     listTechnologies.appendChild(document.createElement("br"));
@@ -135,24 +135,32 @@ function cancelAddTechnology() {
     });
 };
 
+let devDatas = [];
 let devData = [];
 
 const addDevBtn = document.getElementById("add-dev-btn");
 
 addDevBtn.addEventListener("click", function (event) {
-    const devName = event.target.parentNode.children["dev-form"].children["devname"].value;
+    //let devnames = {};
 
-    devData.push(devName);
+    devData.push(event.target.parentNode.children["dev-form"].children["devname"].value);
+
+    //devData.push(devnames);
 
     const listTechnologies = document.querySelectorAll(".list-technologies");
 
-    listTechnologies.forEach(function (element) {
-        let technologyNames = {};
+    listTechnologies.forEach(function (element, index) {
+        let technologies = {};
 
-        technologyNames.technologyName = element.children["technology-name"].value;
+        technologies.technologyName = element.children["technology-name"].value;
 
-        devData.push(technologyNames);
+        //const radiosChecked = document.querySelector('input[name="technology-experience-' + index + '"]:checked').value;
+        technologies.technologyExperience = document.querySelector('input[name="technology-experience-' + index + '"]:checked').value;
+
+        devData.push(technologies);
     });
+
+    devDatas.push(devData);
 
     console.log(devData)
 });
