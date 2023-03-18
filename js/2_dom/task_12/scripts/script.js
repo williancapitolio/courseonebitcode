@@ -140,6 +140,11 @@ addDevBtn.addEventListener("click", function (event) {
 
     devName.name = event.target.parentNode.children["dev-form"].children["devname"].value;
 
+    if (!devName.name) {
+        alert("Preencha o nome do dev!");
+        return;
+    };
+
     devInfo.push(devName);
 
     const listTechnologies = document.querySelectorAll(".list-technologies");
@@ -149,7 +154,19 @@ addDevBtn.addEventListener("click", function (event) {
 
         technologies.technologyName = element.children["technology-name"].value;
 
-        technologies.technologyExperience = document.querySelector('input[name="technology-experience-' + index + '"]:checked').value;
+        if (!technologies.technologyName) {
+            alert("Preencha nome da tecnologia!");
+            return;
+        };
+
+        let radioChecked = document.querySelector('input[name="technology-experience-' + index + '"]:checked');
+
+        if (!radioChecked) {
+            alert("Preencha o tempo de experiência!");
+            return;
+        };
+
+        technologies.technologyExperience = radioChecked.value;
 
         devInfo.push(technologies);
     });
