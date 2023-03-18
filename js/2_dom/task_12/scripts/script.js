@@ -141,13 +141,17 @@ addDevBtn.addEventListener("click", function (event) {
     devName.name = event.target.parentNode.children["dev-form"].children["devname"].value;
 
     if (!devName.name) {
-        alert("Preencha o nome do dev!");
+        alert("Erro: Preencha o nome do dev!");
+        event.target.parentNode.children["dev-form"].children["devname"].focus();
         return;
     };
 
-    devInfo.push(devName);
-
     const listTechnologies = document.querySelectorAll(".list-technologies");
+
+    if (listTechnologies.length === 0) {
+        alert("Adicione pelo menos uma tecnologia!");
+        return;
+    };
 
     listTechnologies.forEach(function (element, index) {
         const technologies = {};
@@ -155,21 +159,30 @@ addDevBtn.addEventListener("click", function (event) {
         technologies.technologyName = element.children["technology-name"].value;
 
         if (!technologies.technologyName) {
-            alert("Preencha nome da tecnologia!");
+            alert("Erro: Preencha nome da tecnologia!");
             return;
         };
 
         let radioChecked = document.querySelector('input[name="technology-experience-' + index + '"]:checked');
 
         if (!radioChecked) {
-            alert("Preencha o tempo de experiência!");
+            alert("Erro: Preencha o tempo de experiência!");
             return;
         };
 
         technologies.technologyExperience = radioChecked.value;
 
         devInfo.push(technologies);
+
+        element.remove();
     });
 
+    devInfo.unshift(devName);
+
     devData.push(devInfo);
+
+    event.target.parentNode.children["dev-form"].children["devname"].value = "";
+
+    alert("Sucesso: Dev cadastrado!");
+    console.log(devData)
 });
