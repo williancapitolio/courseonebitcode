@@ -85,12 +85,6 @@ function addTechnology() {
     listTechnologies.className = "list-technologies";
     listTechnologies.id = "list-technologies";
 
-    //const radioDiv = document.createElement("div");
-    //radioDiv.className = "radio-div";
-    //radioDiv.id = "radio-div";
-
-    const devTechnologies = document.getElementById("dev-technologies");
-
     listTechnologies.appendChild(labelTechnologyName);
     listTechnologies.appendChild(inputTechnologyName);
     listTechnologies.appendChild(document.createElement("br"));
@@ -112,13 +106,13 @@ function addTechnology() {
     listTechnologies.appendChild(document.createElement("br"));
     listTechnologies.appendChild(document.createElement("br"));
 
-    //listTechnologies.appendChild(radioDiv);
-
     listTechnologies.appendChild(btnCancel);
     listTechnologies.appendChild(document.createElement("br"));
 
     listTechnologies.appendChild(document.createElement("br"));
     listTechnologies.appendChild(document.createElement("br"));
+
+    const devTechnologies = document.getElementById("dev-technologies");
 
     devTechnologies.appendChild(listTechnologies);
 
@@ -135,32 +129,30 @@ function cancelAddTechnology() {
     });
 };
 
-let devDatas = [];
-let devData = [];
+const devData = [];
 
 const addDevBtn = document.getElementById("add-dev-btn");
 
 addDevBtn.addEventListener("click", function (event) {
-    //let devnames = {};
+    const devInfo = [];
 
-    devData.push(event.target.parentNode.children["dev-form"].children["devname"].value);
+    const devName = {};
 
-    //devData.push(devnames);
+    devName.name = event.target.parentNode.children["dev-form"].children["devname"].value;
+
+    devInfo.push(devName);
 
     const listTechnologies = document.querySelectorAll(".list-technologies");
 
     listTechnologies.forEach(function (element, index) {
-        let technologies = {};
+        const technologies = {};
 
         technologies.technologyName = element.children["technology-name"].value;
 
-        //const radiosChecked = document.querySelector('input[name="technology-experience-' + index + '"]:checked').value;
         technologies.technologyExperience = document.querySelector('input[name="technology-experience-' + index + '"]:checked').value;
 
-        devData.push(technologies);
+        devInfo.push(technologies);
     });
 
-    devDatas.push(devData);
-
-    console.log(devData)
+    devData.push(devInfo);
 });
