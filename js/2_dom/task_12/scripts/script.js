@@ -158,11 +158,14 @@ addDevBtn.addEventListener("click", function (event) {
 
     function getTechnologyData(element, index) {
         const technologies = {};
+        
+        const technologyName = document.querySelector('input[name="technology-name"]').value;
 
-        technologies.technologyName = element.children["technology-name"].value;
+        technologies.technologyName = technologyName;
 
         if (!technologies.technologyName) {
             alert("Erro: Preencha nome da tecnologia!");
+            document.querySelector('input[id="technology-name"]').focus();
             return false;
         }
 
@@ -178,11 +181,15 @@ addDevBtn.addEventListener("click", function (event) {
         devInfo.push(technologies);
 
         element.remove();
+
+        return true;
     };
 
     listTechnologies.forEach(getTechnologyData);
 
-    if (getTechnologyData) {
+    console.log(getTechnologyData());
+
+    if (!getTechnologyData()) {
         return;
     };
 
