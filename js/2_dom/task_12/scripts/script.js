@@ -53,6 +53,7 @@ function addTechnology() {
     inputRadioFirst.type = "radio";
     inputRadioFirst.name = "technology-experience-" + count;
     inputRadioFirst.id = "first";
+    inputRadioFirst.className = "technology-experience-radio"
     inputRadioFirst.value = "0-2 anos";
     const labelRadioFirst = document.createElement("label");
     labelRadioFirst.setAttribute("for", "first");
@@ -62,6 +63,7 @@ function addTechnology() {
     inputRadioSecond.type = "radio";
     inputRadioSecond.name = "technology-experience-" + count;
     inputRadioSecond.id = "second";
+    inputRadioSecond.className = "technology-experience-radio"
     inputRadioSecond.value = "3-4 anos";
     const labelRadioSecond = document.createElement("label");
     labelRadioSecond.setAttribute("for", "second");
@@ -71,6 +73,7 @@ function addTechnology() {
     inputRadioThird.type = "radio";
     inputRadioThird.name = "technology-experience-" + count;
     inputRadioThird.id = "third";
+    inputRadioThird.className = "technology-experience-radio"
     inputRadioThird.value = "5+ anos";
     const labelRadioThird = document.createElement("label");
     labelRadioThird.setAttribute("for", "third");
@@ -153,6 +156,14 @@ addDevBtn.addEventListener("click", function (event) {
         return;
     };
 
+    let radioChecked = document.querySelectorAll('input[class="technology-experience-radio"]:checked');
+    console.log(radioChecked)
+
+    if (!radioChecked) {
+        alert("Erro: Preencha o tempo de experiência!");
+        return;
+    };
+
     listTechnologies.forEach(function (element, index) {
         const technologies = {};
 
@@ -163,14 +174,7 @@ addDevBtn.addEventListener("click", function (event) {
             return;
         };
 
-        let radioChecked = document.querySelector('input[name="technology-experience-' + index + '"]:checked');
-
-        if (!radioChecked) {
-            alert("Erro: Preencha o tempo de experiência!");
-            return;
-        };
-
-        technologies.technologyExperience = radioChecked.value;
+        technologies.technologyExperience = radioChecked[index].value;
 
         devInfo.push(technologies);
 
