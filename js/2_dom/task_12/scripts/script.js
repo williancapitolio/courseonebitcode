@@ -52,7 +52,7 @@ function addTechnology() {
     const inputRadioFirst = document.createElement("input");
     inputRadioFirst.type = "radio";
     inputRadioFirst.name = "technology-experience-" + count;
-    inputRadioFirst.id = "technology-experience-radio"
+    inputRadioFirst.id = "first"
     inputRadioFirst.className = "technology-experience-radio"
     inputRadioFirst.value = "0-2 anos";
     const labelRadioFirst = document.createElement("label");
@@ -62,7 +62,7 @@ function addTechnology() {
     const inputRadioSecond = document.createElement("input");
     inputRadioSecond.type = "radio";
     inputRadioSecond.name = "technology-experience-" + count;
-    inputRadioSecond.id = "technology-experience-radio"
+    inputRadioSecond.id = "second"
     inputRadioSecond.className = "technology-experience-radio"
     inputRadioSecond.value = "3-4 anos";
     const labelRadioSecond = document.createElement("label");
@@ -72,7 +72,7 @@ function addTechnology() {
     const inputRadioThird = document.createElement("input");
     inputRadioThird.type = "radio";
     inputRadioThird.name = "technology-experience-" + count;
-    inputRadioThird.id = "technology-experience-radio"
+    inputRadioThird.id = "third"
     inputRadioThird.className = "technology-experience-radio"
     inputRadioThird.value = "5+ anos";
     const labelRadioThird = document.createElement("label");
@@ -156,49 +156,50 @@ addDevBtn.addEventListener("click", function (event) {
         return;
     };
 
-    function getTechnologyData(element, index) {
+    for (let i = 0; i < listTechnologies.length; i++) {
         const technologies = {};
-        
-        const technologyName = document.querySelector('input[name="technology-name"]').value;
+
+        const technologyName = listTechnologies[i].children["technology-name"].value;
+
+        if (!technologyName) {
+            alert("Erro: Preencha nome da tecnologia!");
+            listTechnologies[i].children["technology-name"].focus();
+            return;
+        };
 
         technologies.technologyName = technologyName;
 
-        if (!technologies.technologyName) {
-            alert("Erro: Preencha nome da tecnologia!");
-            document.querySelector('input[id="technology-name"]').focus();
-            return false;
-        }
+        const radioFirst = listTechnologies[i].childNodes[6];
+        const radioSecond = listTechnologies[i].childNodes[9];
+        const radioThird = listTechnologies[i].childNodes[12];
 
-        const radioChecked = document.querySelector('input[class="technology-experience-radio"]:checked');
-
-        if (!radioChecked) {
+        if (!radioFirst.checked && !radioSecond.checked && !radioThird.checked) {
             alert("Erro: Preencha o tempo de experiência!");
-            return false;
+            return;
         };
 
-        technologies.technologyExperience = radioChecked.value;
+        if (radioFirst.checked) {
+            technologies.technologyExperience = radioFirst.value;
+        };
+
+        if (radioSecond.checked) {
+            technologies.technologyExperience = radioSecond.value;
+        };
+
+        if (radioThird.checked) {
+            technologies.technologyExperience = radioThird.value;
+        };
 
         devInfo.push(technologies);
+    };
 
+    listTechnologies.forEach(function (element) {
         element.remove();
-
-        return true;
-    };
-
-    listTechnologies.forEach(getTechnologyData);
-
-    console.log(getTechnologyData());
-
-    if (!getTechnologyData()) {
-        return;
-    };
+    });
 
     devInfo.unshift(devName);
 
     devData.push(devInfo);
 
     event.target.parentNode.children["dev-form"].children["devname"].value = "";
-
-    alert("Sucesso: Dev cadastrado!");
-    console.log(devData)
 });
