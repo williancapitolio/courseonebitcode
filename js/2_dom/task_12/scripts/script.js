@@ -233,5 +233,17 @@ addDevBtn.addEventListener("click", function (event) {
         ul.appendChild(liDev);
     });
 
+    const btnDelete = document.createElement("input");
+    btnDelete.type = "button";
+    btnDelete.value = "Apagar";
+    btnDelete.className = "btn-delete";
+
+    ul.appendChild(document.createElement("br"));
+
+    ul.appendChild(btnDelete);
+
+    ul.appendChild(document.createElement("br"));
+    ul.appendChild(document.createElement("br"));
+
     sectionListDevs.append(ul);
 });
