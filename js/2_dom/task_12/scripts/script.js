@@ -246,4 +246,16 @@ addDevBtn.addEventListener("click", function (event) {
     ul.appendChild(document.createElement("br"));
 
     sectionListDevs.append(ul);
+
+    removeDev();
 });
+
+function removeDev() {
+    const getBtnsRemoveDev = document.querySelectorAll(".btn-delete");
+
+    getBtnsRemoveDev.forEach(function (element, index) {
+        getBtnsRemoveDev[index].addEventListener("click", function () {
+            element.parentNode.remove();
+        });
+    });
+};
