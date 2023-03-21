@@ -202,4 +202,36 @@ addDevBtn.addEventListener("click", function (event) {
     devData.push(devInfo);
 
     event.target.parentNode.children["dev-form"].children["devname"].value = "";
+
+    alert("Sucesso: Dev cadastrado!");
+
+    let devExp = "";
+
+    devExp = devInfo.map(function (element, index) {
+        return devExp = "Tecnologia " + index + " - " + element.technologyName + ", experiência de " + element.technologyExperience + ". ";
+    });
+
+    devExp.shift();
+
+    devExp.unshift("Nome do Dev: " + devInfo[0].name + ". ");
+
+    let devDatas = "";
+
+    devDatas = devExp.map(function (element) {
+        return devDatas = element;
+    });
+
+    const sectionListDevs = document.getElementById("list-devs");
+
+    const ul = document.createElement("ul");
+
+    let liDev = "";
+
+    devDatas.forEach(function (element) {
+        liDev = document.createElement("li");
+        liDev.textContent = element;
+        ul.appendChild(liDev);
+    });
+
+    sectionListDevs.append(ul);
 });
