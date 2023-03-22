@@ -22,107 +22,109 @@ funcionar sem acionar um recarregamento.
 
 "use strict";
 
-let count = 0;
+function createLabel(text, htmlFor) {
+    const label = document.createElement("label");
+    label.innerText = text;
+    label.htmlFor = htmlFor;
+    return label;
+};
+
+function createInput(id, value, name, type, placeholder, classname) {
+    const input = document.createElement("input");
+    input.id = id;
+    input.value = value;
+    input.name = name;
+    input.type = type;
+    input.placeholder = placeholder;
+    input.className = classname;
+    return input;
+};
+
+const addDevBtn = document.getElementById("add-dev-btn");
 
 const devForm = document.getElementById("dev-form");
+
+const devData = [];
+
+const developers = [];
+
+let count = 0;
 
 devForm.addEventListener("submit", function (event) {
     event.preventDefault();
 
-    addTechnology();
-
-    cancelAddTechnology();
-});
-
-function addTechnology() {
-    const labelTechnologyName = document.createElement("label");
-    labelTechnologyName.setAttribute("for", "technology-name");
-    labelTechnologyName.innerText = "Tecnologia: ";
-
-    const inputTechnologyName = document.createElement("input");
-    inputTechnologyName.type = "text";
-    inputTechnologyName.name = "technology-name";
-    inputTechnologyName.id = "technology-name";
-    inputTechnologyName.placeholder = "Digite o nome da tecnologia";
-
-    const labelExperience = document.createElement("label");
-    labelExperience.setAttribute("for", "technology-experience-" + count);
-    labelExperience.innerText = "Tempo de experiência";
-
-    const inputRadioFirst = document.createElement("input");
-    inputRadioFirst.type = "radio";
-    inputRadioFirst.name = "technology-experience-" + count;
-    inputRadioFirst.id = "first"
-    inputRadioFirst.className = "technology-experience-radio"
-    inputRadioFirst.value = "0-2 anos";
-    const labelRadioFirst = document.createElement("label");
-    labelRadioFirst.setAttribute("for", "first");
-    labelRadioFirst.innerText = "0-2 anos";
-
-    const inputRadioSecond = document.createElement("input");
-    inputRadioSecond.type = "radio";
-    inputRadioSecond.name = "technology-experience-" + count;
-    inputRadioSecond.id = "second"
-    inputRadioSecond.className = "technology-experience-radio"
-    inputRadioSecond.value = "3-4 anos";
-    const labelRadioSecond = document.createElement("label");
-    labelRadioSecond.setAttribute("for", "second");
-    labelRadioSecond.innerText = "3-4 anos";
-
-    const inputRadioThird = document.createElement("input");
-    inputRadioThird.type = "radio";
-    inputRadioThird.name = "technology-experience-" + count;
-    inputRadioThird.id = "third"
-    inputRadioThird.className = "technology-experience-radio"
-    inputRadioThird.value = "5+ anos";
-    const labelRadioThird = document.createElement("label");
-    labelRadioThird.setAttribute("for", "third");
-    labelRadioThird.innerText = "5+ anos";
-
-    const btnCancel = document.createElement("input");
-    btnCancel.type = "button";
-    btnCancel.value = "Cancelar";
-    btnCancel.className = "btn-cancel-add";
-
-    const listTechnologies = document.createElement("div");
-    listTechnologies.className = "list-technologies";
-    listTechnologies.id = "list-technologies";
-
-    listTechnologies.appendChild(labelTechnologyName);
-    listTechnologies.appendChild(inputTechnologyName);
-    listTechnologies.appendChild(document.createElement("br"));
-    listTechnologies.appendChild(document.createElement("br"));
-
-    listTechnologies.appendChild(labelExperience);
-    listTechnologies.appendChild(document.createElement("br"));
-
-    listTechnologies.appendChild(inputRadioFirst);
-    listTechnologies.appendChild(labelRadioFirst);
-    listTechnologies.appendChild(document.createElement("br"));
-
-    listTechnologies.appendChild(inputRadioSecond);
-    listTechnologies.appendChild(labelRadioSecond);
-    listTechnologies.appendChild(document.createElement("br"));
-
-    listTechnologies.appendChild(inputRadioThird);
-    listTechnologies.appendChild(labelRadioThird);
-    listTechnologies.appendChild(document.createElement("br"));
-    listTechnologies.appendChild(document.createElement("br"));
-
-    listTechnologies.appendChild(btnCancel);
-    listTechnologies.appendChild(document.createElement("br"));
-
-    listTechnologies.appendChild(document.createElement("br"));
-    listTechnologies.appendChild(document.createElement("br"));
-
     const devTechnologies = document.getElementById("dev-technologies");
 
-    devTechnologies.appendChild(listTechnologies);
+    const labelTechnologyName = createLabel(
+        "Tecnologia: ",
+        "technology-name"
+    );
 
-    count++;
-};
+    const inputTechnologyName = createInput(
+        "technology-name",
+        null,
+        "technology-name",
+        "text",
+        "Digite o nome da tecnologia",
+        null
+    );
 
-function cancelAddTechnology() {
+    const labelExperience = createLabel(
+        "Tempo de experiência",
+        "technology-experience-" + count
+    );
+
+    const inputRadioFirst = createInput(
+        "first",
+        "0-2 anos",
+        "technology-experience-" + count,
+        "radio",
+        null,
+        "technology-experience-radio"
+    );
+
+    const labelRadioFirst = createLabel(
+        "0-2 anos",
+        "first"
+    );
+
+    const inputRadioSecond = createInput(
+        "second",
+        "3-4 anos",
+        "technology-experience-" + count,
+        "radio",
+        null,
+        "technology-experience-radio"
+    );
+
+    const labelRadioSecond = createLabel(
+        "3-4 anos",
+        "second"
+    );
+
+    const inputRadioThird = createInput(
+        "third",
+        "5+ anos",
+        "technology-experience-" + count,
+        "radio",
+        null,
+        "technology-experience-radio"
+    );
+
+    const labelRadioThird = createLabel(
+        "5+ anos",
+        "third"
+    );
+
+    const btnCancel = createInput(
+        null,
+        "Cancelar",
+        null,
+        "button",
+        null,
+        "btn-cancel-add"
+    );
+
     const getBtnsCancel = document.querySelectorAll(".btn-cancel-add");
 
     getBtnsCancel.forEach(function (element, index) {
@@ -130,16 +132,53 @@ function cancelAddTechnology() {
             element.parentNode.remove();
         });
     });
-};
 
-const devData = [];
+    const listTechnologies = document.createElement("div");
+    listTechnologies.className = "list-technologies";
+    listTechnologies.id = "list-technologies";
 
-const addDevBtn = document.getElementById("add-dev-btn");
+    listTechnologies.append(
+        labelTechnologyName,
+        inputTechnologyName,
+        document.createElement("br"),
+        document.createElement("br"),
+        labelExperience,
+        document.createElement("br"),
+        inputRadioFirst,
+        labelRadioFirst,
+        document.createElement("br"),
+        inputRadioSecond,
+        labelRadioSecond,
+        document.createElement("br"),
+        inputRadioThird,
+        labelRadioThird,
+        document.createElement("br"),
+        document.createElement("br"),
+        btnCancel,
+        document.createElement("br"),
+        document.createElement("br"),
+        document.createElement("br")
+    );
+
+    devTechnologies.appendChild(listTechnologies);
+
+    count++;
+});
 
 addDevBtn.addEventListener("click", function (event) {
     const devInfo = [];
 
     const devName = {};
+
+    const fullNameInput = event.target.parentNode.children["dev-form"].children["devname"];
+
+    if (!fullNameInput.value) {
+        alert("Erro: Preencha o nome do dev!");
+        fullNameInput.focus();
+        return;
+    };
+
+    let devTechnologies = [];
 
     devName.name = event.target.parentNode.children["dev-form"].children["devname"].value;
 
@@ -159,15 +198,15 @@ addDevBtn.addEventListener("click", function (event) {
     for (let i = 0; i < listTechnologies.length; i++) {
         const technologies = {};
 
-        const technologyName = listTechnologies[i].children["technology-name"].value;
+        const technologyName = listTechnologies[i].children["technology-name"];
 
-        if (!technologyName) {
+        if (!technologyName.value) {
             alert("Erro: Preencha nome da tecnologia!");
-            listTechnologies[i].children["technology-name"].focus();
+            technologyName.focus();
             return;
         };
 
-        technologies.technologyName = technologyName;
+        technologies.technologyName = technologyName.value;
 
         const radioFirst = listTechnologies[i].childNodes[6];
         const radioSecond = listTechnologies[i].childNodes[9];
@@ -180,17 +219,24 @@ addDevBtn.addEventListener("click", function (event) {
 
         if (radioFirst.checked) {
             technologies.technologyExperience = radioFirst.value;
+            devTechnologies.push({ name: technologyName.value, exp: radioFirst.value });
         };
 
         if (radioSecond.checked) {
             technologies.technologyExperience = radioSecond.value;
+            devTechnologies.push({ name: technologyName.value, exp: radioSecond.value });
         };
 
         if (radioThird.checked) {
             technologies.technologyExperience = radioThird.value;
+            devTechnologies.push({ name: technologyName.value, exp: radioThird.value });
         };
 
         devInfo.push(technologies);
+
+        const newDev = { fullname: fullNameInput.value, technologies: devTechnologies };
+
+        developers.push(newDev)
     };
 
     listTechnologies.forEach(function (element) {
@@ -204,6 +250,8 @@ addDevBtn.addEventListener("click", function (event) {
     event.target.parentNode.children["dev-form"].children["devname"].value = "";
 
     alert("Sucesso: Dev cadastrado!");
+
+    console.log(developers);
 
     let devExp = "";
 
@@ -247,10 +295,6 @@ addDevBtn.addEventListener("click", function (event) {
 
     sectionListDevs.append(ul);
 
-    removeDev();
-});
-
-function removeDev() {
     const getBtnsRemoveDev = document.querySelectorAll(".btn-delete");
 
     getBtnsRemoveDev.forEach(function (element, index) {
@@ -258,4 +302,4 @@ function removeDev() {
             element.parentNode.remove();
         });
     });
-};
+});
