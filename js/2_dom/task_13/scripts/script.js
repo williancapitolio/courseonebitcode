@@ -30,9 +30,9 @@ function flashMsg(status, text) {
     div.style.position = "absolute";
     div.style.border = "1px solid " + status;
     div.style.top = "1rem";
-    div.style.right = "3rem";
+    div.style.right = "1rem";
     div.style.height = "3rem";
-    div.style.width = "20%";
+    div.style.width = "30%";
     div.style.textAlign = "center";
     div.id = "flashMsg";
     div.innerText = text;
