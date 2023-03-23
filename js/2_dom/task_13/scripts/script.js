@@ -24,3 +24,88 @@ alguma forma;
 */
 
 "use strict";
+
+function flashMsg(status, text) {
+    const div = document.createElement("div");
+    div.style.position = "absolute";
+    div.style.border = "1px solid " + status;
+    div.style.top = "1rem";
+    div.style.right = "3rem";
+    div.style.height = "3rem";
+    div.style.width = "20%";
+    div.style.textAlign = "center";
+    div.id = "flashMsg";
+    div.innerText = text;
+
+    setTimeout(function () {
+        document.getElementById("flashMsg").remove();
+    }, 2000);
+
+    return div;
+};
+
+function startAndRestartGame(oneValue = "", oneDisabled = false, twoValue = "", twoDisabled = false, sgDisabled = false, btn = true) {
+    playerOne.value = oneValue;
+    playerOne.disabled = oneDisabled;
+    playerTwo.value = twoValue;
+    playerTwo.disabled = twoDisabled;
+    startGame.disabled = sgDisabled;
+    btnRestart.disabled = btn;
+};
+
+const main = document.getElementById("main");
+
+const players = document.getElementById("players");
+
+const currentPlayer = document.getElementById("currentPlayer");
+
+const playerOne = document.getElementById("playerOne");
+
+const playerTwo = document.getElementById("playerTwo");
+
+const startGame = document.getElementById("startGame");
+
+const ticTacToe = document.getElementById("ticTacToe");
+
+const gameBoard = document.querySelectorAll(".gameBoard");
+
+const winnerPlayer = document.getElementById("winnerPlayer");
+
+const btnRestart = document.getElementById("btnRestart");
+
+const statusSuccess = "#198754";
+const statusDanger = "#dc3545";
+const statusOK = "#0d6efd";
+
+let playerGaming = "";
+let valueGaming = "";
+
+startGame.addEventListener("click", function (event) {
+    const playerOneName = playerOne.value;
+    if (!playerOneName) {
+        main.appendChild(flashMsg(statusDanger, "Preencha o nome do primeiro jogador!"));
+        playerOne.focus();
+        return;
+    };
+
+    const playerTwoName = playerTwo.value;
+    if (!playerTwoName) {
+        main.appendChild(flashMsg(statusDanger, "Preencha o nome do segundo jogador!"));
+        playerTwo.focus();
+        return;
+    };
+
+    if (playerOneName === playerTwoName) {
+        main.appendChild(flashMsg(statusDanger, "O nome dos jogadores não podem ser iguais!"));
+        return;
+    };
+
+    startAndRestartGame(playerOneName, true, playerTwoName, true, true, false);
+
+    main.appendChild(flashMsg(statusSuccess, "O jogo irá iniciar!"));
+});
+
+btnRestart.addEventListener("click", function (event) {
+    startAndRestartGame();
+    main.appendChild(flashMsg(statusSuccess, "O jogo irá reiniciar!"));
+});

@@ -16,10 +16,11 @@
         <h2>Tic-Tac-Toe / Jogo da Velha</h2>
         <hr>
     </header>
-    <main>
+    <main id="main">
         <section id="players">
-            <h3>Jogador 1</h3>
-            <h3>Jogador 2</h3>
+            <input type="text" name="playerOne" id="playerOne" placeholder="Primeiro jogador">
+            <input type="text" name="playerTwo" id="playerTwo" placeholder="Segundo jogador">
+            <button type="button" id="startGame">Iniciar</button>
             <hr>
         </section>
         <section id="currentPlayer">
@@ -42,7 +43,7 @@
             <hr>
         </section>
         <section>
-            <button type="button">Reiniciar</button>
+            <button id="btnRestart" type="button" disabled>Reiniciar</button>
             <hr>
         </section>
     </main>
