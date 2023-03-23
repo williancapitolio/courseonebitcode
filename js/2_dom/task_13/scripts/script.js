@@ -44,13 +44,26 @@ function flashMsg(status, text) {
     return div;
 };
 
-function startAndRestartGame(oneValue = "", oneDisabled = false, twoValue = "", twoDisabled = false, sgDisabled = false, btn = true) {
+function startAndRestartGame(
+    oneValue = "",
+    oneDisabled = false,
+    twoValue = "",
+    twoDisabled = false,
+    sgDisabled = false,
+    btn = true,
+    boardDisabled = false,
+    boardText = ""
+) {
     playerOne.value = oneValue;
     playerOne.disabled = oneDisabled;
     playerTwo.value = twoValue;
     playerTwo.disabled = twoDisabled;
     startGame.disabled = sgDisabled;
     btnRestart.disabled = btn;
+    gameBoard.forEach(function (board) {
+        board.disabled = boardDisabled;
+        board.innerText = boardText;
+    });
 };
 
 const main = document.getElementById("main");
@@ -77,7 +90,7 @@ const statusSuccess = "#198754";
 const statusDanger = "#dc3545";
 const statusOK = "#0d6efd";
 
-let playerGaming = "";
+let playerGaming = "X";
 let valueGaming = "";
 
 startGame.addEventListener("click", function (event) {
@@ -105,7 +118,26 @@ startGame.addEventListener("click", function (event) {
     main.appendChild(flashMsg(statusSuccess, "O jogo irá iniciar!"));
 });
 
+gameBoard.forEach(function (board) {
+    board.addEventListener("click", function () {
+        if (!playerOne.value || !playerTwo.value) {
+            main.appendChild(flashMsg(statusDanger, "Preencha o nome dos jogadores para iniciar a partida!"));
+            return;
+        };
+        if (playerGaming === "X") {
+            board.innerText = playerGaming;
+            playerGaming = "O";
+            board.disabled = true;
+        } else {
+            board.innerText = playerGaming;
+            playerGaming = "X";
+            board.disabled = true;
+        };
+    });
+});
+
 btnRestart.addEventListener("click", function (event) {
     startAndRestartGame();
+
     main.appendChild(flashMsg(statusSuccess, "O jogo irá reiniciar!"));
 });
