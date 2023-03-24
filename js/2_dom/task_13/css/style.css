@@ -1,0 +1,17 @@
+.ticTacToe {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    place-items: center;
+    width: 15rem;
+    height: 15rem;
+    margin-bottom: 2rem;
+}
+
+.gameBoard {
+    margin: 0;
+    padding: 0;
+    height: 5rem;
+    width: 5rem;
+    border-radius: 0;
+    border: 1px solid #000;
+}
