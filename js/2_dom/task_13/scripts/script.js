@@ -44,6 +44,10 @@ function flashMsg(status, text) {
     return div;
 };
 
+function callFlashMsg(status, text) {
+    main.appendChild(flashMsg(status, text));
+};
+
 function startAndRestartGame(
     oneValue = "",
     oneDisabled = false,
@@ -51,7 +55,7 @@ function startAndRestartGame(
     twoDisabled = false,
     sgDisabled = false,
     btn = true,
-    boardDisabled = false,
+    boardDisabled = true,
     boardText = ""
 ) {
     playerOne.value = oneValue;
@@ -96,32 +100,32 @@ let valueGaming = "";
 startGame.addEventListener("click", function (event) {
     const playerOneName = playerOne.value;
     if (!playerOneName) {
-        main.appendChild(flashMsg(statusDanger, "Preencha o nome do primeiro jogador!"));
+        callFlashMsg(statusDanger, "Preencha o nome do primeiro jogador!");
         playerOne.focus();
         return;
     };
 
     const playerTwoName = playerTwo.value;
     if (!playerTwoName) {
-        main.appendChild(flashMsg(statusDanger, "Preencha o nome do segundo jogador!"));
+        callFlashMsg(statusDanger, "Preencha o nome do segundo jogador!");
         playerTwo.focus();
         return;
     };
 
     if (playerOneName === playerTwoName) {
-        main.appendChild(flashMsg(statusDanger, "O nome dos jogadores não podem ser iguais!"));
+        callFlashMsg(statusDanger, "O nome dos jogadores não podem ser iguais!");
         return;
     };
 
-    startAndRestartGame(playerOneName, true, playerTwoName, true, true, false);
+    startAndRestartGame(playerOneName, true, playerTwoName, true, true, false, false);
 
-    main.appendChild(flashMsg(statusSuccess, "O jogo irá iniciar!"));
+    callFlashMsg(statusSuccess, "O jogo irá iniciar!");
 });
 
 gameBoard.forEach(function (board) {
     board.addEventListener("click", function () {
         if (!playerOne.value || !playerTwo.value) {
-            main.appendChild(flashMsg(statusDanger, "Preencha o nome dos jogadores para iniciar a partida!"));
+            callFlashMsg(statusDanger, "Preencha o nome dos jogadores para iniciar a partida!");
             return;
         };
         if (playerGaming === "X") {
@@ -139,5 +143,5 @@ gameBoard.forEach(function (board) {
 btnRestart.addEventListener("click", function (event) {
     startAndRestartGame();
 
-    main.appendChild(flashMsg(statusSuccess, "O jogo irá reiniciar!"));
+    callFlashMsg(statusSuccess, "O jogo irá reiniciar!");
 });
