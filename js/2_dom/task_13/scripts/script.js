@@ -56,7 +56,8 @@ function startAndRestartGame(
     sgDisabled = false,
     btn = true,
     boardDisabled = true,
-    boardText = ""
+    boardText = "",
+    playerGaming = "Inicie e partida!"
 ) {
     playerOne.value = oneValue;
     playerOne.disabled = oneDisabled;
@@ -68,6 +69,7 @@ function startAndRestartGame(
         board.disabled = boardDisabled;
         board.innerText = boardText;
     });
+    setPlayerGaming.innerText = playerGaming;
 };
 
 const main = document.getElementById("main");
@@ -75,6 +77,8 @@ const main = document.getElementById("main");
 const players = document.getElementById("players");
 
 const currentPlayer = document.getElementById("currentPlayer");
+
+const setPlayerGaming = document.getElementById("setPlayerGaming");
 
 const playerOne = document.getElementById("playerOne");
 
@@ -94,8 +98,7 @@ const statusSuccess = "#198754";
 const statusDanger = "#dc3545";
 const statusOK = "#0d6efd";
 
-let playerGaming = "X";
-let valueGaming = "";
+let valueGaming = "X";
 
 startGame.addEventListener("click", function (event) {
     const playerOneName = playerOne.value;
@@ -117,7 +120,17 @@ startGame.addEventListener("click", function (event) {
         return;
     };
 
-    startAndRestartGame(playerOneName, true, playerTwoName, true, true, false, false);
+    startAndRestartGame(
+        playerOneName,
+        true,
+        playerTwoName,
+        true,
+        true,
+        false,
+        false,
+        "",
+        "Vez do jogador: " + playerOneName
+    );
 
     callFlashMsg(statusSuccess, "O jogo irá iniciar!");
 });
@@ -128,14 +141,16 @@ gameBoard.forEach(function (board) {
             callFlashMsg(statusDanger, "Preencha o nome dos jogadores para iniciar a partida!");
             return;
         };
-        if (playerGaming === "X") {
-            board.innerText = playerGaming;
-            playerGaming = "O";
+        if (valueGaming === "X") {
+            board.innerText = valueGaming;
+            valueGaming = "O";
             board.disabled = true;
+            setPlayerGaming.innerText = "Vez do jogador: " + playerTwo.value;;
         } else {
-            board.innerText = playerGaming;
-            playerGaming = "X";
+            board.innerText = valueGaming;
+            valueGaming = "X";
             board.disabled = true;
+            setPlayerGaming.innerText = "Vez do jogador: " + playerOne.value;
         };
     });
 });

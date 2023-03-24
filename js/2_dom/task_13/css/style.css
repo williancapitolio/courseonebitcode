@@ -4,12 +4,10 @@
     place-items: center;
     width: 15rem;
     height: 15rem;
-    margin-bottom: 2rem;
+    margin: 2rem 0;
 }
 
 .gameBoard {
-    margin: 0;
-    padding: 0;
     height: 5rem;
     width: 5rem;
     border-radius: 0;
