@@ -57,8 +57,10 @@ function startAndRestartGame(
     btn = true,
     boardDisabled = true,
     boardText = "",
+    boardBackgroundColor = "#EFEFEF4D",
+    boardColor = "#000",
     playerGaming = "Inicie e partida!",
-    winner = "Quem vai vencer?"
+    startValue = "X"
 ) {
     playerOne.value = oneValue;
     playerOne.disabled = oneDisabled;
@@ -69,9 +71,11 @@ function startAndRestartGame(
     gameBoard.forEach(function (board) {
         board.disabled = boardDisabled;
         board.innerText = boardText;
+        board.style.backgroundColor = boardBackgroundColor;
+        board.style.color = boardColor;
     });
     setPlayerGaming.innerText = playerGaming;
-    winnerPlayer.innerText = winner;
+    valueGaming = startValue;
 };
 
 function validateGame(result, playerName) {
@@ -88,14 +92,20 @@ function validateGame(result, playerName) {
         if (gameBoard[play[0]].innerText === result &&
             gameBoard[play[1]].innerText === result &&
             gameBoard[play[2]].innerText === result) {
-            return winnerPlayer.innerText = playerName + " ganhou!";
+            gameBoard[play[0]].style.backgroundColor = statusSuccess;
+            gameBoard[play[1]].style.backgroundColor = statusSuccess;
+            gameBoard[play[2]].style.backgroundColor = statusSuccess;
+            gameBoard[play[0]].style.color = "#FFF";
+            gameBoard[play[1]].style.color = "#FFF";
+            gameBoard[play[2]].style.color = "#FFF";
+            return setPlayerGaming.innerText = playerName + " ganhou!";
         };
     });
 };
 
 function validateWinnerPlayer(value, playerName) {
     validateGame(value, playerName);
-    if (winnerPlayer.innerText === playerName + " ganhou!") {
+    if (setPlayerGaming.innerText === playerName + " ganhou!") {
         gameBoard.forEach(function (board) {
             board.disabled = true;
         });
@@ -121,8 +131,6 @@ const startGame = document.getElementById("startGame");
 const ticTacToe = document.getElementById("ticTacToe");
 
 const gameBoard = document.querySelectorAll(".gameBoard");
-
-const winnerPlayer = document.getElementById("winnerPlayer");
 
 const btnRestart = document.getElementById("btnRestart");
 
@@ -196,7 +204,7 @@ gameBoard.forEach(function (board, index) {
             gameBoard[7].innerText &&
             gameBoard[8].innerText) {
             callFlashMsg(statusOK, "Deu velha!");
-            return winnerPlayer.innerText = "Deu velha!";
+            return setPlayerGaming.innerText = "Deu velha!";
         };
 
         validateWinnerPlayer("X", playerOne.value);
