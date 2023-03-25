@@ -57,7 +57,8 @@ function startAndRestartGame(
     btn = true,
     boardDisabled = true,
     boardText = "",
-    playerGaming = "Inicie e partida!"
+    playerGaming = "Inicie e partida!",
+    winner = "Quem vai vencer?"
 ) {
     playerOne.value = oneValue;
     playerOne.disabled = oneDisabled;
@@ -70,9 +71,10 @@ function startAndRestartGame(
         board.innerText = boardText;
     });
     setPlayerGaming.innerText = playerGaming;
+    winnerPlayer.innerText = winner;
 };
 
-function validateGame(result) {
+function validateGame(result, playerName) {
     const winningPlays = [
         [0, 1, 2],
         [0, 3, 6],
@@ -86,9 +88,20 @@ function validateGame(result) {
         if (gameBoard[play[0]].innerText === result &&
             gameBoard[play[1]].innerText === result &&
             gameBoard[play[2]].innerText === result) {
-            return setPlayerGaming.innerText = result + " ganhou!";
+            return winnerPlayer.innerText = playerName + " ganhou!";
         };
     });
+};
+
+function validateWinnerPlayer(value, playerName) {
+    validateGame(value, playerName);
+    if (winnerPlayer.innerText === playerName + " ganhou!") {
+        gameBoard.forEach(function (board) {
+            board.disabled = true;
+        });
+        callFlashMsg(statusSuccess, "Jogador " + playerName + " ganhou a partida!");
+        return;
+    };
 };
 
 const main = document.getElementById("main");
@@ -116,8 +129,6 @@ const btnRestart = document.getElementById("btnRestart");
 const statusSuccess = "#198754";
 const statusDanger = "#dc3545";
 const statusOK = "#0d6efd";
-
-const ticTacToePlays = [];
 
 let valueGaming = "X";
 
@@ -162,6 +173,7 @@ gameBoard.forEach(function (board, index) {
             callFlashMsg(statusDanger, "Preencha o nome dos jogadores para iniciar a partida!");
             return;
         };
+
         if (valueGaming === "X") {
             board.innerText = valueGaming;
             valueGaming = "O";
@@ -173,13 +185,28 @@ gameBoard.forEach(function (board, index) {
             board.disabled = true;
             setPlayerGaming.innerText = "Vez do jogador: " + playerOne.value;
         };
-        validateGame("X");
-        validateGame("O");
+
+        if (gameBoard[0].innerText &&
+            gameBoard[1].innerText &&
+            gameBoard[2].innerText &&
+            gameBoard[3].innerText &&
+            gameBoard[4].innerText &&
+            gameBoard[5].innerText &&
+            gameBoard[6].innerText &&
+            gameBoard[7].innerText &&
+            gameBoard[8].innerText) {
+            callFlashMsg(statusOK, "Deu velha!");
+            return winnerPlayer.innerText = "Deu velha!";
+        };
+
+        validateWinnerPlayer("X", playerOne.value);
+
+        validateWinnerPlayer("O", playerTwo.value);
     });
 });
 
 btnRestart.addEventListener("click", function (event) {
     startAndRestartGame();
 
-    callFlashMsg(statusSuccess, "O jogo irá reiniciar!");
+    callFlashMsg(statusOK, "O jogo irá reiniciar!");
 });
