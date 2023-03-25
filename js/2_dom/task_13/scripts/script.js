@@ -72,6 +72,25 @@ function startAndRestartGame(
     setPlayerGaming.innerText = playerGaming;
 };
 
+function validateGame(result) {
+    const winningPlays = [
+        [0, 1, 2],
+        [0, 3, 6],
+        [0, 4, 8],
+        [1, 4, 7],
+        [2, 4, 6],
+        [2, 5, 8],
+        [3, 4, 5]
+    ];
+    winningPlays.forEach(function (play) {
+        if (gameBoard[play[0]].innerText === result &&
+            gameBoard[play[1]].innerText === result &&
+            gameBoard[play[2]].innerText === result) {
+            return setPlayerGaming.innerText = result + " ganhou!";
+        };
+    });
+};
+
 const main = document.getElementById("main");
 
 const players = document.getElementById("players");
@@ -97,6 +116,8 @@ const btnRestart = document.getElementById("btnRestart");
 const statusSuccess = "#198754";
 const statusDanger = "#dc3545";
 const statusOK = "#0d6efd";
+
+const ticTacToePlays = [];
 
 let valueGaming = "X";
 
@@ -135,7 +156,7 @@ startGame.addEventListener("click", function (event) {
     callFlashMsg(statusSuccess, "O jogo irá iniciar!");
 });
 
-gameBoard.forEach(function (board) {
+gameBoard.forEach(function (board, index) {
     board.addEventListener("click", function () {
         if (!playerOne.value || !playerTwo.value) {
             callFlashMsg(statusDanger, "Preencha o nome dos jogadores para iniciar a partida!");
@@ -152,6 +173,8 @@ gameBoard.forEach(function (board) {
             board.disabled = true;
             setPlayerGaming.innerText = "Vez do jogador: " + playerOne.value;
         };
+        validateGame("X");
+        validateGame("O");
     });
 });
 
