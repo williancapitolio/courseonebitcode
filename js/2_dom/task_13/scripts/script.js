@@ -55,11 +55,11 @@ function startAndRestartGame(
     twoDisabled = false,
     sgDisabled = false,
     btn = true,
+    playerGaming = "Inicie e partida!",
     boardDisabled = true,
     boardText = "",
     boardBackgroundColor = "#EFEFEF4D",
     boardColor = "#000",
-    playerGaming = "Inicie e partida!",
     startValue = "X"
 ) {
     playerOne.value = oneValue;
@@ -68,13 +68,13 @@ function startAndRestartGame(
     playerTwo.disabled = twoDisabled;
     startGame.disabled = sgDisabled;
     btnRestart.disabled = btn;
+    setPlayerGaming.innerText = playerGaming;
     gameBoard.forEach(function (board) {
         board.disabled = boardDisabled;
         board.innerText = boardText;
         board.style.backgroundColor = boardBackgroundColor;
         board.style.color = boardColor;
     });
-    setPlayerGaming.innerText = playerGaming;
     valueGaming = startValue;
 };
 
@@ -88,6 +88,7 @@ function validateGame(result, playerName) {
         [2, 5, 8],
         [3, 4, 5]
     ];
+
     winningPlays.forEach(function (play) {
         if (gameBoard[play[0]].innerText === result &&
             gameBoard[play[1]].innerText === result &&
@@ -105,20 +106,19 @@ function validateGame(result, playerName) {
 
 function validateWinnerPlayer(value, playerName) {
     validateGame(value, playerName);
+
     if (setPlayerGaming.innerText === playerName + " ganhou!") {
         gameBoard.forEach(function (board) {
             board.disabled = true;
         });
+
         callFlashMsg(statusSuccess, "Jogador " + playerName + " ganhou a partida!");
+        
         return;
     };
 };
 
 const main = document.getElementById("main");
-
-const players = document.getElementById("players");
-
-const currentPlayer = document.getElementById("currentPlayer");
 
 const setPlayerGaming = document.getElementById("setPlayerGaming");
 
@@ -127,8 +127,6 @@ const playerOne = document.getElementById("playerOne");
 const playerTwo = document.getElementById("playerTwo");
 
 const startGame = document.getElementById("startGame");
-
-const ticTacToe = document.getElementById("ticTacToe");
 
 const gameBoard = document.querySelectorAll(".gameBoard");
 
@@ -167,9 +165,9 @@ startGame.addEventListener("click", function (event) {
         true,
         true,
         false,
+        "Vez do jogador: " + playerOneName,
         false,
-        "",
-        "Vez do jogador: " + playerOneName
+        ""
     );
 
     callFlashMsg(statusSuccess, "O jogo irá iniciar!");
