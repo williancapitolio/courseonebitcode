@@ -13,3 +13,19 @@
     border-radius: 0;
     border: 1px solid #000;
 }
+
+#startGame {
+    cursor: pointer;
+}
+
+#startGame:disabled {
+    cursor: default;
+}
+
+#btnRestart {
+    cursor: pointer;
+}
+
+#btnRestart:disabled {
+    cursor: default;
+}

@@ -60,6 +60,7 @@ function startAndRestartGame(
     playerGaming = "Inicie e partida!",
     boardDisabled = true,
     boardText = "",
+    cursorVerify = "default",
     boardBackgroundColor = "#EFEFEF4D",
     boardColor = "#000",
     startValue = "X"
@@ -78,7 +79,10 @@ function startAndRestartGame(
 
     gameBoard.forEach(function (board) {
         board.disabled = boardDisabled;
+
         board.innerText = boardText;
+
+        board.style.cursor = cursorVerify
         board.style.backgroundColor = boardBackgroundColor;
         board.style.color = boardColor;
     });
@@ -120,6 +124,7 @@ function validateWinnerPlayer(value, playerName) {
     if (setPlayerGaming.innerText === playerName + " ganhou!") {
         gameBoard.forEach(function (board) {
             board.disabled = true;
+            board.style.cursor = "default";
         });
 
         callFlashMsg(statusSuccess, "Jogador " + playerName + " ganhou a partida!");
@@ -141,7 +146,7 @@ function validateTicTacToe() {
         !validateWinnerPlayer("X", playerOne.value) &&
         !validateWinnerPlayer("O", playerTwo.value)) {
         callFlashMsg(statusOK, "Deu velha!");
-        
+
         return setPlayerGaming.innerText = "Deu velha!";
     };
 };
@@ -195,7 +200,8 @@ startGame.addEventListener("click", function () {
         false,
         "Vez do jogador: " + playerOneName,
         false,
-        ""
+        "",
+        "pointer"
     );
 
     callFlashMsg(statusSuccess, "O jogo irá iniciar!");
@@ -212,12 +218,18 @@ gameBoard.forEach(function (board) {
             board.innerText = valueGaming;
             valueGaming = "O";
             board.disabled = true;
-            setPlayerGaming.innerText = "Vez do jogador: " + playerTwo.value;;
+            setPlayerGaming.innerText = "Vez do jogador: " + playerTwo.value;
         } else {
             board.innerText = valueGaming;
             valueGaming = "X";
             board.disabled = true;
             setPlayerGaming.innerText = "Vez do jogador: " + playerOne.value;
+        };
+
+        if (board.innerText === "") {
+            board.style.cursor = "pointer";
+        } else {
+            board.style.cursor = "default";
         };
 
         validateWinnerPlayer("X", playerOne.value);
