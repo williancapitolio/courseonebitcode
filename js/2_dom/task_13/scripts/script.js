@@ -166,7 +166,7 @@ const statusOK = "#0d6efd";
 
 let valueGaming = "X";
 
-startGame.addEventListener("click", function (event) {
+startGame.addEventListener("click", function () {
     const playerOneName = playerOne.value;
     if (!playerOneName) {
         callFlashMsg(statusDanger, "Preencha o nome do primeiro jogador!");
@@ -201,7 +201,7 @@ startGame.addEventListener("click", function (event) {
     callFlashMsg(statusSuccess, "O jogo irá iniciar!");
 });
 
-gameBoard.forEach(function (board, index) {
+gameBoard.forEach(function (board) {
     board.addEventListener("click", function () {
         if (!playerOne.value || !playerTwo.value) {
             callFlashMsg(statusDanger, "Preencha o nome dos jogadores para iniciar a partida!");
@@ -228,7 +228,7 @@ gameBoard.forEach(function (board, index) {
     });
 });
 
-btnRestart.addEventListener("click", function (event) {
+btnRestart.addEventListener("click", function () {
     startAndRestartGame();
 
     callFlashMsg(statusOK, "O jogo irá reiniciar!");
