@@ -27,6 +27,7 @@ alguma forma;
 
 function flashMsg(status, text) {
     const div = document.createElement("div");
+
     div.style.position = "absolute";
     div.style.border = "1px solid " + status;
     div.style.top = "1rem";
@@ -34,6 +35,7 @@ function flashMsg(status, text) {
     div.style.height = "3rem";
     div.style.width = "30%";
     div.style.textAlign = "center";
+
     div.id = "flashMsg";
     div.innerText = text;
 
@@ -64,17 +66,23 @@ function startAndRestartGame(
 ) {
     playerOne.value = oneValue;
     playerOne.disabled = oneDisabled;
+
     playerTwo.value = twoValue;
     playerTwo.disabled = twoDisabled;
+
     startGame.disabled = sgDisabled;
+
     btnRestart.disabled = btn;
+
     setPlayerGaming.innerText = playerGaming;
+
     gameBoard.forEach(function (board) {
         board.disabled = boardDisabled;
         board.innerText = boardText;
         board.style.backgroundColor = boardBackgroundColor;
         board.style.color = boardColor;
     });
+
     valueGaming = startValue;
 };
 
@@ -96,9 +104,11 @@ function validateGame(result, playerName) {
             gameBoard[play[0]].style.backgroundColor = statusSuccess;
             gameBoard[play[1]].style.backgroundColor = statusSuccess;
             gameBoard[play[2]].style.backgroundColor = statusSuccess;
+
             gameBoard[play[0]].style.color = "#FFF";
             gameBoard[play[1]].style.color = "#FFF";
             gameBoard[play[2]].style.color = "#FFF";
+
             return setPlayerGaming.innerText = playerName + " ganhou!";
         };
     });
@@ -113,8 +123,26 @@ function validateWinnerPlayer(value, playerName) {
         });
 
         callFlashMsg(statusSuccess, "Jogador " + playerName + " ganhou a partida!");
+
+        return true;
+    };
+};
+
+function validateTicTacToe() {
+    if (gameBoard[0].disabled &&
+        gameBoard[1].disabled &&
+        gameBoard[2].disabled &&
+        gameBoard[3].disabled &&
+        gameBoard[4].disabled &&
+        gameBoard[5].disabled &&
+        gameBoard[6].disabled &&
+        gameBoard[7].disabled &&
+        gameBoard[8].disabled &&
+        !validateWinnerPlayer("X", playerOne.value) &&
+        !validateWinnerPlayer("O", playerTwo.value)) {
+        callFlashMsg(statusOK, "Deu velha!");
         
-        return;
+        return setPlayerGaming.innerText = "Deu velha!";
     };
 };
 
@@ -192,22 +220,11 @@ gameBoard.forEach(function (board, index) {
             setPlayerGaming.innerText = "Vez do jogador: " + playerOne.value;
         };
 
-        if (gameBoard[0].innerText &&
-            gameBoard[1].innerText &&
-            gameBoard[2].innerText &&
-            gameBoard[3].innerText &&
-            gameBoard[4].innerText &&
-            gameBoard[5].innerText &&
-            gameBoard[6].innerText &&
-            gameBoard[7].innerText &&
-            gameBoard[8].innerText) {
-            callFlashMsg(statusOK, "Deu velha!");
-            return setPlayerGaming.innerText = "Deu velha!";
-        };
-
         validateWinnerPlayer("X", playerOne.value);
 
         validateWinnerPlayer("O", playerTwo.value);
+
+        validateTicTacToe();
     });
 });
 
