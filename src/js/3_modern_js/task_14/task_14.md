@@ -47,3 +47,11 @@ Essas funções devem mostrar o resultado de alguma forma em texto porém não �
 - **Moda:** Pode ser calculada encontrando o valor que mais se repete em um dado conjunto.
     
     Exemplo:
+
+    ```jsx
+    moda(1, 1, 5, 4, 9, 7, 4, 3, 5, 2, 4, 0, 4) === 4
+    // porque:
+    // 4 aparece 4 vezes
+    // 5 e 1 aparecem 2 vezes
+    // 9, 7, 3, 2 e 0 aparecem 1 vez
+    ```
