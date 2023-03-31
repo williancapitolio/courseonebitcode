@@ -1,13 +1,13 @@
 const getSimpleArithmeticMean = (...values) => {
-    let sumValues = values.reduce((accumulator, value) => (accumulator + value), 0);
+    const sumValues = values.reduce((accumulator, value) => accumulator + value, 0);
 
-    return sumValues /= values.length;
+    return sumValues / values.length;
 };
 
 const getWeightedArithmeticMean = (...values) => {
-    const sumNumberPlusWeigh = values.reduce((accumulator, value) => (value.n * value.p) + accumulator, 0);
+    const sumNumberPlusWeigh = values.reduce((accumulator, { n, p }) => (n * (p ?? 1)) + accumulator, 0);
 
-    const sumWeights = values.reduce((accumulator, value) => (accumulator + value.p), 0);
+    const sumWeights = values.reduce((accumulator, { p }) => (accumulator + (p ?? 1)), 0);
 
     return sumNumberPlusWeigh / sumWeights
 };
@@ -29,8 +29,14 @@ const getMedian = (...values) => {
     };
 };
 
-
-const getMode = (...values) => { };
+function getMode(...values) {
+    const quantities = values.map(value => [
+        value,
+        values.filter(val => value === val).length
+    ]);
+    quantities.sort((a, b) => b[1] - a[1]);
+    return quantities[0][0];
+};
 
 console.log(getSimpleArithmeticMean(2, 6, 3, 7, 4));
 
@@ -38,3 +44,5 @@ console.log(getWeightedArithmeticMean({ n: 7, p: 2 }, { n: 9, p: 5 }, { n: 3, p:
 
 console.log(getMedian(2, 4, 5, 7, 42, 99));
 console.log(getMedian(15, 14, 8, 7, 3));
+
+console.log(getMode(1, 1, 5, 4, 9, 7, 4, 3, 5, 2, 4, 0, 4));
