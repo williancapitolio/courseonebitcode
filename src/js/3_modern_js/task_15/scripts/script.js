@@ -1,5 +1,3 @@
-import { input } from "./modules/variables.js";
-
 import { charkeyClickBtn } from "./modules/charkeyClickBtn.js";
 import { clearClickBtn } from "./modules/clearClickBtn.js";
 import { keyDownValue } from "./modules/keyDownValue.js";
@@ -11,7 +9,7 @@ document.querySelectorAll(".charKey").forEach(charkeyClickBtn);
 
 document.getElementById("clear").addEventListener("click", clearClickBtn);
 
-input.addEventListener("keydown", keyDownValue);
+document.querySelector('#input').addEventListener("keydown", keyDownValue);
 
 document.getElementById("equal").addEventListener("click", calculate);
 
