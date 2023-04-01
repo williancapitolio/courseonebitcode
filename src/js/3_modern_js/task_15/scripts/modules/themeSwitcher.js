@@ -1,17 +1,15 @@
-import { main, root } from "./variables.js";
-
 export function themeSwitcher() {
-    if (main.dataset.theme === "dark") {
-        root.style.setProperty("--bg-color", "#f1f5f9");
-        root.style.setProperty("--border-color", "#aaa");
-        root.style.setProperty("--font-color", "#212529");
-        root.style.setProperty("--primary-color", "#26834a");
-        main.dataset.theme = "light";
+    if (document.querySelector("main").dataset.theme === "dark") {
+        document.querySelector(":root").style.setProperty("--bg-color", "#f1f5f9");
+        document.querySelector(":root").style.setProperty("--border-color", "#aaa");
+        document.querySelector(":root").style.setProperty("--font-color", "#212529");
+        document.querySelector(":root").style.setProperty("--primary-color", "#26834a");
+        document.querySelector("main").dataset.theme = "light";
     } else {
-        root.style.setProperty("--bg-color", "#212529");
-        root.style.setProperty("--border-color", "#666");
-        root.style.setProperty("--font-color", "#f1f5f9");
-        root.style.setProperty("--primary-color", "#4dff91");
-        main.dataset.theme = "dark";
+        document.querySelector(":root").style.setProperty("--bg-color", "#212529");
+        document.querySelector(":root").style.setProperty("--border-color", "#666");
+        document.querySelector(":root").style.setProperty("--font-color", "#f1f5f9");
+        document.querySelector(":root").style.setProperty("--primary-color", "#4dff91");
+        document.querySelector("main").dataset.theme = "dark";
     };
 };

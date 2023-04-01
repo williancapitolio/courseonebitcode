@@ -1,6 +1,4 @@
-import { input } from "./variables.js";
-
 export function clearClickBtn() {
-    input.value = "";
-    input.focus();
+    document.getElementById("input").value = "";
+    document.getElementById("input").focus();
 };

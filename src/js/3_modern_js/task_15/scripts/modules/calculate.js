@@ -1,9 +1,7 @@
-import { resultInput, input } from "./variables.js";
-
 export function calculate() {
-    resultInput.value = "ERROR";
-    resultInput.classList.add("error");
-    const result = eval(input.value);
-    resultInput.value = result;
-    resultInput.classList.remove("error");
+    document.getElementById("result").value = "ERROR";
+    document.getElementById("result").classList.add("error");
+    const result = eval(document.getElementById("input").value);
+    document.getElementById("result").value = result;
+    document.getElementById("result").classList.remove("error");
 };
