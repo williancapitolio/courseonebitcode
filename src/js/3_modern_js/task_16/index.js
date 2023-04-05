@@ -16,7 +16,8 @@ const datesWithDayjs = (dateOfBirth) => {
 
     const dateOfBirthArray = dateOfBirth.split("/");
 
-    const dateOfBirthResult = `${dateOfBirthArray[2]}-${dateOfBirthArray[1]}-${dateOfBirthArray[0]}`;
+    //const dateOfBirthResult = `${dateOfBirthArray[2]}-${dateOfBirthArray[1]}-${dateOfBirthArray[0]}`;
+    const dateOfBirthResult = dateOfBirthArray.reverse().reduce((acc, item) => `${acc}-${item}`);
 
     const birthdayDayjs = dayjs(dateOfBirthResult).format("YYYY-MM-DD");
 
@@ -35,7 +36,7 @@ const datesWithDayjs = (dateOfBirth) => {
     return console.log(`
         - Today is ${todayFormat}
         - Your birthday is ${dateOfBirth}
-        - Your age is ${currentAge}
+        - Your age is ${currentAge} years
         - Your next birthday is ${nextBirthdayFormat}
         - ${daysToNextBirthday} days until your next birthday
     `);
