@@ -1,7 +1,9 @@
 "use strict";
 
 const dayjs = require("dayjs");
+
 const customParseFormat = require("dayjs/plugin/customParseFormat");
+
 dayjs.extend(customParseFormat);
 
 const datesWithDayjs = (dateOfBirth) => {
@@ -14,24 +16,20 @@ const datesWithDayjs = (dateOfBirth) => {
         `);
     };
 
-    const dateOfBirthArray = dateOfBirth.split("/");
-
     //const dateOfBirthResult = `${dateOfBirthArray[2]}-${dateOfBirthArray[1]}-${dateOfBirthArray[0]}`;
-    const dateOfBirthResult = dateOfBirthArray.reverse().reduce((acc, item) => `${acc}-${item}`);
+    const dateOfBirthResult = dateOfBirth.split("/").reverse().reduce((acc, item) => `${acc}-${item}`);
 
-    const birthdayDayjs = dayjs(dateOfBirthResult).format("YYYY-MM-DD");
+    const dateOfBirthInDayjs = dayjs(dateOfBirthResult).format("YYYY-MM-DD");
 
     const today = dayjs().format("YYYY-MM-DD");
+    const todayFormat = dayjs(today).format("DD/MM/YYYY");
 
     const currentAge = dayjs(today).diff(dateOfBirthResult, "year");
 
-    const nextBirthday = dayjs(birthdayDayjs).add((currentAge + 1), "year").format("YYYY-MM-DD");
+    const nextBirthday = dayjs(dateOfBirthInDayjs).add((currentAge + 1), "year").format("YYYY-MM-DD");
+    const nextBirthdayFormat = dayjs(nextBirthday).format("DD/MM/YYYY");
 
     const daysToNextBirthday = dayjs(nextBirthday).diff(today, "day");
-
-    const todayFormat = dayjs(today).format("DD/MM/YYYY");
-
-    const nextBirthdayFormat = dayjs(nextBirthday).format("DD/MM/YYYY");
 
     return console.log(`
         - Today is ${todayFormat}
