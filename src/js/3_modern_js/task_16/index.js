@@ -1,11 +1,14 @@
 "use strict";
 
 const dayjs = require("dayjs");
+const customParseFormat = require("dayjs/plugin/customParseFormat");
+dayjs.extend(customParseFormat);
 
 const datesWithDayjs = (dateOfBirth) => {
+    //validate with regex && validate with dayjs().isValid()
     const validDateOfBirth = /([0-2][0-9]|3[0-1])\/(0[0-9]|1[0-2])\/[0-9]{4}/;
 
-    if (!validDateOfBirth.test(dateOfBirth)) {
+    if (!validDateOfBirth.test(dateOfBirth) && !dayjs(dateOfBirth, "DD/MM/YYYY", true).isValid()) {
         return console.log(`
         - ${dateOfBirth} not a valid date of birth. Try the format: DD/MM/YYYY
         `);
