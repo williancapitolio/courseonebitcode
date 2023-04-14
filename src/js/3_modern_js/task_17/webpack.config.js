@@ -1,42 +1,32 @@
-const path = require('path');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const path = require("path");
 
 module.exports = {
-    entry: "./src/index.js",
-    output: {
-        filename: "[name].min.js",
-        path: path.resolve(__dirname, "dist"),
+    entry: {
+        main: "./src/index.js"
     },
     mode: "production",
+    output: {
+        path: path.resolve(__dirname, "public"),
+        filename: "[name].bundle.min.js"
+    },
     module: {
         rules: [
             {
-                test: /\.js$/,
+                test: /\.m?js$/,
                 exclude: /node_modules/,
                 use: {
-                    loader: "babel-loader",
+                    loader: 'babel-loader',
                     options: {
                         presets: [
-                            ["@babel/preset-env", { targets: "defaults" }]
+                            ['@babel/preset-env', { targets: "defaults" }]
                         ]
                     }
                 }
             },
             {
-                test: /\.css$/,
-                use: [MiniCssExtractPlugin.loader, "css-loader"],
+                test: /\.css$/i,
+                use: ["style-loader", "css-loader"],
             }
         ],
-    },
-    optimization: {
-        minimizer: [
-            new CssMinimizerPlugin(),
-        ]
-    },
-    plugins: [
-        new MiniCssExtractPlugin({
-            filename: "style.min.css"
-        })
-    ]
+    }
 };
