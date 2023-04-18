@@ -2,7 +2,7 @@ const path = require("path");
 
 module.exports = {
     entry: {
-        main: "./src/index.js",
+        index: "./src/index.js",
         hello: "./src/helloWorld.js"
     },
     mode: "production",
@@ -13,19 +13,12 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.m?js$/,
+                test: /\.js$/,
                 exclude: /node_modules/,
-                use: {
-                    loader: "babel-loader",
-                    options: {
-                        presets: [
-                            ["@babel/preset-env", { targets: "defaults" }]
-                        ]
-                    }
-                }
+                use: "babel-loader"
             },
             {
-                test: /\.css$/i,
+                test: /\.css$/,
                 use: ["style-loader", "css-loader"],
             }
         ],
