@@ -1,4 +1,4 @@
-class User {
+export default class User {
     constructor(fullname, email, password) {
         this.fullname = fullname,
         this.email = email,
@@ -17,8 +17,3 @@ class User {
         };
     };
 };
-
-const admin = new User("admin", "admin@email.com", "admin123");
-console.log(admin);
-
-admin.login("admin@email.com", "admin123");
