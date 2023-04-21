@@ -7,7 +7,7 @@ admin.login("admin@email.com", "admin123");
 
 console.log(admin);
 
-const bookEragon = new Product("Eragon", "Eragon um livro escrito por Christopher Paolini.", 50.00)
+const bookEragon = new Product("Eragon", "Eragon um livro escrito por Christopher Paolini.", 50.00);
 
 bookEragon.addToStock(3);
 
@@ -15,10 +15,10 @@ bookEragon.addToStock(5);
 
 bookEragon.addToStock("cinco");
 
-bookEragon.calculateDiscount(10)
+bookEragon.calculateDiscount(10);
 
-bookEragon.calculateDiscount(100)
+bookEragon.calculateDiscount(100);
 
-bookEragon.calculateDiscount("cem")
+bookEragon.calculateDiscount("cem");
 
 console.log(bookEragon);
