@@ -5,6 +5,8 @@ const admin = new User("admin", "admin@email.com", "admin123");
 
 admin.login("admin@email.com", "admin123");
 
+admin.login("admin@email.com", "admin");
+
 console.log(admin);
 
 const bookEragon = new Product("Eragon", "Eragon um livro escrito por Christopher Paolini.", 50.00);
