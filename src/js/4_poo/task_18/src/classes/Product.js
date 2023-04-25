@@ -44,6 +44,7 @@ export default class Product {
         };
 
         const discountPrice = this.price - (this.price * (discount / 100));
+        //const discountPrice = this.price * ((100 - discount) / 100);
         
         return console.log(`Success: The discounted product price will be ${discountPrice.toFixed(2)}.`);
     };
