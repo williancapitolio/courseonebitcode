@@ -1,7 +1,7 @@
 const Author = require("./Author.js");
 const Comment = require("./Comment.js");
 
-class Post {
+module.exports = class Post {
     constructor(text, date, fullname, email) {
         this.text = text;
         this.date = date;
@@ -14,5 +14,3 @@ class Post {
         this.comments.push(commnetToAdd);
     };
 };
-
-module.exports = Post;

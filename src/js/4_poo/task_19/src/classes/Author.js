@@ -1,6 +1,6 @@
 const Post = require("./Post.js");
 
-class Author {
+module.exports = class Author {
     constructor(fullname, email) {
         this.fullname = fullname;
         this.email = email;
@@ -13,5 +13,3 @@ class Author {
         return console.log(postToAdd);
     };
 };
-
-module.exports = Author;
