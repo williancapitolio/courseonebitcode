@@ -4,10 +4,13 @@ class Author {
     constructor(fullname, email) {
         this.fullname = fullname;
         this.email = email;
+        this.posts = [];
     };
 
-    createPost(text, date, fullname, email) {
-        return console.log(new Post(text, date, fullname = this.fullname, email = this.email));
+    createPost(text, date) {
+        const postToAdd = new Post(text, date, this.fullname, this.email);
+        this.posts.push(postToAdd);
+        return console.log(postToAdd);
     };
 };
 

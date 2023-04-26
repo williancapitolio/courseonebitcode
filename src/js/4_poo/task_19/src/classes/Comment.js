@@ -1,6 +1,6 @@
 class Comment {
     constructor(comment, author) {
-        this.text = comment;
+        this.comment = comment;
         this.author = author;
     };
 };
