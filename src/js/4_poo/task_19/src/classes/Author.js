@@ -1,15 +1,14 @@
 const Post = require("./Post.js");
 
 module.exports = class Author {
-    constructor(fullname, email) {
+    constructor(fullname) {
         this.fullname = fullname;
-        this.email = email;
         this.posts = [];
     };
 
     createPost(text, date) {
-        const postToAdd = new Post(text, date, this.fullname, this.email);
+        const postToAdd = new Post(text, date, this.fullname);
         this.posts.push(postToAdd);
-        return postToAdd;
+        return console.log(postToAdd);
     };
 };
