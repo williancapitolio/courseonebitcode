@@ -21,3 +21,15 @@ will.createPost("Texto criado para o post", new Date());
 will.createPost("Texto dois criado para o post", "25/04/2023");
 
 console.log(will);
+
+//
+
+const john = new Author("John Doe");
+
+const post = john.createPost("Post do John", "Data de criação do post");
+
+post.addComment("Post top", "Usuário");
+post.addComment("Post bom", "Fulano");
+
+console.log(john);
+console.log(post);

@@ -7,8 +7,8 @@ module.exports = class Author {
     };
 
     createPost(text, date) {
-        const postToAdd = new Post(text, date, this.fullname);
+        const postToAdd = new Post(text, date, this);
         this.posts.push(postToAdd);
-        return console.log(postToAdd);
+        return postToAdd;
     };
 };
