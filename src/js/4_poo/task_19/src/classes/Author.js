@@ -10,6 +10,6 @@ module.exports = class Author {
     createPost(text, date) {
         const postToAdd = new Post(text, date, this.fullname, this.email);
         this.posts.push(postToAdd);
-        return console.log(postToAdd);
+        return postToAdd;
     };
 };

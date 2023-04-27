@@ -3,4 +3,8 @@ module.exports = class Comment {
         this.comment = comment;
         this.author = author;
     };
+
+    readComment() {
+        return `O comentário foi "${this.comment}" criado por ${this.author}.`;
+    };
 };
