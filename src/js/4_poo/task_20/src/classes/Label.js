@@ -1,6 +1,6 @@
-const Component = require("./Component.js");
+import Component from "./Component.js";
 
-module.exports = class Label extends Component {
+export default class Label extends Component {
     constructor(domElement) {
         super(domElement = "label");
     };

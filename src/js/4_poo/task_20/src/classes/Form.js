@@ -1,6 +1,6 @@
-const Component = require("./Component.js");
+import Component from "./Component.js";
 
-module.exports = class Form extends Component {
+export default class Form extends Component {
     constructor(domElement) {
         super(domElement = "form");
     };

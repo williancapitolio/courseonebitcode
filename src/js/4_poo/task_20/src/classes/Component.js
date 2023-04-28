@@ -1,4 +1,4 @@
-module.exports = class Component {
+export default class Component {
     #domElement;
 
     constructor(domElement) {
