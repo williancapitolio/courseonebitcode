@@ -3,20 +3,20 @@ export default class Component {
 
     constructor(domElement) {
         this.#domElement = domElement;
-        this.build = function (domElement) {
-            return document.createElement(domElement);
+        this.buildElement = function () {
+            return document.createElement(`${this.#domElement}`);
         };
     };
 
     read() {
-        return this.#domElement;
+        return console.log(`O valor do atributo é: ${this.#domElement}`);
     };
 
     build() {
-        return document.createElement(this.#domElement);
+        return this.buildElement();
     };
 
     render() {
-        return document.getElementById("body").append(this.build);
+        return document.getElementById("body").append(this.buildElement());
     };
 };

@@ -1,8 +1,20 @@
 import Component from "./classes/Component.js";
-import Form from "./classes/Form.js";
 import Input from "./classes/Input.js";
 import Label from "./classes/Label.js";
+import Form from "./classes/Form.js";
 
-const ul = new Component("ul");
+const li = new Component("li");
 
-ul.render();
+li.read();
+
+li.build();
+
+li.render();
+
+const input = new Input();
+
+input.read();
+
+input.build();
+
+input.render();
