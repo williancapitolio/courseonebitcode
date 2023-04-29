@@ -5,12 +5,10 @@ export default class Label extends Component {
         super(domElement = "label");
 
         this.text = text;
+        this.setText = function () {
+            const element = this.buildElement();
+            element.innerText = this.text;
+            return document.getElementById("body").append(element);
+        }
     };
-
-    setText() {
-        const element = this.buildElement();
-        element.innerText = this.text;
-        console.log(element);
-        return element;
-    }
 };
