@@ -4,17 +4,20 @@ import Label from "./classes/Label.js";
 import Form from "./classes/Form.js";
 
 const li = new Component("li");
+const input = new Input();
+const label = new Label("Nome: ");
 
-li.read();
+/* li.read();
+input.read();
+label.read(); */
 
 li.build();
-
 li.render();
 
-const input = new Input();
-
-input.read();
-
 input.build();
-
 input.render();
+
+
+label.build();
+label.render();
+label.setText();
