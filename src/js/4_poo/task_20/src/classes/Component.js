@@ -3,9 +3,7 @@ export default class Component {
 
     constructor(domElement) {
         this.#domElement = domElement;
-        this.buildElement = function () {
-            return document.createElement(`${this.#domElement}`);
-        };
+        this.buildElement = this.build();
     };
 
     read() {
@@ -13,7 +11,9 @@ export default class Component {
     };
 
     build() {
-        return this.buildElement();
+        return function () {
+            return document.createElement(`${this.#domElement}`);
+        };
     };
 
     render() {
