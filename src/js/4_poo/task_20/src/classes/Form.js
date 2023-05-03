@@ -1,13 +1,13 @@
 import Component from "./Component.js";
 
 export default class Form extends Component {
-    constructor(domElement) {
-        super(domElement = "form");
-
-        this.form = function () {
-            document.getElementsByClassName("form").append(document.createElement(domElement))
-        };
+    constructor(parent, options) {
+        super("form", parent, options);
     };
 
-    addChild() { };
+    addChildren(...children) {
+        children.forEach(child => {
+            this.getDomElement().appendChild(child.getDomElement());
+        });
+    };
 };
