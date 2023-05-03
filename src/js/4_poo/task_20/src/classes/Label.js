@@ -9,6 +9,6 @@ export default class Label extends Component {
             const element = this.buildElement();
             element.innerText = this.text;
             return document.getElementById("body").append(element);
-        }
+        };
     };
 };

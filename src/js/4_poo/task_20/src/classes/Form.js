@@ -5,12 +5,8 @@ export default class Form extends Component {
         super(domElement = "form");
 
         this.form = function () {
-            document.getElementById("body").append(document.createElement(domElement))
+            document.getElementsByClassName("form").append(document.createElement(domElement))
         };
-        
-        this.getForm = function () {
-            document.getElementById(domElement);
-        }
     };
 
     addChild() { };
