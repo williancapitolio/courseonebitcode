@@ -1,22 +1,28 @@
 export default class Component {
-    #domElement;
+    #domElement = null;
 
-    constructor(domElement) {
-        this.#domElement = domElement;
-        this.buildElement = this.build();
+    constructor(tag, parent, options) {
+        this.tag = tag;
+        this.parent = parent;
+        this.options = options;
+        this.build();
     };
 
-    read() {
-        return console.log(`O valor do atributo é: ${this.#domElement}`);
+    getDomElement() {
+        return this.#domElement;
     };
 
     build() {
-        return function () {
-            return document.createElement(`${this.#domElement}`);
-        };
+        this.#domElement = document.createElement(this.tag);
+        Object.assign(this.#domElement, this.options);
+        return this;
     };
-
+    
     render() {
-        return document.getElementById("body").append(this.buildElement());
+        if (this.parent instanceof Component) {
+            this.parent.getDomElement().append(this.#domElement);
+        } else {
+            document.querySelector(this.parent).append(this.#domElement);
+        };
     };
 };
