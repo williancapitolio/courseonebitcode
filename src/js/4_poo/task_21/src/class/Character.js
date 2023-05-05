@@ -7,8 +7,8 @@ export default class Character {
     };
 
     attackerAndDefensorData(target) {
-        const attakerData = `- Atacante - \n\nNome: ${this.fullName}\nPontos de Vida: ${this.lifePoints}\nPontos de Ataque: ${this.attackPoints}\nPontos de Defesa: ${this.defensePoints}`;
-        const defensorData = `- Defensor - \n\nNome: ${target.fullName}\nPontos de Vida: ${target.lifePoints}\nPontos de Ataque: ${target.attackPoints}\nPontos de Defesa: ${target.defensePoints}`;
+        const attakerData = `- Atacante - \n\nNome: ${this.fullName}\nPontos de Vida: ${this.lifePoints}\nPontos de Ataque: ${this.attackPoints}`;
+        const defensorData = `- Defensor - \n\nNome: ${target.fullName}\nPontos de Vida: ${target.lifePoints}\nPontos de Defesa: ${target.defensePoints}`;
 
         console.log(attakerData, `\n`, `\n`, `\n`, defensorData, `\n`, `\n`, `\n`);
     };

@@ -12,7 +12,10 @@ export default class Mage extends Character {
             return console.log("O ataque falhou!");
         };
 
-        this.attackerAndDefensorData(target);
+        const attakerData = `- Atacante - \n\nNome: ${this.fullName}\nPontos de Vida: ${this.lifePoints}\nPontos de Ataque: ${this.attackPoints}\nPontos de Defesa: ${this.defensePoints}\nPontos de Magia: ${this.magicPoints}`;
+        const defensorData = `- Defensor - \n\nNome: ${target.fullName}\nPontos de Vida: ${target.lifePoints}\nPontos de Ataque: ${target.attackPoints}\nPontos de Defesa: ${target.defensePoints}`;
+
+        console.log(attakerData, `\n`, `\n`, `\n`, defensorData, `\n`, `\n`, `\n`);
 
         if ((this.attackPoints + this.magicPoints) <= target.defensePoints) {
             return console.log("O ataque não surtiu efeito!");
