@@ -44,11 +44,11 @@ export default class Warrior extends Character {
 
     togglePosition() {
         if (this.position === "Ataque") {
-            return this.position = "Defesa";
-        };
-
-        if (this.position === "Defesa") {
-            return this.position = "Ataque";
+            this.position = "Defesa";
+            this.defensePoints += this.shieldPoints;
+        } else {
+            this.position = "Ataque";
+            this.defensePoints -= this.shieldPoints;
         };
     };
 };
