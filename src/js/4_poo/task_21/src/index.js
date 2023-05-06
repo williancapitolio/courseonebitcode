@@ -16,6 +16,8 @@ const guerreiro = new Warrior("guerreiro", 1500, 250, 250, 300);
 //mago.attack(defensor);
 //mago.heal(ladrao);
 
-guerreiro.attack(defensor);
+/* guerreiro.attack(defensor);
 guerreiro.togglePosition();
-guerreiro.attack(defensor);
+guerreiro.attack(defensor); */
+
+console.table({atacante, defensor, ladrao, mago, guerreiro})
