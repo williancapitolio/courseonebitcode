@@ -1,17 +1,18 @@
 module.exports = class Loan {
-    static #interestRate;
+    static #interestRate = 10;
 
     constructor(value, installments) {
         this.value = value;
         this.installments = installments;
+        this.total = installments * (value + Loan.interestRate);
         this.createdAd = new Date();
     }
 
-    get interestRate() {
+    static get interestRate() {
         return this.#interestRate;
     };
 
-    set interestRate(value) {
+    static set interestRate(value) {
         this.#interestRate = value;
     };
 };
