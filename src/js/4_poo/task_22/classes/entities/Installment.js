@@ -1,7 +1,7 @@
 module.exports = class Installment {
-    constructor(value, number, situation) {
+    constructor(value, numberInstallment, situation) {
         this.value = value;
-        this.number = number;
+        this.numberInstallment = numberInstallment;
         this.situation = situation;
     };
 };
