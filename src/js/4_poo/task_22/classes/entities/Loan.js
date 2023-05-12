@@ -1,10 +1,12 @@
-module.exports = class Loan {
-    static #interestRate = 10;
+const Installment = require("./Installment.js");
 
-    constructor(value, numberInstallments, installment) { 
+module.exports = class Loan {
+    static #interestRate = 5;
+
+    constructor(value, numberInstallments) { 
         this.value = value;
         this.numberInstallments = numberInstallments;
-        this.installment = installment;
+        this.valueEachInstallment = new Installment();
         this.createdAd = new Date();
     }
 

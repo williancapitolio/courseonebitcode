@@ -1,12 +1,13 @@
 const Deposit = require("./Deposit.js");
+const Loan = require("./Loan.js");
 
 module.exports = class Account {
     #balance = 0;
 
-    constructor(loans, transfers, owner) {
+    constructor(owner) {
         this.deposits = [];
-        this.loans = loans;
-        this.transfers = transfers;
+        this.loans = [];
+        this.transfers = [];
         this.owner = owner;
     };
 
@@ -17,5 +18,10 @@ module.exports = class Account {
     newDeposit(value) {
         this.#balance += value;
         this.deposits.push(new Deposit(value));
+    };
+
+    newLoan(value, numberInstallments) {
+        this.#balance += value;
+        this.loans.push(new Loan(value, numberInstallments));
     };
 };
