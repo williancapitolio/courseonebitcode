@@ -14,8 +14,8 @@ module.exports = class Loan {
         return this.#interestRate;
     };
 
-    static set interestRate(value) {
-        this.#interestRate = value;
+    static set interestRate(newPercentage) {
+        this.#interestRate = newPercentage;
     };
 
     /* static get valueEachInstallment() {
