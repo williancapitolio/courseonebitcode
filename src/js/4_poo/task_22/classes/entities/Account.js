@@ -6,10 +6,10 @@ module.exports = class Account {
     #balance = 0;
 
     constructor(owner) {
+        this.owner = owner;
         this.deposits = [];
         this.loans = [];
         this.transfers = [];
-        this.owner = owner;
     };
 
     get balance() {
