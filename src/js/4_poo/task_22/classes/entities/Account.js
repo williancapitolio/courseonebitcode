@@ -1,5 +1,6 @@
 const Deposit = require("./Deposit.js");
 const Loan = require("./Loan.js");
+const Transfer = require("./Transfer.js");
 
 module.exports = class Account {
     #balance = 0;
@@ -17,11 +18,33 @@ module.exports = class Account {
 
     newDeposit(value) {
         this.#balance += value;
+
         this.deposits.push(new Deposit(value));
     };
 
     newLoan(value, numberInstallments) {
         this.#balance += value;
+
         this.loans.push(new Loan(value, numberInstallments));
+    };
+
+    newTransfer(userSender, userRecipient, value) {
+        if (userSender === this.owner && userRecipient === this.owner) {
+            return "Error: It is not possible to make transfers with the same account!";
+        } else if (userSender === this.owner && this.balance >= value) {
+            this.#balance -= value;
+
+            this.transfers.push(new Transfer(userSender, userRecipient, value));
+
+            return "Success: Transfer done!";
+        } else if (userRecipient === this.owner) {
+            this.#balance += value;
+
+            this.transfers.push(new Transfer(userSender, userRecipient, value));
+
+            return "Success: Transfer done!";
+        } else {
+            return "Error: The transfer could not be performed!";
+        };
     };
 };

@@ -6,7 +6,7 @@ module.exports = class Loan {
     constructor(value, numberInstallments) { 
         this.value = value;
         this.numberInstallments = numberInstallments;
-        this.valueInstallment = new Installment(((this.interestRate() / 100) * value) + value, 1, "pending");
+        this.valueInstallment = new Installment(((this.interestRate / 100) * value) + value, 1, "pending");
         this.createdAd = new Date();
     }
 
