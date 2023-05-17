@@ -6,9 +6,10 @@ module.exports = class Loan {
     constructor(value, numberInstallments) { 
         this.value = value;
         this.numberInstallments = numberInstallments;
-        this.valueInstallment = new Installment(((this.interestRate / 100) * value) + value, 1, "pending");
+        //this.valueInstallment = this.valueEachInstallment;
+        this.valueInstallment = new Installment(((this.interestRate / 100) * value) + value);
         this.createdAd = new Date();
-    }
+    };
 
     static get interestRate() {
         return this.#interestRate;
@@ -20,5 +21,5 @@ module.exports = class Loan {
 
     /* static get valueEachInstallment() {
         return ((this.interestRate() / 100) * this.value) + this.value;
-    } */
+    }; */
 };
