@@ -7,7 +7,7 @@ module.exports = class Loan {
         this.value = value;
         this.numberInstallments = numberInstallments;
         this.valueInstallment = this.valueEachInstallment;
-        this.installment = this.InstallmentArrayFunction;
+        this.installments = this.InstallmentArrayFunction;
         this.createdAd = new Date();
     };
 

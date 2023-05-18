@@ -4,5 +4,5 @@ module.exports = class Transfer {
         this.userRecipient = userRecipient;
         this.value = value;
         this.createdAt = new Date();
-    }
+    };
 };
