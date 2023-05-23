@@ -18,7 +18,7 @@ formRegister.addEventListener("submit", e => {
 });
 
 const validateEmail = (email) => {
-    const validEmail = /^[a-z0-9?_.]{2,}+@[a-z]{2,}+.[a-z]{2,}$/i;
+    const validEmail = /^([a-z0-9?_.]{2,})+@([a-z]{2,})+.([a-z]{2,})$/i;
     if (!validEmail.test(email)) {
         return statusResponse = "Error: Invalid email! Try: xx@xx.xx";
     };
