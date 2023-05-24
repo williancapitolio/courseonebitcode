@@ -1,7 +1,5 @@
 const formRegister = document.getElementById("form-register");
 
-let statusResponse = "";
-
 formRegister.addEventListener("submit", e => {
     try {
         e.preventDefault();
@@ -13,30 +11,25 @@ formRegister.addEventListener("submit", e => {
         const password = e.target.children["password"];
 
         if (!fullname.value || !email.value || !password.value) {
-            statusResponse = "Error: Fill all fields!";
-            return inputStatus.value = statusResponse;
+            return setInputStatusMessage(inputStatus, "Error: Fill all fields!");
         };
 
         if (!validateEmail(email.value)) {
-            statusResponse = "Error: Invalid email! Try: xx@xx.xx";
-            return inputStatus.value = statusResponse;
+            return setInputStatusMessage(inputStatus, "Error: Invalid email! Try: xx@xx.xx");
         };
 
         if (!validatePassword(password.value)) {
-            statusResponse = "Error: Invalid password!";
-            return inputStatus.value = statusResponse;
+            return setInputStatusMessage(inputStatus, "Error: Invalid password!");
         };
 
         fullname.value = "";
         email.value = "";
         password.value = "";
 
-        statusResponse = "Sucess: Registration done!";
-        inputStatus.value = statusResponse;
+        setInputStatusMessage(inputStatus, "Sucess: Registration done!");
     } catch (e) {
         console.log(e.message);
-        statusResponse = "Error: A system error occurred, please try again later.";
-        document.getElementById("status-response").value = statusResponse;
+        setInputStatusMessage(document.getElementById("status-response"), "Error: A system error occurred, please try again later.");
     };
 });
 
@@ -56,4 +49,8 @@ const validatePassword = (password) => {
     };
 
     return true;
+};
+
+const setInputStatusMessage = (inputStatus, message) => {
+    inputStatus.value = message;
 };
