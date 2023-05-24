@@ -1,6 +1,26 @@
-const formRegister = document.getElementById("form-register");
+const validateEmail = (email) => {
+    const validEmail = /^([a-z0-9?_.]{2,})+@([a-z]{2,})+.([a-z]{2,})$/i;
+    if (!validEmail.test(email)) {
+        return false;
+    };
 
-formRegister.addEventListener("submit", e => {
+    return true;
+};
+
+const validatePassword = (password) => {
+    const validPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[-+_!@#$%^&*.,?]).+$/;
+    if (!validPassword.test(password)) {
+        return false;
+    };
+
+    return true;
+};
+
+const setInputStatusMessage = (inputStatus, message) => {
+    inputStatus.value = message;
+};
+
+document.getElementById("form-register").addEventListener("submit", e => {
     try {
         e.preventDefault();
 
@@ -33,24 +53,3 @@ formRegister.addEventListener("submit", e => {
     };
 });
 
-const validateEmail = (email) => {
-    const validEmail = /^([a-z0-9?_.]{2,})+@([a-z]{2,})+.([a-z]{2,})$/i;
-    if (!validEmail.test(email)) {
-        return false;
-    };
-
-    return true;
-};
-
-const validatePassword = (password) => {
-    const validPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[-+_!@#$%^&*.,?]).+$/;
-    if (!validPassword.test(password)) {
-        return false;
-    };
-
-    return true;
-};
-
-const setInputStatusMessage = (inputStatus, message) => {
-    inputStatus.value = message;
-};
