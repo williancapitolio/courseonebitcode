@@ -26,7 +26,7 @@ export default class User {
     };
 
     validatePassword() {
-        const validPassword = /^(?=.[a-z])(?=.[A-Z])(?=.\d)(?=.[-+_!@#$%^&*.,?]).+$/;
+        const validPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[-+_!@#$%^&*.,?]).+$/;
 
         if (!this.password.value.match(validPassword)) {
             const err = new Error("Error: Invalid password!");
