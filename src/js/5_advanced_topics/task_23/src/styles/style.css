@@ -1,0 +1,13 @@
+span {
+    color: #f64348;
+    font-size: 0.75rem;
+    margin: 0.25rem;
+}
+
+.success {
+    border: 1px solid #43f67f;
+}
+
+.error {
+    border: 1px solid #f64348;
+}
