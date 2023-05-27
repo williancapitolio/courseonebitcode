@@ -29,7 +29,7 @@ const situationBMI = (weight, height) => {
         console.log("Ending...");
     });
 
-    console.log("Body Mass Index (BMI) Calculator");
+    console.log(`Calculating Body Mass Index (BMI) for Weight ${weight} and Height ${height}`);
 };
 
 situationBMI(100, 1.80);
