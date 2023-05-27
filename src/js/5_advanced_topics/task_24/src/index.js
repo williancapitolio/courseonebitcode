@@ -9,8 +9,9 @@ const getBMI = (weight, height) => {
 };
 
 const situationBMI = (weight, height) => {
-    getBMI(weight, height).then((result => {
+    getBMI(weight, height).then((result) => {
         console.log(`The BMI are ${result.toFixed(1)}`);
+
         if (result < 18.5) {
             console.log(`The result are THINNESS`);
         } else if (result >= 18.5 && result <= 24.9) {
@@ -22,7 +23,7 @@ const situationBMI = (weight, height) => {
         } else if (result >= 40) {
             console.log(`The result are SEVERE OBESITY`);
         };
-    })).catch((err) => {
+    }).catch((err) => {
         console.log(err);
     }).finally(() => {
         console.log("Ending...");
