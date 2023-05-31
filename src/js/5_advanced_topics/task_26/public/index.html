@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 26</title>
+    <script src="../src/index.js" type="module"></script>
+</head>
+
+<body>
+    <header id="title-main">
+        <h1>Finanças Pessoais</h1>
+    </header>
+
+    <main>
+        <section id="form-section">
+            <form action="http://localhost:3000/transactions" method="POST" id="form-transaction">
+                <h3>Adicionar Transação</h3>
+
+                <label for="name-transaction">Nome da Transação</label>
+                <input type="text" name="name-transaction" id="name-transaction">
+
+                <label for="value-transaction">Valor da Transação</label>
+                <input type="text" name="value-transaction" id="value-transaction">
+
+                <button type="submit" id="btn-save-transaction">Salvar</button>
+            </form>
+        </section>
+
+        <section id="transactions-section">
+            <h3>Transações</h3>
+
+            <div id="list-transactions-div"></div>
+        </section>
+    </main>
+</body>
+
+</html>
