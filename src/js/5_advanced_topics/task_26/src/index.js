@@ -8,6 +8,19 @@ const btnAction = document.querySelector("#btn-save-transaction");
 
 let id;
 
+let balance;
+let balanceEdit;
+
+const findById = async (id) => {
+    const response = await fetch(`${url}/${id}`).then(res => res.json());
+    return response;
+};
+
+const setValue = (balance) => {
+    balanceEdit = 0;
+    document.querySelector("#balance-span").innerText = balance.toFixed(2);
+};
+
 const renderTransaction = (transactionData) => {
     const transaction = document.createElement("div");
     transaction.classList.add("transaction");
@@ -20,7 +33,7 @@ const renderTransaction = (transactionData) => {
 
     const value = document.createElement("span");
     value.classList.add("value-transaction");
-    value.textContent = transactionData.value;
+    value.textContent = transactionData.value.toFixed(2);
     value.id = `value-transaction-${transactionData.id}`;
 
     const btnEdit = document.createElement("button");
@@ -37,7 +50,16 @@ const renderTransaction = (transactionData) => {
     btnDelete.textContent = "Apagar";
     btnDelete.id = `delete-transaction-${transactionData.id}`;
 
-    transaction.append(name, document.createElement("br"), value, document.createElement("br"), btnEdit, btnDelete, document.createElement("br"), document.createElement("br"));
+    transaction.append(
+        name,
+        document.createElement("br"),
+        value, document.createElement("br"),
+        btnEdit,
+        btnDelete,
+        document.createElement("br"),
+        document.createElement("br")
+    );
+
     document.querySelector("#list-transactions-div").appendChild(transaction);
 };
 
@@ -46,27 +68,24 @@ const fetchTransactions = async () => {
 
     const transactions = await response.json();
 
+    balance = transactions.reduce((total, { value }) => total + value, 0);
+
+    setValue(balance);
+
     transactions.forEach(renderTransaction);
 };
+
 
 document.addEventListener("DOMContentLoaded", () => {
     fetchTransactions();
 });
-
-const getTransactionById = async btn => {
-    const id = btn.id.split("-").at(-1);
-
-    const response = await fetch(`${url}/${id}`).then(res => res.json());
-
-    return response;
-};
 
 formTransaction.addEventListener("submit", async ev => {
     ev.preventDefault();
 
     const transactionData = {
         name: document.querySelector("#name-transaction").value,
-        value: document.querySelector("#value-transaction").value
+        value: parseFloat(document.querySelector("#value-transaction").value)
     };
 
     if (!transactionData.name || !transactionData.value) {
@@ -80,7 +99,7 @@ formTransaction.addEventListener("submit", async ev => {
     if (typeTransaction.innerText === "Editar Transação") {
         const transactionData = {
             name: document.querySelector("#name-transaction").value,
-            value: document.querySelector("#value-transaction").value
+            value: parseFloat(document.querySelector("#value-transaction").value)
         };
 
         const response = await fetch(`${url}/${id}`, {
@@ -93,18 +112,27 @@ formTransaction.addEventListener("submit", async ev => {
 
         const editedTransaction = await response.json();
 
-        renderTransaction(editedTransaction);
+        if (!editedTransaction) {
+            return alert("Não foi possível editar a transação!")
+        };
 
+        document.querySelector(`#name-transaction-${id}`).innerText = editedTransaction.name;
+        document.querySelector(`#value-transaction-${id}`).innerText = editedTransaction.value.toFixed(2);
+
+        //const { value } = await findById(id).then(res => res.json());
+
+        balanceEdit -= editedTransaction.value
+
+        setValue(balance - balanceEdit);
+        
         typeTransaction.innerText = "Adicionar Transação";
         btnAction.innerText = "Salvar";
 
-        return formTransaction.reset();
+        formTransaction.reset();
+
+        return alert("Editado com sucesso!");
     };
 
-    postTransaction();
-});
-
-const postTransaction = async () => {
     const response = await fetch(url, {
         method: "POST",
         headers: {
@@ -118,25 +146,36 @@ const postTransaction = async () => {
     renderTransaction(savedTransaction);
 
     formTransaction.reset();
-};
+});
 
-const editTransaction = async (btn) => {
+const editTransaction = async (item) => {
     typeTransaction.innerText = "Editar Transação";
     btnAction.innerText = "Salvar Edição";
 
-    const transactionId = btn.id.split("-").at(-1);
+    const transactionId = item.id.split("-").at(-1);
 
-    const inputNameToEdit = btn.parentElement.children[`name-transaction-${transactionId}`].innerText;
-    const inputValueToEdit = btn.parentElement.children[`value-transaction-${transactionId}`].innerText;
+    const inputNameToEdit = item.parentElement.children[`name-transaction-${transactionId}`].innerText;
+    const inputValueToEdit = item.parentElement.children[`value-transaction-${transactionId}`].innerText;
 
     document.querySelector("#name-transaction").value = inputNameToEdit;
     document.querySelector("#value-transaction").value = inputValueToEdit;
 
     id = transactionId;
+    balanceEdit = inputValueToEdit;
 };
 
-const deleteTransaction = async (btn) => {
-    const idToDelete = btn.id.split("-").at(-1);
+const deleteTransaction = async (item) => {
+    if (!confirm("Tem certeza que deseja apagar?")) {
+        return;
+    };
+
+    const idToDelete = item.id.split("-").at(-1);
+
+    const { value } = await findById(idToDelete);
+
+    balance -= value;
+
+    setValue(balance);
 
     const response = await fetch(`${url}/${idToDelete}`, {
         method: "DELETE",
@@ -144,9 +183,11 @@ const deleteTransaction = async (btn) => {
 
     const deletedTransaction = await response.json();
 
+    console.log(deletedTransaction);
+
     if (!deletedTransaction) {
         return alert("Não foi possível remover a transação!")
     };
 
-    btn.parentElement.remove();
+    item.parentElement.remove();
 };

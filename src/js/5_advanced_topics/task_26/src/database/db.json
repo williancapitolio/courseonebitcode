@@ -1,19 +1,19 @@
 {
-    "transactions": [
-        {
-            "id": 1,
-            "name": "Transação 1",
-            "value": "100.00"
-        },
-        {
-            "id": 2,
-            "name": "Transação 2",
-            "value": "150.00"
-        },
-        {
-            "id": 3,
-            "name": "Transação 3",
-            "value": "220.00"
-        }
-    ]
+  "transactions": [
+    {
+      "name": "Transação 1",
+      "value": 1,
+      "id": 1
+    },
+    {
+      "id": 2,
+      "name": "Transação 2",
+      "value": 150
+    },
+    {
+      "name": "Transação 3",
+      "value": 200,
+      "id": 3
+    }
+  ]
 }
