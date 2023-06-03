@@ -6,18 +6,23 @@ const typeTransaction = document.querySelector("#type-transactions");
 
 const btnAction = document.querySelector("#btn-save-transaction");
 
+const btnCancel = document.querySelector("#btn-cancel");
+
 let id;
 
 let balance;
-let balanceEdit;
 
 const findById = async (id) => {
     const response = await fetch(`${url}/${id}`).then(res => res.json());
     return response;
 };
 
-const setValue = (balance) => {
-    balanceEdit = 0;
+const findAll = async () => {
+    const transactions = await fetch(url).then(res => res.json());
+    return transactions;
+};
+
+const setBalance = (balance) => {
     document.querySelector("#balance-span").innerText = balance.toFixed(2);
 };
 
@@ -64,13 +69,11 @@ const renderTransaction = (transactionData) => {
 };
 
 const fetchTransactions = async () => {
-    const response = await fetch(url);
-
-    const transactions = await response.json();
+    const transactions = await findAll();
 
     balance = transactions.reduce((total, { value }) => total + value, 0);
 
-    setValue(balance);
+    setBalance(balance);
 
     transactions.forEach(renderTransaction);
 };
@@ -119,16 +122,18 @@ formTransaction.addEventListener("submit", async ev => {
         document.querySelector(`#name-transaction-${id}`).innerText = editedTransaction.name;
         document.querySelector(`#value-transaction-${id}`).innerText = editedTransaction.value.toFixed(2);
 
-        //const { value } = await findById(id).then(res => res.json());
+        const transactions = await findAll();
 
-        balanceEdit -= editedTransaction.value
+        balance = transactions.reduce((total, { value }) => total + value, 0);
 
-        setValue(balance - balanceEdit);
-        
+        setBalance(balance);
+
         typeTransaction.innerText = "Adicionar Transação";
         btnAction.innerText = "Salvar";
 
         formTransaction.reset();
+
+        btnCancel.style.display = "none";
 
         return alert("Editado com sucesso!");
     };
@@ -144,6 +149,12 @@ formTransaction.addEventListener("submit", async ev => {
     const savedTransaction = await response.json();
 
     renderTransaction(savedTransaction);
+
+    const { value } = await findById(savedTransaction.id);
+
+    balance -= value;
+
+    setBalance(balance);
 
     formTransaction.reset();
 });
@@ -161,7 +172,8 @@ const editTransaction = async (item) => {
     document.querySelector("#value-transaction").value = inputValueToEdit;
 
     id = transactionId;
-    balanceEdit = inputValueToEdit;
+
+    btnCancel.style.display = "";
 };
 
 const deleteTransaction = async (item) => {
@@ -175,7 +187,7 @@ const deleteTransaction = async (item) => {
 
     balance -= value;
 
-    setValue(balance);
+    setBalance(balance);
 
     const response = await fetch(`${url}/${idToDelete}`, {
         method: "DELETE",
@@ -183,11 +195,19 @@ const deleteTransaction = async (item) => {
 
     const deletedTransaction = await response.json();
 
-    console.log(deletedTransaction);
-
     if (!deletedTransaction) {
         return alert("Não foi possível remover a transação!")
     };
 
     item.parentElement.remove();
 };
+
+btnCancel.addEventListener("click", () => {
+    typeTransaction.innerText = "Adicionar Transação";
+
+    btnAction.innerText = "Salvar";
+
+    formTransaction.reset();
+
+    btnCancel.style.display = "none";
+});
