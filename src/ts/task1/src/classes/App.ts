@@ -2,9 +2,7 @@ import Spaceship from "./entities/Spaceship.js";
 import Member from "./entities/Member.js";
 
 export default class App {
-  spaceships: Spaceship[] = [];
-
-  static spaceships: Spaceship[] = [];
+  private static readonly spaceships: Spaceship[] = [];
 
   static get listSpaceships(): Spaceship[] {
     return App.spaceships;
@@ -32,6 +30,11 @@ export default class App {
 
     const spacechip = App.findSpaceshipByName(name);
 
+    if (!spacechip) {
+      const err = "Erro: espaçonave não existe!";
+      return err;
+    }
+
     if (spacechip.crew.length >= spacechip.crewLimit) {
       const err =
         "Erro: Essa espaçonave já possui o número máximo de tripulantes!";
@@ -50,6 +53,11 @@ export default class App {
     }
 
     const spacechip = App.findSpaceshipByName(name);
+
+    if (!spacechip) {
+      const err = "Erro: espaçonave não existe!";
+      return err;
+    }
 
     if (spacechip.crew.length === 0) {
       const err = "Erro: Nenhum tripulante na espaçonave!";
