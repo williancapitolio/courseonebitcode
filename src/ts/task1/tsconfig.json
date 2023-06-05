@@ -2,6 +2,7 @@
   "compilerOptions": {
     "outDir": "dist",
     "watch": true,
+    "lib": ["ES6"],
     "target": "ES5"
   }
 }
