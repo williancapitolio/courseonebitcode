@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
-    "outDir": "dist",
-    "watch": true,
-    "lib": ["ES6"],
-    "target": "ES5"
+    "outFile": "./dist/index.js",
+    "target": "ES2016",
+    "lib": ["ES2016"],
+    "module": "AMD"
   }
 }

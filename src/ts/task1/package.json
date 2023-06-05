@@ -6,12 +6,14 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "tsc-watch": "tsc ./src/index.ts"
+    "tsc-watch": "tsc --project ./tsconfig.json --watch"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "tsconfig": "^7.0.0",
+    "tsconfig.json": "^1.0.11",
     "typescript": "^5.1.3"
   }
 }
