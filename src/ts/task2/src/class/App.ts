@@ -26,35 +26,7 @@ export default class App {
     coordinates: [number, number, number, number],
     situation: "Habitado" | "Habitável" | "Inabitável" | "Inexplorado"
   ) {
-    if (!name) {
-      return alert(
-        `Erro: Não foi possível concluir, pois o campo "Nome" estava vazio!`
-      );
-    }
-
-    if (!coordinates) {
-      return alert(
-        `Erro: Não foi possível concluir, pois o campo "Coordenadas" estava vazio!`
-      );
-    }
-
-    if (!situation) {
-      return alert(
-        `Erro: Não foi possível concluir, pois o campo "Situação" estava vazio!`
-      );
-    }
-
-    const planet = App.findPlanetByName(name);
-
-    if (planet.name === name) {
-      return alert(
-        `Erro: Não foi possível concluir, pois já existe um Planeta com o nome ${name}!`
-      );
-    }
-
     App.planets.push(new Planet(name, coordinates, situation));
-
-    return alert(`Sucesso: Planeta ${name} foi criado!`);
   }
 
   static updateSituation(
