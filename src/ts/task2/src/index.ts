@@ -1,4 +1,4 @@
-import App from "./class/App.js";
+import App from "./class/App";
 
 let op: number;
 

@@ -1,4 +1,4 @@
-import Planet from "./entities/Planet.js";
+import Planet from "./entities/Planet";
 
 export default class App {
   private static readonly planets: Planet[] = [];
