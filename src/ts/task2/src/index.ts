@@ -11,6 +11,8 @@ const op6 = "\n6. Finalizar";
 
 do {
   op = Number(prompt(`Escolha uma opção:${op1}${op2}${op3}${op4}${op5}${op6}`));
+  let situationOp: number;
+  let situation: "Habitado" | "Habitável" | "Inabitável" | "Inexplorado";
 
   switch (op) {
     case 1:
@@ -49,15 +51,11 @@ do {
         break;
       }
 
-      let situationOp: number;
-
       situationOp = Number(
         prompt(
           "Digite o número da situação do Planeta:\n1. Habitado\n2. Habitável\n3. Inabitável\n4. Inexplorado"
         )
       );
-
-      let situation: "Habitado" | "Habitável" | "Inabitável" | "Inexplorado";
 
       if (situationOp === 1) situation = "Habitado";
       else if (situationOp === 2) situation = "Habitável";
@@ -74,6 +72,44 @@ do {
       break;
 
     case 2:
+      const plaUpdate = prompt("Digite o nome do Planeta para situação ser mudada:");
+      if (!plaUpdate) {
+        if (!name) {
+          alert("Erro: Nome do Planeta não informado!");
+          break;
+        }
+      }
+
+      const planet = App.findPlanetByName(plaUpdate);
+
+      if(!planet) {
+        alert(`Erro: Nenhum Planeta com o nome ${plaUpdate}!`);
+        break;
+      }
+
+      situationOp = Number(
+        prompt(
+          "Digite o número da situação do Planeta:\n1. Habitado\n2. Habitável\n3. Inabitável\n4. Inexplorado"
+        )
+      );
+
+      if (situationOp === 1) situation = "Habitado";
+      else if (situationOp === 2) situation = "Habitável";
+      else if (situationOp === 3) situation = "Inabitável";
+      else if (situationOp === 4) situation = "Inexplorado";
+      else {
+        alert("Erro: Opção escolhida não registrada!");
+        break;
+      }
+
+      if(planet.situation === situation) {
+        alert(`Erro: O Planeta ${plaUpdate} já possui a situação ${situation}!`);
+        break;
+      }
+
+      App.updateSituation(plaUpdate, situation);
+
+      alert(`Sucesso: Situação do planeta ${plaUpdate} foi atualizada para ${situation}!`)
       break;
 
     case 3:

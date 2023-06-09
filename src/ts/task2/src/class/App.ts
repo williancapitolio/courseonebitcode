@@ -35,27 +35,7 @@ export default class App {
   ) {
     const planet = App.findPlanetByName(planetName);
 
-    if (!planet) {
-      return alert("Erro: Nenhum Planeta com o nome informado!");
-    }
-
-    if (!option) {
-      return alert(
-        `Erro: Não foi possível concluir, pois o campo "Opção" estava vazio!`
-      );
-    }
-
-    if (planet.situation === option) {
-      return alert(
-        `Erro: O Planeta ${planet.name} já possui a situação ${planet.situation}!`
-      );
-    }
-
     planet.situation = option;
-
-    return alert(
-      `A situação do Planeta ${planet.name} foi atualizada para: ${planet.situation}!`
-    );
   }
 
   static addSatellite(planetName: string, satellite: string) {
@@ -81,7 +61,9 @@ export default class App {
 
     planet.satellites.push(satellite);
 
-    return alert(`Sucesso: O Satélite ${satellite} foi adicionado ao Planeta ${planetName}!`);
+    return alert(
+      `Sucesso: O Satélite ${satellite} foi adicionado ao Planeta ${planetName}!`
+    );
   }
 
   static removeSatellite(planetName: string, satellite: string) {
@@ -109,6 +91,8 @@ export default class App {
 
     planet.satellites.splice(indexToRemove, 1);
 
-    return alert(`Sucesso: O Satélite ${satellite} foi removido do Planeta ${planetName}!`);
+    return alert(
+      `Sucesso: O Satélite ${satellite} foi removido do Planeta ${planetName}!`
+    );
   }
 }
