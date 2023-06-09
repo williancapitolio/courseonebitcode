@@ -72,7 +72,9 @@ do {
       break;
 
     case 2:
-      const plaUpdate = prompt("Digite o nome do Planeta para situação ser mudada:");
+      const plaUpdate = prompt(
+        "Digite o nome do Planeta para situação ser mudada:"
+      );
       if (!plaUpdate) {
         if (!name) {
           alert("Erro: Nome do Planeta não informado!");
@@ -82,7 +84,7 @@ do {
 
       const planet = App.findPlanetByName(plaUpdate);
 
-      if(!planet) {
+      if (!planet) {
         alert(`Erro: Nenhum Planeta com o nome ${plaUpdate}!`);
         break;
       }
@@ -102,20 +104,98 @@ do {
         break;
       }
 
-      if(planet.situation === situation) {
-        alert(`Erro: O Planeta ${plaUpdate} já possui a situação ${situation}!`);
+      if (planet.situation === situation) {
+        alert(
+          `Erro: O Planeta ${plaUpdate} já possui a situação ${situation}!`
+        );
         break;
       }
 
       App.updateSituation(plaUpdate, situation);
 
-      alert(`Sucesso: Situação do planeta ${plaUpdate} foi atualizada para ${situation}!`)
+      alert(
+        `Sucesso: Situação do planeta ${plaUpdate} foi atualizada para ${situation}!`
+      );
       break;
 
     case 3:
+      const planetName = prompt("Digite o nome do Planeta:");
+      if (!planetName) {
+        alert("Erro: Nenhum nome digitado!");
+        break;
+      }
+
+      const planetToAddSatellite = App.findPlanetByName(planetName);
+      if (!planetToAddSatellite) {
+        alert(`Erro: Nenhum Planeta com o nome ${planetToAddSatellite}!`);
+        break;
+      }
+
+      const satellite = prompt("Digite o nome do Satélite:");
+      if (!satellite) {
+        alert("Erro: Nenhum satélite digitado!");
+        break;
+      }
+
+      if (planetToAddSatellite.satellites.find((sat) => sat === satellite)) {
+        alert(
+          `Erro: no Planeta ${planetName} já existe um Satélite com o nome ${satellite}!`
+        );
+        break;
+      }
+
+      App.addSatellite(planetName, satellite);
+
+      alert(
+        `Sucesso: Adicionado no Planeta ${planetName} o Satélite ${satellite}!`
+      );
       break;
 
     case 4:
+      const namePlanet = prompt("Digite o nome do planeta");
+      if (!namePlanet) {
+        alert("Erro: Nenhum nome informado!");
+        break;
+      }
+
+      const planetToRemoveSatellite = App.findPlanetByName(namePlanet);
+      if (!planetToRemoveSatellite) {
+        alert(`Erro: Nenhum Planeta com o nome ${namePlanet}!`);
+        break;
+      }
+
+      if (planetToRemoveSatellite.satellites.length < 0) {
+        alert(`Erro: No Planeta ${namePlanet} não existe nenhum Satélite!`);
+        break;
+      }
+
+      const listSatellites = planetToRemoveSatellite.satellites.reduce(
+        (acc, sat, i) => acc + (i + 1 + ". " + sat + "\n"),
+        ""
+      );
+
+      let idx = Number(
+        prompt(
+          `Digite o número do Satélite que deseja remover: \n${listSatellites}`
+        )
+      );
+      if (!idx) {
+        alert("Erro: Opção escolhida não registrada!");
+        break;
+      }
+      idx -= 1;
+
+      const conf = confirm(
+        `Deseja realmente remover o Satélite ${planetToRemoveSatellite.satellites[idx]} do Planeta ${namePlanet}?`
+      );
+
+      if (!conf) {
+        alert("Satélite não removido!")
+        break;
+      }
+
+      App.removeSatellite(planetName, idx);
+      alert("Sucesso: Removido!")
       break;
 
     case 5:
