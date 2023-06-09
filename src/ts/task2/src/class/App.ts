@@ -30,9 +30,9 @@ export default class App {
   }
 
   static listPlanets() {
-    let list = `Planetas Registrados:\n\n`;
+    let list = `Planetas Cadastrados:\n\n`;
 
-    App.planets.forEach((planet, i
+    App.planets.length > 0 ? App.planets.forEach((planet, i
       ) => {
         list += `Planeta: ${i + 1
         }\nNome: ${planet.name
@@ -42,7 +42,7 @@ export default class App {
         }\nSatélites:\n${planet.satellites.length > 0 ? planet.satellites.reduce(
           (acc, sat, i) => acc + ("- Satélite " + (i + 1 )+ ". " + sat + "\n"),"") : "Nenhum Satélite Cadastrado\n"
         }\n`;
-    });
+    }) : list += "Nenhum Planeta Cadastrado!";
 
     alert(list);
   }
