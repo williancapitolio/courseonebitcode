@@ -194,11 +194,12 @@ do {
         break;
       }
 
-      App.removeSatellite(planetName, idx);
+      App.removeSatellite(namePlanet, idx);
       alert("Sucesso: Removido!")
       break;
 
     case 5:
+      App.listPlanets();
       break;
 
     case 6:

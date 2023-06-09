@@ -17,10 +17,7 @@ export default class App {
     App.planets.push(new Planet(name, coordinates, situation));
   }
 
-  static updateSituation(
-    planetName: string,
-    option: typeOption
-  ) {
+  static updateSituation(planetName: string, option: typeOption) {
     App.findPlanetByName(planetName).situation = option;
   }
 
@@ -30,5 +27,23 @@ export default class App {
 
   static removeSatellite(planetName: string, indexToRemove: number) {
     App.findPlanetByName(planetName).satellites.splice(indexToRemove, 1);
+  }
+
+  static listPlanets() {
+    let list = `Planetas Registrados:\n\n`;
+
+    App.planets.forEach((planet, i
+      ) => {
+        list += `Planeta: ${i + 1
+        }\nNome: ${planet.name
+        }\nCoordenadas:\n${planet.coordinates.reduce(
+          (acc, cord, i) => acc + ("- Coordenada " + (i + 1) + ". " + cord + "\n"), "")
+        }Situação: ${planet.situation
+        }\nSatélites:\n${planet.satellites.length > 0 ? planet.satellites.reduce(
+          (acc, sat, i) => acc + ("- Satélite " + (i + 1 )+ ". " + sat + "\n"),"") : "Nenhum Satélite Cadastrado\n"
+        }\n`;
+    });
+
+    alert(list);
   }
 }
