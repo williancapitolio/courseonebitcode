@@ -2,7 +2,7 @@
 
 ### Criando Interfaces
 
-Crie um arquivo TypeScript com as funções listadas abaixo. Atilize interfaces para tipar as respostas das requisições.
+Crie um arquivo TypeScript com as funções listadas abaixo. Utilize interfaces para tipar as respostas das requisições.
 
 1. Uma função que recebe um nome de um usuário do GitHub e realiza uma requisição GET para obter os dados dele através da API pública do GitHub.
 

@@ -16,30 +16,30 @@ export default class App {
   } */
 
   static async fetchUser(username: string) {
-    if (!username) {
-      return alert("Campo vazio!");
-    }
-
-    const response: User | void = await fetch(
+    const response: User = await fetch(
       `https://api.github.com/users/${username}`
-    ).then((res) => res.json());
+    ).then((res) => {
+      if (!res) {
+        return new Error("Falha na requisição!");
+      }
 
-    if (!response) {
-      return Promise.reject(new Error("deu ruim"));
-    }
+      if (res.status === 404) {
+        return new Error("Não encontrado!");
+      }
 
-    return response;
+      return res.json();
+    });
+
+    return response ?? false;
   }
 
   static async getUser(username: string) {
     try {
-      const response: User = await App.fetchUser(username);
+      const response = await App.fetchUser(username);
 
       const { id, login, name, bio, public_repos, repos_url } = response;
 
       App.users.push(new User(id, login, name, bio, public_repos, repos_url));
-
-      alert("ok");
     } catch (error) {
       alert(error);
     }
