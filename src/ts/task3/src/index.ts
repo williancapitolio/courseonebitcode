@@ -1,45 +1,27 @@
-/* interface UserInterface {
-  id: number;
-  login: string;
-  name: string;
-  bio: string;
-  public_repos: number;
-  repos_url: string;
-}
+import App from "./class/App";
 
-interface RepositoriesInterface {
-  name: string;
-  description: string;
-  fork: boolean;
-  stargazers_count: number;
-}
+let op: string;
 
-const users: UserInterface[] = [];
+do {
+  op = prompt(
+    "- Menu -\nEnter the option to interact\n1. Search username\n2. List information\n3. Finalize"
+  );
 
-const fetchUser = async (username: string) => {
-  try {
-    const response = await fetch(
-      `https://api.github.com/users/${username}`
-    ).then((res) => {
-      if (!res) {
-        return new Error("Falha na requisição!");
-      }
+  switch (op) {
+    case "1":
+      const username = prompt("Enter usarname:");
+      await App.fetchUser(username);
+      break;
 
-      if (res.status === 404) {
-        return new Error("Não encontrado!");
-      }
+    case "2":
+      App.showUserInfo();
+      break;
 
-      return res.json();
-    });
+    case "3":
+      alert("Finishing...");
+      break;
 
-    //users.push(response);
-    console.log(response);
-
-    alert("ok");
-  } catch (error) {
-    alert(error);
+    default:
+      alert("Invalid option! Try again.");
   }
-};
-
-fetchUser("hygfhfghfg");
- */
+} while (op !== "3");

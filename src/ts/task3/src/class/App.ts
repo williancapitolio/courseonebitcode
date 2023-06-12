@@ -1,62 +1,86 @@
+import Repository from "./entities/Repository";
 import User from "./entities/User";
 
 export default class App {
   private static readonly users: User[] = [];
 
-  /* static promptValidUser(callback: (user: User) => void) {
-    const user = getUser(userName);
+  static async fetchUser(username: string) {
+    const response = await fetch(
+      `https://api.github.com/users/${username}`
+    ).then((res) => res.json());
 
-    App.users.push(new User(response.id, response.login, response.name, response.bio, response.public_repos, response.repos_url));
+    if (response.message) {
+      return alert(response.message);
+    }
+
+    if (App.findUserByUsername(username)) {
+      return alert("User already registered.");
+    }
+
+    const conf = confirm(
+      `User ${response.login} was found. Would you like to save the data?`
+    );
+
+    if (!conf) {
+      return alert("Data was not saved.");
+    }
+
+    const { id, login, name, bio, public_repos, repos_url } = response;
+
+    const repos: Repository[] = await App.fetchRepos(repos_url);
+
+    App.users.push(
+      new User(
+        id,
+        login,
+        name,
+        bio,
+        public_repos,
+        repos_url,
+        repos.map((repo) => {
+          const { name, description, fork, stargazers_count } = repo;
+          return new Repository(name, description, fork, stargazers_count);
+        })
+      )
+    );
+
+    alert("Saved successfully.");
+  }
+
+  static async fetchRepos(repos_url: string) {
+    const response = await fetch(repos_url).then((res) => res.json());
+    return response;
+  }
+
+  static findUserByUsername(username: string) {
+    return App.users.find((user) => user.login === username);
+  }
+
+  static async promptValidName(callback: (user: User) => void) {
+    const userName = prompt("Enter the username:");
+    const user = App.findUserByUsername(userName);
 
     if (user) {
-      callback(user)
+      callback(user);
     } else {
-      alert("Necessário preencher o campo!")
+      alert("User Not Found! Returning to the menu...");
     }
-  } */
+  }
 
-  static async fetchUser(username: string) {
-    const response: User = await fetch(
-      `https://api.github.com/users/${username}`
-    ).then((res) => {
-      if (!res) {
-        return new Error("Falha na requisição!");
-      }
+  static showUserInfo() {
+    App.promptValidName(async (user) => {
+      const { id, login, name, bio, public_repos, repositories } = user;
 
-      if (res.status === 404) {
-        return new Error("Não encontrado!");
-      }
+      let msg = `- Dados -\n\nID: ${id}\nUsername: ${login}\nName: ${name}\nBio: ${bio}\nPublic Repositories: ${public_repos}\nList of Repositories:\n\n`;
 
-      return res.json();
+      repositories.forEach((repo, index) => {
+        const { name, description, fork, stargazers_count } = repo;
+        msg += `Repository ${index + 1}\n- Nome: ${name}\n- Descrição: ${description}\n- Fork: ${
+          fork === true ? "Sim" : "Não"
+        }\n- Estrelas: ${stargazers_count}\n\n`;
+      });
+
+      alert(msg);
     });
-
-    return response ?? false;
   }
-
-  static async getUser(username: string) {
-    try {
-      const response = await App.fetchUser(username);
-
-      const { id, login, name, bio, public_repos, repos_url } = response;
-
-      App.users.push(new User(id, login, name, bio, public_repos, repos_url));
-    } catch (error) {
-      alert(error);
-    }
-  }
-
-  /* static validEmptyPrompt(): string {
-    let empty = true;
-
-    while (!empty) {
-      const user = prompt(
-        "Digite o nome do usuário que deseja encontrar no GitHub:"
-      );
-
-      if (user) {
-        empty = false;
-        return user;
-      }
-    }
-  } */
 }
