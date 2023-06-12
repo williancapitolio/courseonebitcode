@@ -75,12 +75,24 @@ export default class App {
 
       repositories.forEach((repo, index) => {
         const { name, description, fork, stargazers_count } = repo;
-        msg += `Repository ${index + 1}\n- Nome: ${name}\n- Descrição: ${description}\n- Fork: ${
+        msg += `Repository ${
+          index + 1
+        }\n- Nome: ${name}\n- Descrição: ${description}\n- Fork: ${
           fork === true ? "Sim" : "Não"
         }\n- Estrelas: ${stargazers_count}\n\n`;
       });
 
       alert(msg);
     });
+  }
+
+  static listAllUsers() {
+    let msg = `- Registered users -\n\n`;
+
+    App.users.length > 0 ? App.users.forEach(({ login, name }, index) => {
+      msg += `Usuário ${index + 1}: ${login}, nome: ${name}\n`;
+    }): msg += "No registered user";
+
+    alert(msg);
   }
 }

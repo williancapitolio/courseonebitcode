@@ -4,7 +4,7 @@ let op: string;
 
 do {
   op = prompt(
-    "- Menu -\nEnter the option to interact\n1. Search username\n2. List information\n3. Finalize"
+    "- Menu -\nEnter the option to interact\n1. Search username\n2. List user information\n3. List all users\n4. Calcute sum all repositories\n5. Top 5 users with higher number of public repositories\n6. Finalize"
   );
 
   switch (op) {
@@ -18,10 +18,20 @@ do {
       break;
 
     case "3":
+      App.listAllUsers();
+      break;
+
+    case "4":
+      break;
+
+    case "5":
+      break;
+
+    case "6":
       alert("Finishing...");
       break;
 
     default:
       alert("Invalid option! Try again.");
   }
-} while (op !== "3");
+} while (op !== "6");
