@@ -22,9 +22,11 @@ do {
       break;
 
     case "4":
+      App.sumAllRepositories();
       break;
 
     case "5":
+      App.topFiveUsersWithMostPublicRepositories();
       break;
 
     case "6":

@@ -89,10 +89,29 @@ export default class App {
   static listAllUsers() {
     let msg = `- Registered users -\n\n`;
 
-    App.users.length > 0 ? App.users.forEach(({ login, name }, index) => {
-      msg += `Usuário ${index + 1}: ${login}, nome: ${name}\n`;
-    }): msg += "No registered user";
+    App.users.length > 0
+      ? App.users.forEach(({ login, name }, index) => {
+          msg += `Usuário ${index + 1}: ${login}, nome: ${name}\n`;
+        })
+      : (msg += "No registered user");
 
     alert(msg);
+  }
+
+  static sumAllRepositories() {
+    let msg = `Sum of saved user repositories: `;
+    let sum = 0;
+
+    App.users.length > 0
+      ? App.users.forEach((user) => {
+          sum += user.public_repos;
+        })
+      : (msg += "No registered user");
+
+    alert(`${msg} ${sum}`);
+  }
+
+  static topFiveUsersWithMostPublicRepositories() {
+    
   }
 }
