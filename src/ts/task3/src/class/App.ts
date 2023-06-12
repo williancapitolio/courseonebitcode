@@ -112,6 +112,13 @@ export default class App {
   }
 
   static topFiveUsersWithMostPublicRepositories() {
-    
+    const topFive = App.users.map(user => user).sort((a, b) => b.public_repos - a.public_repos).slice(0, 5);
+    let msg = `Top Five:\n`;
+
+    topFive.forEach((top, index) => {
+      msg += `${index + 1}. ${top.name}, Repos: ${top.public_repos}\n`;
+    })
+
+    alert(msg);
   }
 }
