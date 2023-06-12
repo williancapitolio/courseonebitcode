@@ -99,25 +99,30 @@ export default class App {
   }
 
   static sumAllRepositories() {
-    let msg = `Sum of saved user repositories: `;
+    let msg = `Sum of saved user repositories:`;
     let sum = 0;
 
-    App.users.length > 0
-      ? App.users.forEach((user) => {
-          sum += user.public_repos;
-        })
-      : (msg += "No registered user");
+    App.users.forEach((user) => {
+      sum += user.public_repos;
+    });
 
-    alert(`${msg} ${sum}`);
+    App.users.length > 0
+      ? alert(`${msg} ${sum}`)
+      : alert(`${msg} No registered user`);
   }
 
   static topFiveUsersWithMostPublicRepositories() {
-    const topFive = App.users.map(user => user).sort((a, b) => b.public_repos - a.public_repos).slice(0, 5);
+    const topFive = App.users
+      .map((user) => user)
+      .sort((a, b) => b.public_repos - a.public_repos)
+      .slice(0, 5);
     let msg = `Top Five:\n`;
 
-    topFive.forEach((top, index) => {
-      msg += `${index + 1}. ${top.name}, Repos: ${top.public_repos}\n`;
-    })
+    App.users.length > 0
+      ? topFive.forEach((top, index) => {
+          msg += `${index + 1}. ${top.name}, Repos: ${top.public_repos}\n`;
+        })
+      : (msg += "No registered user");
 
     alert(msg);
   }
