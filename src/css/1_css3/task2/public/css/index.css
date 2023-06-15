@@ -6,8 +6,9 @@
 }
 
 .post-container {
-  width: 900px;
-  margin: auto;
+  width: 70%;
+  height: 100%;
+  margin: 0 auto;
 }
 
 .post {
