@@ -26,6 +26,11 @@
   width: 12.5rem;
 }
 
+.btns {
+  display: flex;
+  gap: 0 1rem;
+}
+
 .btn {
   color: #fff;
   background-color: #000;
@@ -41,8 +46,4 @@
   color: #ff003a;
   background-color: #000;
   border: 2px solid #ff003a;
-}
-
-.btn:nth-child(2) {
-  margin: 0 .5rem;
 }
