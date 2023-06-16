@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  background-color: #000;
+  width: 100vw;
+  height: 3.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 3%;
+}
+
+.svgs {
+  cursor: pointer;
+}
+
+.svg-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.svg-logo {
+  width: 12.5rem;
+  height: 12.5rem;
+}
+
+.btn {
+  color: #fff;
+  background-color: #000;
+  border: 2px solid #fff;
+  border-radius: 15%;
+  padding: .4rem .7rem;
+  font-size: 18px;
+  font-family: "Raleway-Regular", "Raleway";
+}
+
+.btn:hover {
+  cursor: pointer;
+  color: #ff003a;
+  background-color: #000;
+  border: 2px solid #ff003a;
+}
+
+.btn:nth-child(2) {
+  margin: 0 .5rem;
+}
