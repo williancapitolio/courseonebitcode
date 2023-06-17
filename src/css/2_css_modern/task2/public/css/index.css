@@ -47,6 +47,9 @@ section{
   border: 0.125rem solid #000;
   height: 12.5rem;
   flex-basis: 20rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .item-1,
