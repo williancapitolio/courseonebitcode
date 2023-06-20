@@ -6,11 +6,11 @@
 
 .main-container {
   background-color: #9a9a9a;
-  height: 100vh;
+  min-height: 100vh;
   display: grid;
   gap: 0.5rem 1rem;
   grid-template-columns: 1fr 2fr 1fr 1fr;
-  grid-auto-rows: minmax(12rem, auto);
+  grid-auto-rows: minmax(22rem, auto);
 }
 
 .item {
@@ -20,5 +20,5 @@
 }
 
 .paragraph {
-  font-size: 20px;
+  font-size: 30px;
 }
