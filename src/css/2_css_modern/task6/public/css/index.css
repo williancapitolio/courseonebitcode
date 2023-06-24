@@ -174,7 +174,6 @@ aside.extras .aside-item .aside-img img {
     height: 12rem;
     border-radius: 5%;
   }
-  
 }
 
 @media (max-width: 560px) {
@@ -182,4 +181,7 @@ aside.extras .aside-item .aside-img img {
     grid-template-columns: 1fr;
     margin-bottom: 1rem;
   }
+}
+
+@media (max-width: 460px) {
 }
