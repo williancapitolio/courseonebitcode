@@ -51,6 +51,11 @@ section.title {
   margin-bottom: 1.5rem;
 }
 
+section.title h1,
+section.title span {
+  text-align: center;
+}
+
 div.separator {
   display: flex;
   justify-content: center;
@@ -71,7 +76,7 @@ div.item {
   display: flex;
   flex-direction: column;
   width: 15rem;
-  height: 20rem;
+  height: 18rem;
   border: 0.2rem solid #fff;
   border-radius: 5%;
   transition: all 0.25s ease-in-out;
@@ -100,6 +105,11 @@ div.item .img-card {
 div.item h2 {
   font-size: 1.25rem;
   font-weight: 500;
+}
+
+div.item p {
+  line-height: 1.25rem;
+  text-align: justify;
 }
 
 aside.extras {
