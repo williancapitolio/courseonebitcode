@@ -71,7 +71,7 @@ div.item {
   display: flex;
   flex-direction: column;
   width: 15rem;
-  height: 28.125rem;
+  height: 20rem;
   border: 0.2rem solid #fff;
   border-radius: 5%;
   transition: all 0.25s ease-in-out;
@@ -163,6 +163,10 @@ aside.extras .aside-item .aside-img img {
   div.separator {
     display: flex;
     flex-direction: column;
+  }
+
+  section.cards {
+    margin-bottom: 1rem;
   }
 
   aside.extras .aside-item {
