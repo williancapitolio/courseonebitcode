@@ -191,6 +191,23 @@ aside.extras .aside-item .aside-img img {
 }
 
 @media (max-width: 560px) {
+  header.header,
+  footer.footer {
+    flex-direction: column;
+    padding-top: 1rem;
+  }
+
+  .logo-svg,
+  header.header .nav-items,
+  footer.footer .back-arrow-back-top {
+    padding: 0.25rem;
+  }
+
+  header.header .nav-items,
+  footer.footer .back-arrow-back-top {
+    margin-bottom: .75rem;
+  }
+
   section.cards {
     grid-template-columns: 1fr;
     margin-bottom: 1rem;
