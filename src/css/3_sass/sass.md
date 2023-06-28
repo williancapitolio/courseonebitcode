@@ -29,8 +29,14 @@ Folders and files structur on a project
                   └── common.scss
 ```
 
-CLI to run sass 
+CLI to run and watch sass 
 
 ```bash
   sass --watch sass/index.scss:css/index.css
+```
+
+CLI to run and minify sass 
+
+```bash
+  sass sass/index.scss:css/index.css --style compressed
 ```
