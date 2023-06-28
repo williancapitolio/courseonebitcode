@@ -8,7 +8,7 @@ Install sass globally
   npm i -g sass
 ```
 
-Folder and files structures on a project
+Folders and files structur on a project
 
 ```bash
   project
