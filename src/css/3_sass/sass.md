@@ -1,6 +1,6 @@
 # sass
 
-## Sass in a project.
+## Sass in a project
 
 Install sass globally
 
