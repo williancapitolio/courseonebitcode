@@ -37,5 +37,8 @@
   display: flex;
   justify-content: center;
 }
+.body-footer p {
+  text-align: center;
+}
 
 /*# sourceMappingURL=style.css.map */
