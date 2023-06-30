@@ -6,10 +6,124 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
   <link rel="stylesheet" href="./css/style.css">
+  <link rel="shortcut icon" href="./img/favicon/FAVICON-SPACEX.png" type="image/x-icon">
   <title>task1 - OneBitX</title>
 </head>
 
-<body>
+<body class="body">
+  <main class="body-main-content">
+    <form action="" class="body-main-content-form">
+
+      <div class="body-main-content-form-fullname mb-3">
+        <label for="" class="form-label">1 - Qual o seu nome?</label>
+
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1">Primeiro nome:</span>
+          <input type="text" class="form-control" placeholder="Digite aqui" aria-label="Username"
+            aria-describedby="basic-addon1">
+        </div>
+
+        <div class="input-group">
+          <span class="input-group-text" id="basic-addon1">Segundo nome:</span>
+          <input type="text" class="form-control" placeholder="Digite aqui" aria-label="Username"
+            aria-describedby="basic-addon1">
+        </div>
+      </div>
+
+      <div class="body-main-content-form-gender mb-3">
+        <label for="flexRadioDefault" class="form-label">2 - Qual o seu gênero?</label>
+
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+          <label class="form-check-label" for="flexRadioDefault1">
+            Homem
+          </label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+          <label class="form-check-label" for="flexRadioDefault2">
+            Mulher
+          </label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
+          <label class="form-check-label" for="flexRadioDefault3">
+            Prefiro não informar
+          </label>
+        </div>
+      </div>
+
+      <div class="body-main-content-form-trainings mb-3">
+        <label for="" class="form-label">3 - Marque os treinamentos que você fez:</label>
+
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" role="switch" id="op1">
+          <label class="form-check-label" for="op1">Treinamento básico de astronauta</label>
+        </div>
+
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" role="switch" id="op2">
+          <label class="form-check-label" for="op2">Treinamento físico básico</label>
+        </div>
+
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" role="switch" id="op3">
+          <label class="form-check-label" for="op3">Treinamento avançado de astronauta</label>
+        </div>
+
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" role="switch" id="op4">
+          <label class="form-check-label" for="op4">Treinamento físico intenso</label>
+        </div>
+      </div>
+
+      <div class="body-main-content-form-skills mb-3">
+        <label for="" class="form-label">4 - Quais você acha que são suas qualidades?</label>
+
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="Proativo" id="check1">
+          <label class="form-check-label" for="check1">
+            Proativo
+          </label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="Resistente" id="check2">
+          <label class="form-check-label" for="check2">
+            Resistente
+          </label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="Não vomito fácil" id="check3">
+          <label class="form-check-label" for="check3">
+            Não vomito fácil
+          </label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="Não temo marciano" id="check4">
+          <label class="form-check-label" for="check4">
+            Não temo marciano
+          </label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="Já vi todos os star wars" id="check5">
+          <label class="form-check-label" for="check5">
+            Já vi todos os star wars
+          </label>
+        </div>
+      </div>
+
+      <div class="body-main-content-form-btn">
+        <button type="button" class="btn btn-outline-danger">Enviar</button>
+      </div>
+      
+    </form>
+  </main>
 
   <script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
 </body>

@@ -4,3 +4,14 @@
   box-sizing: border-box;
   color: #fff;
 }
+
+.body {
+  background-image: url("../img/backgroundLp.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &-main-content {
+
+    &-form {}
+  }
+}

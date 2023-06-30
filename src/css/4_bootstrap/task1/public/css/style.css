@@ -5,4 +5,10 @@
   color: #fff;
 }
 
+.body {
+  background-image: url("../img/backgroundLp.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 /*# sourceMappingURL=style.css.map */
