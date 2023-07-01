@@ -36,15 +36,6 @@
         }
       }
 
-      &-fullname {
-      }
-
-      &-gender {
-      }
-
-      &-trainings {
-      }
-
       &-skills {
         display: flex;
         flex-wrap: wrap;
@@ -53,13 +44,52 @@
 
       &-btn {
         @include flexStart;
+        margin-top: 2rem;
       }
     }
   }
 
   &-footer {
+    margin-inline: 2.5rem;
+
     p {
       text-align: center;
+    }
+  }
+}
+
+@media (max-width: (math.div(500, 16) * 1rem)) {
+  .body {
+    &-main-content {
+      width: 100%;
+
+      &-form {
+        &-skills {
+          flex-direction: column;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: (math.div(380, 16) * 1rem)) {
+  .body {
+    &-main-content {
+      padding: 0.75rem;
+
+      &-form {
+        &-img {
+          margin-top: 1rem;
+        }
+
+        &-btn {
+          margin-bottom: 1rem;
+
+          button {
+            width: 80%;
+          }
+        }
+      }
     }
   }
 }
