@@ -10,23 +10,24 @@
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 .body-main-content {
   background-color: rgba(19, 18, 18, 0.9450980392);
   width: 28.125rem;
-  padding: 1rem 2rem;
+  padding: 1.5rem;
   margin: 2.5rem;
 }
 .body-main-content-form-img {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 .body-main-content-form-img img {
   width: 10.9375rem;
-  margin-block: 1rem;
+  margin-bottom: 1rem;
 }
 .body-main-content-form-skills {
   display: flex;
@@ -36,6 +37,7 @@
 .body-main-content-form-btn {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 .body-footer p {
   text-align: center;
