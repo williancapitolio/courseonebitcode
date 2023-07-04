@@ -17,6 +17,7 @@
   background-image: url("../img/backgroundLp.png");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: right;
   @include flexStart;
   flex-direction: column;
 

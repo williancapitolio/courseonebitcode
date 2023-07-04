@@ -9,6 +9,7 @@
   background-image: url("../img/backgroundLp.png");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: right;
   display: flex;
   justify-content: center;
   align-items: center;
