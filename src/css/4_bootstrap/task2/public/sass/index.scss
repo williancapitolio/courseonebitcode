@@ -1,3 +1,43 @@
-@import url("./pages/falcon.scss");
+@mixin flexStart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-@import url("./pages/human.scss");
+@mixin backgroundImage($url) {
+  background-image: $url;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #fff !important;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+header {
+  @include backgroundImage(url("../img/01.jpg"));
+}
+
+main section.index-section-one {
+  @include backgroundImage(url("../img/02.jpg"));
+}
+
+main section.index-section-two {
+  @include backgroundImage(url("../img/03.gif"));
+}
+
+main section.index-section-three {
+  @include backgroundImage(url("../img/04.jpg"));
+}
+
+/* @import url("./pages/falcon.scss");
+
+@import url("./pages/human.scss"); */

@@ -1,4 +1,45 @@
-@import url("./pages/falcon.scss");
-@import url("./pages/human.scss");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #fff !important;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+header {
+  background-image: url("../img/01.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+main section.index-section-one {
+  background-image: url("../img/02.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+main section.index-section-two {
+  background-image: url("../img/03.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+main section.index-section-three {
+  background-image: url("../img/04.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+/* @import url("./pages/falcon.scss");
+
+@import url("./pages/human.scss"); */
 
 /*# sourceMappingURL=style.css.map */
