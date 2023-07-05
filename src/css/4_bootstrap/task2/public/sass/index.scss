@@ -36,15 +36,17 @@
     @include pxToRem(gap, 8);
 
     &-container {
+      &-logo {
+        @include pxToRem(margin-right, 36);
+      }
+
+      &-toggler {
+        border: .2rem solid #fff;
+      }
 
       &-navbar {
-
         &-nav {
           @include flexCenter;
-
-          &-logo {
-            @include pxToRem(margin-right, 36)
-          }
 
           &-item {
             text-transform: uppercase;
