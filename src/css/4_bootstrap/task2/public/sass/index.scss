@@ -1,4 +1,6 @@
-@mixin flexStart {
+@use "sass:math";
+
+@mixin flexCenter {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,6 +14,10 @@
   height: 100vh;
 }
 
+@mixin pxToRem($tag, $value) {
+  #{$tag}: math.div($value, 16) * 1rem;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -22,19 +28,45 @@
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
-header {
+.header {
   @include backgroundImage(url("../img/01.jpg"));
-}
 
-main section.index-section-one {
+  &-nav {
+    @include pxToRem(padding-top, 24);
+    @include pxToRem(gap, 8);
+
+    &-container {
+
+      &-navbar {
+
+        &-nav {
+          @include flexCenter;
+
+          &-logo {
+            @include pxToRem(margin-right, 36)
+          }
+
+          &-item {
+            text-transform: uppercase;
+            @include pxToRem(font-size, 12);
+            font-weight: 700;
+          }
+        }
+      }
+    }
+  }
+}
+//header-nav-container-navbar-nav-logo
+
+.index-section-one {
   @include backgroundImage(url("../img/02.jpg"));
 }
 
-main section.index-section-two {
+.index-section-two {
   @include backgroundImage(url("../img/03.gif"));
 }
 
-main section.index-section-three {
+.index-section-three {
   @include backgroundImage(url("../img/04.jpg"));
 }
 
