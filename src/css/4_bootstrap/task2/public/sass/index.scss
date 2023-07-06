@@ -54,8 +54,8 @@
   &-btn-know-more {
     text-transform: uppercase;
     @include pxToRem(margin-top, 48);
-    padding: .9375rem 2.1875rem;
-    border: .125rem solid #fff
+    padding: 0.9375rem 2.1875rem;
+    border: 0.125rem solid #fff;
   }
 
   &-div {
@@ -71,3 +71,5 @@
 @import "./pages/falcon.scss";
 
 @import "./pages/human.scss";
+
+@import "./common/footer.scss";

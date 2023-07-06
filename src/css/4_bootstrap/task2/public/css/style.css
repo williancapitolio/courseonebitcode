@@ -94,4 +94,27 @@
   width: 5.625rem;
 }
 
+.footer {
+  background-color: #000;
+  font-weight: 500;
+  font-size: 0.75rem;
+}
+.footer-items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-block: 2.25rem;
+  gap: 1.5rem;
+}
+.footer-items-copy {
+  margin: 0;
+  color: #555252 !important;
+}
+.footer-items-link {
+  text-decoration: none;
+}
+.footer-items-link:hover {
+  color: #adb5bd !important;
+}
+
 /*# sourceMappingURL=style.css.map */
