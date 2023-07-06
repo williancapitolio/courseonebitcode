@@ -84,6 +84,9 @@
   padding: 0.9375rem 2.1875rem;
   border: 0.125rem solid #fff;
 }
+.page-btn-know-more:hover {
+  color: #000 !important;
+}
 .page-div {
   display: flex;
   justify-content: center;

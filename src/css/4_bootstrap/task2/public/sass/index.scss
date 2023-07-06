@@ -56,6 +56,10 @@
     @include pxToRem(margin-top, 48);
     padding: 0.9375rem 2.1875rem;
     border: 0.125rem solid #fff;
+
+    &:hover {
+      color: #000 !important;
+    }
   }
 
   &-div {
