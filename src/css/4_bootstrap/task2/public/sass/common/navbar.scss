@@ -1,0 +1,28 @@
+.header {
+  &-nav {
+    @include pxToRem(padding-top, 24);
+    @include pxToRem(gap, 8);
+
+    &-container {
+      &-logo {
+        @include pxToRem(margin-right, 36);
+      }
+
+      &-toggler {
+        border: 0.2rem solid #fff;
+      }
+
+      &-navbar {
+        &-nav {
+          @include flexCenter;
+
+          &-item {
+            text-transform: uppercase;
+            @include pxToRem(font-size, 12);
+            font-weight: 700;
+          }
+        }
+      }
+    }
+  }
+}

@@ -6,13 +6,6 @@
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
-.header {
-  background-image: url("../img/01.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
-}
 .header-nav {
   padding-top: 1.5rem;
   gap: 0.5rem;
@@ -32,6 +25,14 @@
   text-transform: uppercase;
   font-size: 0.75rem;
   font-weight: 700;
+}
+
+#header-index {
+  background-image: url("../img/01.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
 }
 
 .index-section-one {
@@ -57,9 +58,5 @@
   background-position: center;
   height: 100vh;
 }
-
-/* @import url("./pages/falcon.scss");
-
-@import url("./pages/human.scss"); */
 
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,17 @@
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin backgroundImage($url) {
+  background-image: $url;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+@mixin pxToRem($tag, $value) {
+  #{$tag}: math.div($value, 16) * 1rem;
+}

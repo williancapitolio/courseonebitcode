@@ -1,22 +1,6 @@
 @use "sass:math";
 
-@mixin flexCenter {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-@mixin backgroundImage($url) {
-  background-image: $url;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
-}
-
-@mixin pxToRem($tag, $value) {
-  #{$tag}: math.div($value, 16) * 1rem;
-}
+@import "./helpers/mixins.scss";
 
 * {
   margin: 0;
@@ -28,37 +12,11 @@
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
-.header {
+@import "./common/navbar.scss";
+
+#header-index {
   @include backgroundImage(url("../img/01.jpg"));
-
-  &-nav {
-    @include pxToRem(padding-top, 24);
-    @include pxToRem(gap, 8);
-
-    &-container {
-      &-logo {
-        @include pxToRem(margin-right, 36);
-      }
-
-      &-toggler {
-        border: .2rem solid #fff;
-      }
-
-      &-navbar {
-        &-nav {
-          @include flexCenter;
-
-          &-item {
-            text-transform: uppercase;
-            @include pxToRem(font-size, 12);
-            font-weight: 700;
-          }
-        }
-      }
-    }
-  }
 }
-//header-nav-container-navbar-nav-logo
 
 .index-section-one {
   @include backgroundImage(url("../img/02.jpg"));
@@ -72,6 +30,6 @@
   @include backgroundImage(url("../img/04.jpg"));
 }
 
-/* @import url("./pages/falcon.scss");
+@import "./pages/falcon.scss";
 
-@import url("./pages/human.scss"); */
+@import "./pages/human.scss";
