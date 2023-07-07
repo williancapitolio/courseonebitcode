@@ -44,6 +44,7 @@
 
     &-paragraph {
       @include pxToRem(width, 800);
+      padding-inline: 2rem;
 
       &-email {
         text-decoration: none;
