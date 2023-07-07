@@ -1,3 +1,33 @@
 #header-human {
   @include backgroundImage(url("../img/pages/human/01.jpg"));
 }
+
+.header {
+  &-human {
+    @include flexCenter;
+    flex-direction: column;
+    height: 87.5%;
+    text-transform: uppercase;
+    text-align: center;
+    
+    &-title {
+      @include pxToRem(font-size, 120);
+    }
+
+    &-subtitle {
+      @include pxToRem(font-size, 30);
+      @include pxToRem(margin-top, 20);
+      @include pxToRem(margin-bottom, 50);
+      font-weight: 300;
+    }
+
+    &-div {
+      @include flexCenter;
+      width: 100%;
+  
+      &-link-arrow-down {
+        @include pxToRem(width, 130);
+      }
+    }
+  }
+}

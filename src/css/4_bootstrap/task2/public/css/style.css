@@ -20,11 +20,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 0.5rem;
 }
 .header-nav-container-navbar-nav-item {
   text-transform: uppercase;
   font-size: 0.75rem;
   font-weight: 700;
+  backdrop-filter: blur(1rem);
 }
 
 #header-index {
@@ -111,6 +113,34 @@
   background-size: cover;
   background-position: center;
   height: 100vh;
+}
+
+.header-human {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 87.5%;
+  text-transform: uppercase;
+  text-align: center;
+}
+.header-human-title {
+  font-size: 7.5rem;
+}
+.header-human-subtitle {
+  font-size: 1.875rem;
+  margin-top: 1.25rem;
+  margin-bottom: 3.125rem;
+  font-weight: 300;
+}
+.header-human-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.header-human-div-link-arrow-down {
+  width: 8.125rem;
 }
 
 .footer {

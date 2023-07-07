@@ -15,11 +15,13 @@
       &-navbar {
         &-nav {
           @include flexCenter;
+          gap: .5rem;
 
           &-item {
             text-transform: uppercase;
             @include pxToRem(font-size, 12);
             font-weight: 700;
+            backdrop-filter: blur(1rem);
           }
         }
       }
