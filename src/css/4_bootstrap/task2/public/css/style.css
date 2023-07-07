@@ -97,6 +97,22 @@
   width: 5.625rem;
 }
 
+#header-falcon {
+  background-image: url("../img/pages/falcon/01.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+#header-human {
+  background-image: url("../img/pages/human/01.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
 .footer {
   background-color: #000;
   font-weight: 500;
