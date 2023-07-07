@@ -43,7 +43,7 @@
     @include pxToRem(font-size, 20);
 
     &-paragraph {
-      width: 75%;
+      @include pxToRem(width, 800);
 
       &-email {
         text-decoration: none;
