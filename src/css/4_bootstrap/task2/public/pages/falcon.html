@@ -4,16 +4,48 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
-  <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="./css/style.css">
-  <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="../../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon">
   <title>OneBitX - Falcon 9</title>
 </head>
 
 <body>
+  <header class="header" id="header-falcon">
+    <nav class="navbar navbar-expand-lg bg-body-invisible header-nav">
+      <div class="container header-nav-container">
+        <a class="navbar-brand header-nav-container-logo" href="../index.html">
+          <img src="../img/logo-obc-2021-darkbg.png" alt="Bootstrap" width="240" height="auto">
+        </a>
+        <button class="navbar-toggler navbar-brand header-nav-container-toggler" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse header-nav-container-navbar" id="navbarNav">
+          <ul class="navbar-nav header-nav-container-navbar-nav">
+            <li class="nav-item header-nav-container-navbar-nav-item">
+              <a class="nav-link" aria-current="page" href="./falcon.html">Falcon 9</a>
+            </li>
+            <li class="nav-item header-nav-container-navbar-nav-item">
+              <a class="nav-link" aria-current="page" href="./human.html">Human Space Flight</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
 
-  <script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+  <footer class="footer">
+    <div class="footer-items">
+      <p class="footer-items-copy">OniBitCode &copy; 2023</p>
+      <a href="https://www.instagram.com/" target="_blank" class="footer-items-link">Instagram</a>
+      <a href="https://www.youtube.com/" target="_blank" class="footer-items-link">YouTube</a>
+      <a href="https://twitter.com/" target="_blank" class="footer-items-link">Twitter</a>
+    </div>
+  </footer>
+
+  <script src="../../node_modules/bootstrap/dist/js/bootstrap.js"></script>
 </body>
 
 </html>
