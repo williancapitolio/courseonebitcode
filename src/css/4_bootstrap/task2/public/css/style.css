@@ -143,6 +143,25 @@
   width: 8.125rem;
 }
 
+.main-human-human-contact {
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 25vh;
+  font-size: 1.25rem;
+}
+.main-human-human-contact-paragraph {
+  width: 75%;
+}
+.main-human-human-contact-paragraph-email {
+  text-decoration: none;
+}
+.main-human-human-contact-paragraph-email:hover {
+  color: #0d6efd !important;
+}
 .main-human-human-section-one {
   background-image: url("../img/pages/human/02.jpg");
   background-repeat: no-repeat;
