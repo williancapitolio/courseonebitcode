@@ -32,23 +32,25 @@
   }
 }
 
-.human-section-one {
-  @include backgroundImage(url("../img/pages/human/02.jpg"));
-}
+.main-human {
+  &-human-section-one {
+    @include backgroundImage(url("../img/pages/human/02.jpg"));
+  }
 
-.human-section-two {
-  @include backgroundImage(url("../img/pages/human/03.jpg"));
-}
+  &-human-section-two {
+    @include backgroundImage(url("../img/pages/human/03.jpg"));
+  }
 
-.human-section-three {
-  @include backgroundImage(url("../img/pages/human/04.jpg"));
-}
+  &-human-section-three {
+    @include backgroundImage(url("../img/pages/human/04.jpg"));
+  }
 
-.human-section-for {
-  @include backgroundImage(url("../img/pages/human/05.jpg"));
-}
+  &-human-section-for {
+    @include backgroundImage(url("../img/pages/human/05.jpg"));
+  }
 
-.human-section-five {
-  background-color: #000;
-  height: 85vh;
+  &-human-section-five {
+    background-color: #000;
+    height: 85vh;
+  }
 }
