@@ -143,6 +143,43 @@
   width: 8.125rem;
 }
 
+.human-section-one {
+  background-image: url("../img/pages/human/02.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+.human-section-two {
+  background-image: url("../img/pages/human/03.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+.human-section-three {
+  background-image: url("../img/pages/human/04.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+.human-section-for {
+  background-image: url("../img/pages/human/05.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+.human-section-five {
+  background-color: #000;
+  height: 85vh;
+}
+
 .footer {
   background-color: #000;
   font-weight: 500;

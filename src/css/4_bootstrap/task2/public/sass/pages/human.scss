@@ -9,7 +9,7 @@
     height: 87.5%;
     text-transform: uppercase;
     text-align: center;
-    
+
     &-title {
       @include pxToRem(font-size, 120);
     }
@@ -24,10 +24,31 @@
     &-div {
       @include flexCenter;
       width: 100%;
-  
+
       &-link-arrow-down {
         @include pxToRem(width, 130);
       }
     }
   }
+}
+
+.human-section-one {
+  @include backgroundImage(url("../img/pages/human/02.jpg"));
+}
+
+.human-section-two {
+  @include backgroundImage(url("../img/pages/human/03.jpg"));
+}
+
+.human-section-three {
+  @include backgroundImage(url("../img/pages/human/04.jpg"));
+}
+
+.human-section-for {
+  @include backgroundImage(url("../img/pages/human/05.jpg"));
+}
+
+.human-section-five {
+  background-color: #000;
+  height: 85vh;
 }
