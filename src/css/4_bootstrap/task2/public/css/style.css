@@ -177,6 +177,18 @@
   justify-content: center;
   align-items: end;
 }
+.main-human-human-section-one-title {
+  font-size: 3.75rem;
+}
+.main-human-human-section-one-subtitle {
+  margin-bottom: 2.5rem;
+}
+.main-human-human-section-one-btn {
+  padding: 1rem 3rem;
+}
+.main-human-human-section-one-btn:hover {
+  color: #000 !important;
+}
 .main-human-human-section-two {
   background-image: url("../img/pages/human/03.jpg");
   background-repeat: no-repeat;
@@ -188,6 +200,18 @@
   padding-inline: 3rem;
   justify-content: center;
   align-items: start;
+}
+.main-human-human-section-two-title {
+  font-size: 3.75rem;
+}
+.main-human-human-section-two-subtitle {
+  margin-bottom: 2.5rem;
+}
+.main-human-human-section-two-btn {
+  padding: 1rem 3rem;
+}
+.main-human-human-section-two-btn:hover {
+  color: #000 !important;
 }
 .main-human-human-section-three {
   background-image: url("../img/pages/human/04.jpg");
@@ -201,6 +225,18 @@
   justify-content: center;
   align-items: end;
 }
+.main-human-human-section-three-title {
+  font-size: 3.75rem;
+}
+.main-human-human-section-three-subtitle {
+  margin-bottom: 2.5rem;
+}
+.main-human-human-section-three-btn {
+  padding: 1rem 3rem;
+}
+.main-human-human-section-three-btn:hover {
+  color: #000 !important;
+}
 .main-human-human-section-for {
   background-image: url("../img/pages/human/05.jpg");
   background-repeat: no-repeat;
@@ -213,9 +249,43 @@
   justify-content: center;
   align-items: start;
 }
+.main-human-human-section-for-title {
+  font-size: 3.75rem;
+}
+.main-human-human-section-for-subtitle {
+  margin-bottom: 2.5rem;
+}
+.main-human-human-section-for-btn {
+  padding: 1rem 3rem;
+}
+.main-human-human-section-for-btn:hover {
+  color: #000 !important;
+}
 .main-human-human-section-five {
   background-color: #000;
   height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.main-human-human-section-five-contact {
+  text-align: center;
+  padding-inline: 3rem;
+}
+.main-human-human-section-five-contact-link {
+  text-decoration: none;
+  color: #adb5bd !important;
+}
+.main-human-human-section-five-contact-link:hover {
+  color: #f0f0f0 !important;
+}
+.main-human-human-section-five-btns {
+  display: flex;
+  gap: 1rem;
+}
+.main-human-human-section-five-btns-btn {
+  padding: 1rem;
 }
 
 .footer {

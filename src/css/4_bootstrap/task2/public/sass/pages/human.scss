@@ -60,73 +60,54 @@
   &-human-section-one {
     @include backgroundImage(url("../img/pages/human/02.jpg"));
     @include humanSectionPosition(end);
-
-    &-mission {
-    }
-
-    &-title {
-    }
-
-    &-subtitle {
-    }
-
-    &-btn {
-    }
+    @include humanSectionItems;
   }
 
   &-human-section-two {
     @include backgroundImage(url("../img/pages/human/03.jpg"));
     @include humanSectionPosition(start);
-
-    &-mission {
-    }
-
-    &-title {
-    }
-
-    &-subtitle {
-    }
-
-    &-btn {
-    }
+    @include humanSectionItems;
   }
 
   &-human-section-three {
     @include backgroundImage(url("../img/pages/human/04.jpg"));
     @include humanSectionPosition(end);
-
-    &-mission {
-    }
-
-    &-title {
-    }
-
-    &-subtitle {
-    }
-
-    &-btn {
-    }
+    @include humanSectionItems;
   }
 
   &-human-section-for {
     @include backgroundImage(url("../img/pages/human/05.jpg"));
     @include humanSectionPosition(start);
-
-    &-mission {
-    }
-
-    &-title {
-    }
-
-    &-subtitle {
-    }
-
-    &-btn {
-    }
+    @include humanSectionItems;
   }
 
   &-human-section-five {
     background-color: #000;
     height: 85vh;
+    @include flexCenter;
+    flex-direction: column;
+
+    &-contact {
+      text-align: center;
+      padding-inline: 3rem;
+
+      &-link {
+        text-decoration: none;
+        color: #adb5bd !important;
+
+        &:hover {
+          color: #f0f0f0 !important;
+        }
+      }
+    }
+
+    &-btns {
+      display: flex;
+      gap: 1rem;
+
+      &-btn {
+        padding: 1rem;
+      }
+    }
   }
 }
