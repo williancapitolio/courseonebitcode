@@ -171,6 +171,11 @@
   background-size: cover;
   background-position: center;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-inline: 3rem;
+  justify-content: center;
+  align-items: end;
 }
 .main-human-human-section-two {
   background-image: url("../img/pages/human/03.jpg");

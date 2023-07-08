@@ -33,6 +33,7 @@
 }
 
 .main-human {
+
   &-human-contact {
     background-color: #000;
     @include flexCenter;
@@ -59,6 +60,7 @@
 
   &-human-section-one {
     @include backgroundImage(url("../img/pages/human/02.jpg"));
+    @include humanSectionPosition(end);
   }
 
   &-human-section-two {

@@ -15,3 +15,11 @@
 @mixin pxToRem($tag, $value) {
   #{$tag}: math.div($value, 16) * 1rem;
 }
+
+@mixin humanSectionPosition($position) {
+  display: flex;
+  flex-direction: column;
+  padding-inline: 3rem;
+  justify-content: center;
+  align-items: $position;
+}
