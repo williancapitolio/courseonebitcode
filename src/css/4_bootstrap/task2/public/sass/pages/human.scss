@@ -33,7 +33,6 @@
 }
 
 .main-human {
-
   &-human-contact {
     background-color: #000;
     @include flexCenter;
@@ -61,18 +60,69 @@
   &-human-section-one {
     @include backgroundImage(url("../img/pages/human/02.jpg"));
     @include humanSectionPosition(end);
+
+    &-mission {
+    }
+
+    &-title {
+    }
+
+    &-subtitle {
+    }
+
+    &-btn {
+    }
   }
 
   &-human-section-two {
     @include backgroundImage(url("../img/pages/human/03.jpg"));
+    @include humanSectionPosition(start);
+
+    &-mission {
+    }
+
+    &-title {
+    }
+
+    &-subtitle {
+    }
+
+    &-btn {
+    }
   }
 
   &-human-section-three {
     @include backgroundImage(url("../img/pages/human/04.jpg"));
+    @include humanSectionPosition(end);
+
+    &-mission {
+    }
+
+    &-title {
+    }
+
+    &-subtitle {
+    }
+
+    &-btn {
+    }
   }
 
   &-human-section-for {
     @include backgroundImage(url("../img/pages/human/05.jpg"));
+    @include humanSectionPosition(start);
+
+    &-mission {
+    }
+
+    &-title {
+    }
+
+    &-subtitle {
+    }
+
+    &-btn {
+    }
   }
 
   &-human-section-five {

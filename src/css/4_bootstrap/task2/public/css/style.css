@@ -183,6 +183,11 @@
   background-size: cover;
   background-position: center;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-inline: 3rem;
+  justify-content: center;
+  align-items: start;
 }
 .main-human-human-section-three {
   background-image: url("../img/pages/human/04.jpg");
@@ -190,6 +195,11 @@
   background-size: cover;
   background-position: center;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-inline: 3rem;
+  justify-content: center;
+  align-items: end;
 }
 .main-human-human-section-for {
   background-image: url("../img/pages/human/05.jpg");
@@ -197,6 +207,11 @@
   background-size: cover;
   background-position: center;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-inline: 3rem;
+  justify-content: center;
+  align-items: start;
 }
 .main-human-human-section-five {
   background-color: #000;
