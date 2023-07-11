@@ -107,7 +107,48 @@
   height: 100vh;
 }
 
-.main-falcon-falcon-section-five {
+.main-falcon {
+  /* &-falcon-section-four {
+    @include backgroundImage(url("../img/pages/falcon/08.jpg"));
+  } */
+}
+.main-falcon-falcon-section-one {
+  height: 40vh;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+}
+.main-falcon-falcon-section-one-data {
+  padding-inline: 6rem;
+}
+.main-falcon-falcon-section-one-data-numbers {
+  font-size: 5.625rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+.main-falcon-falcon-section-one-data-subtitle {
+  font-size: 1.25rem;
+  margin: 0;
+}
+.main-falcon-falcon-section-two {
+  background-image: url("../img/pages/falcon/02.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  font-size: 1.375rem;
+}
+.main-falcon-falcon-section-two-text {
+  width: 65%;
+  padding-inline: 6rem;
+  line-height: 3.125rem;
+  text-align: justify;
+}
+.main-falcon-falcon-section-six {
   background-color: #000;
   height: 85vh;
   display: flex;
@@ -115,25 +156,25 @@
   align-items: center;
   flex-direction: column;
 }
-.main-falcon-falcon-section-five-contact {
+.main-falcon-falcon-section-six-contact {
   text-align: center;
   padding-inline: 3rem;
 }
-.main-falcon-falcon-section-five-contact-link {
+.main-falcon-falcon-section-six-contact-link {
   text-decoration: none;
   color: #adb5bd !important;
 }
-.main-falcon-falcon-section-five-contact-link:hover {
+.main-falcon-falcon-section-six-contact-link:hover {
   color: #f0f0f0 !important;
 }
-.main-falcon-falcon-section-five-btns {
+.main-falcon-falcon-section-six-btns {
   display: flex;
   gap: 1rem;
 }
-.main-falcon-falcon-section-five-btns-btn {
+.main-falcon-falcon-section-six-btns-btn {
   padding: 1rem;
 }
-.main-falcon-falcon-section-five-btns-btn:hover {
+.main-falcon-falcon-section-six-btns-btn:hover {
   color: #000 !important;
 }
 
