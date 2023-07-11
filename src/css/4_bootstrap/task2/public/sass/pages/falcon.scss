@@ -2,6 +2,21 @@
   @include backgroundImage(url("../img/pages/falcon/01.jpg"));
 }
 
+.header-section-falcon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80%;
+  &-title {
+    font-size: 5.625rem;
+  }
+
+  &-subtitle {
+    font-size: 1.25rem;
+  }
+}
+
 .main-falcon {
   &-falcon-section-one {
     height: 40vh;
@@ -39,6 +54,9 @@
       line-height: 3.125rem;
       text-align: justify;
     }
+  }
+
+  &-falcon-section-three {
   }
 
   /* &-falcon-section-four {

@@ -107,6 +107,20 @@
   height: 100vh;
 }
 
+.header-section-falcon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80%;
+}
+.header-section-falcon-title {
+  font-size: 5.625rem;
+}
+.header-section-falcon-subtitle {
+  font-size: 1.25rem;
+}
+
 .main-falcon {
   /* &-falcon-section-four {
     @include backgroundImage(url("../img/pages/falcon/08.jpg"));
