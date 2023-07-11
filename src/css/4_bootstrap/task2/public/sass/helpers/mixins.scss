@@ -41,3 +41,37 @@
     }
   }
 }
+
+@mixin sectionContact {
+  background-color: #000;
+  height: 85vh;
+  @include flexCenter;
+  flex-direction: column;
+
+  &-contact {
+    text-align: center;
+    padding-inline: 3rem;
+
+    &-link {
+      text-decoration: none;
+      color: #adb5bd !important;
+
+      &:hover {
+        color: #f0f0f0 !important;
+      }
+    }
+  }
+
+  &-btns {
+    display: flex;
+    gap: 1rem;
+
+    &-btn {
+      padding: 1rem;
+
+      &:hover {
+        color: #000 !important;
+      }
+    }
+  }
+}

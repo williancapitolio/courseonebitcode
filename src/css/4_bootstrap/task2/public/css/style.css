@@ -107,6 +107,36 @@
   height: 100vh;
 }
 
+.main-falcon-falcon-section-five {
+  background-color: #000;
+  height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.main-falcon-falcon-section-five-contact {
+  text-align: center;
+  padding-inline: 3rem;
+}
+.main-falcon-falcon-section-five-contact-link {
+  text-decoration: none;
+  color: #adb5bd !important;
+}
+.main-falcon-falcon-section-five-contact-link:hover {
+  color: #f0f0f0 !important;
+}
+.main-falcon-falcon-section-five-btns {
+  display: flex;
+  gap: 1rem;
+}
+.main-falcon-falcon-section-five-btns-btn {
+  padding: 1rem;
+}
+.main-falcon-falcon-section-five-btns-btn:hover {
+  color: #000 !important;
+}
+
 #header-human {
   background-image: url("../img/pages/human/01.jpg");
   background-repeat: no-repeat;
@@ -286,6 +316,9 @@
 }
 .main-human-human-section-five-btns-btn {
   padding: 1rem;
+}
+.main-human-human-section-five-btns-btn:hover {
+  color: #000 !important;
 }
 
 .footer {
