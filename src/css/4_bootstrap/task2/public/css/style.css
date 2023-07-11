@@ -199,6 +199,66 @@
   background-position: center;
   height: 100vh;
 }
+.main-falcon-falcon-section-five-carousel-items-one {
+  background-image: url("../img/pages/falcon/09.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+.main-falcon-falcon-section-five-carousel-items-one div p {
+  backdrop-filter: blur(10rem) !important;
+}
+.main-falcon-falcon-section-five-carousel-items-two {
+  background-image: url("../img/pages/falcon/10.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+.main-falcon-falcon-section-five-carousel-items-two div p {
+  backdrop-filter: blur(10rem) !important;
+}
+.main-falcon-falcon-section-five-carousel-items-three {
+  background-image: url("../img/pages/falcon/11.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+.main-falcon-falcon-section-five-carousel-items-three div p {
+  backdrop-filter: blur(10rem) !important;
+}
+.main-falcon-falcon-section-five-carousel-items-four {
+  background-image: url("../img/pages/falcon/12.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+.main-falcon-falcon-section-five-carousel-items-four div p {
+  backdrop-filter: blur(10rem) !important;
+}
+.main-falcon-falcon-section-five-carousel-items-five {
+  background-image: url("../img/pages/falcon/13.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+.main-falcon-falcon-section-five-carousel-items-five div p {
+  backdrop-filter: blur(10rem) !important;
+}
+.main-falcon-falcon-section-five-carousel-items-six {
+  background-image: url("../img/pages/falcon/14.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+.main-falcon-falcon-section-five-carousel-items-six div p {
+  backdrop-filter: blur(10rem) !important;
+}
 .main-falcon-falcon-section-six {
   background-color: #000;
   height: 85vh;

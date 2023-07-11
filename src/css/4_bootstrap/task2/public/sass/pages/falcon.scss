@@ -86,6 +86,60 @@
     @include backgroundImage(url("../img/pages/falcon/08.jpg"));
   }
 
+  &-falcon-section-five {
+    &-carousel {
+      &-items {
+        &-one {
+          @include backgroundImage(url("../img/pages/falcon/09.jpg"));
+
+          div p {
+            backdrop-filter: blur(10rem) !important;
+          }
+        }
+
+        &-two {
+          @include backgroundImage(url("../img/pages/falcon/10.jpg"));
+
+          div p {
+            backdrop-filter: blur(10rem) !important;
+          }
+        }
+
+        &-three {
+          @include backgroundImage(url("../img/pages/falcon/11.jpg"));
+
+          div p {
+            backdrop-filter: blur(10rem) !important;
+          }
+        }
+
+        &-four {
+          @include backgroundImage(url("../img/pages/falcon/12.jpg"));
+
+          div p {
+            backdrop-filter: blur(10rem) !important;
+          }
+        }
+
+        &-five {
+          @include backgroundImage(url("../img/pages/falcon/13.jpg"));
+
+          div p {
+            backdrop-filter: blur(10rem) !important;
+          }
+        }
+
+        &-six {
+          @include backgroundImage(url("../img/pages/falcon/14.jpg"));
+
+          div p {
+            backdrop-filter: blur(10rem) !important;
+          }
+        }
+      }
+    }
+  }
+
   &-falcon-section-six {
     @include sectionContact;
   }
