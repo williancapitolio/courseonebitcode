@@ -57,11 +57,34 @@
   }
 
   &-falcon-section-three {
+    &-carousel {
+      &-items {
+        &-one {
+          @include backgroundImage(url("../img/pages/falcon/03.jpg"));
+        }
+
+        &-two {
+          @include backgroundImage(url("../img/pages/falcon/04.jpg"));
+        }
+
+        &-three {
+          @include backgroundImage(url("../img/pages/falcon/05.jpg"));
+        }
+
+        &-four {
+          @include backgroundImage(url("../img/pages/falcon/06.jpg"));
+        }
+
+        &-five {
+          @include backgroundImage(url("../img/pages/falcon/07.jpg"));
+        }
+      }
+    }
   }
 
-  /* &-falcon-section-four {
+  &-falcon-section-four {
     @include backgroundImage(url("../img/pages/falcon/08.jpg"));
-  } */
+  }
 
   &-falcon-section-six {
     @include sectionContact;
