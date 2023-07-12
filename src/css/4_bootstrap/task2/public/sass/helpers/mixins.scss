@@ -75,3 +75,11 @@
     }
   }
 }
+
+@mixin carouselWithSubtitle($url) {
+  @include backgroundImage($url);
+
+  div p {
+    backdrop-filter: blur(10rem) !important;
+  }
+}

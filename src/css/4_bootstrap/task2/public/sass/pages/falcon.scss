@@ -90,51 +90,27 @@
     &-carousel {
       &-items {
         &-one {
-          @include backgroundImage(url("../img/pages/falcon/09.jpg"));
-
-          div p {
-            backdrop-filter: blur(10rem) !important;
-          }
+          @include carouselWithSubtitle(url("../img/pages/falcon/09.jpg"));
         }
 
         &-two {
-          @include backgroundImage(url("../img/pages/falcon/10.jpg"));
-
-          div p {
-            backdrop-filter: blur(10rem) !important;
-          }
+          @include carouselWithSubtitle(url("../img/pages/falcon/10.jpg"));
         }
 
         &-three {
-          @include backgroundImage(url("../img/pages/falcon/11.jpg"));
-
-          div p {
-            backdrop-filter: blur(10rem) !important;
-          }
+          @include carouselWithSubtitle(url("../img/pages/falcon/11.jpg"));
         }
 
         &-four {
-          @include backgroundImage(url("../img/pages/falcon/12.jpg"));
-
-          div p {
-            backdrop-filter: blur(10rem) !important;
-          }
+          @include carouselWithSubtitle(url("../img/pages/falcon/12.jpg"));
         }
 
         &-five {
-          @include backgroundImage(url("../img/pages/falcon/13.jpg"));
-
-          div p {
-            backdrop-filter: blur(10rem) !important;
-          }
+          @include carouselWithSubtitle(url("../img/pages/falcon/13.jpg"));
         }
 
         &-six {
-          @include backgroundImage(url("../img/pages/falcon/14.jpg"));
-
-          div p {
-            backdrop-filter: blur(10rem) !important;
-          }
+          @include carouselWithSubtitle(url("../img/pages/falcon/14.jpg"));
         }
       }
     }
