@@ -61,6 +61,29 @@
       &-items {
         &-one {
           @include backgroundImage(url("../img/pages/falcon/03.jpg"));
+
+          &-content {
+            @include carouselContent;
+
+            &-falcon {
+            }
+
+            &-title {
+            }
+
+            &-table {
+              width: 100%;
+              
+              tr {
+                margin: 1rem;
+                border-bottom: 0.1rem solid #fff;
+
+                td {
+                  padding: .75rem
+                }
+              }
+            }
+          }
         }
 
         &-two {

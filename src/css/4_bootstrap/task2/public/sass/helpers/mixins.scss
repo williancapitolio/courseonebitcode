@@ -76,6 +76,13 @@
   }
 }
 
+@mixin carouselContent {
+  width: 65%;
+  padding-inline: 9rem 6rem;
+  padding-top: 8rem;
+  text-align: justify;
+}
+
 @mixin carouselWithSubtitle($url) {
   @include backgroundImage($url);
 
