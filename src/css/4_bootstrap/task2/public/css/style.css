@@ -187,12 +187,34 @@
   background-position: center;
   height: 100vh;
 }
+.main-falcon-falcon-section-three-carousel-items-two-content {
+  width: 65%;
+  padding-inline: 9rem 6rem;
+  padding-top: 8rem;
+  text-align: justify;
+}
 .main-falcon-falcon-section-three-carousel-items-three {
   background-image: url("../img/pages/falcon/05.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   height: 100vh;
+}
+.main-falcon-falcon-section-three-carousel-items-three-content {
+  width: 65%;
+  padding-inline: 9rem 6rem;
+  padding-top: 8rem;
+  text-align: justify;
+}
+.main-falcon-falcon-section-three-carousel-items-three-content-table {
+  width: 100%;
+}
+.main-falcon-falcon-section-three-carousel-items-three-content-table tr {
+  margin: 1rem;
+  border-bottom: 0.1rem solid #fff;
+}
+.main-falcon-falcon-section-three-carousel-items-three-content-table tr td {
+  padding: 0.75rem;
 }
 .main-falcon-falcon-section-three-carousel-items-four {
   background-image: url("../img/pages/falcon/06.jpg");
@@ -201,12 +223,24 @@
   background-position: center;
   height: 100vh;
 }
+.main-falcon-falcon-section-three-carousel-items-four-content {
+  width: 65%;
+  padding-inline: 9rem 6rem;
+  padding-top: 8rem;
+  text-align: justify;
+}
 .main-falcon-falcon-section-three-carousel-items-five {
   background-image: url("../img/pages/falcon/07.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   height: 100vh;
+}
+.main-falcon-falcon-section-three-carousel-items-five-content {
+  width: 65%;
+  padding-inline: 9rem 6rem;
+  padding-top: 8rem;
+  text-align: justify;
 }
 .main-falcon-falcon-section-four {
   background-image: url("../img/pages/falcon/08.jpg");

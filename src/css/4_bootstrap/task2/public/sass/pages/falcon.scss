@@ -65,41 +65,42 @@
           &-content {
             @include carouselContent;
 
-            &-falcon {
-            }
-
-            &-title {
-            }
-
-            &-table {
-              width: 100%;
-              
-              tr {
-                margin: 1rem;
-                border-bottom: 0.1rem solid #fff;
-
-                td {
-                  padding: .75rem
-                }
-              }
-            }
+            @include carouselTable;
           }
         }
 
         &-two {
           @include backgroundImage(url("../img/pages/falcon/04.jpg"));
+
+          &-content {
+            @include carouselContent;
+          }
         }
 
         &-three {
           @include backgroundImage(url("../img/pages/falcon/05.jpg"));
+
+          &-content {
+            @include carouselContent;
+
+            @include carouselTable;
+          }
         }
 
         &-four {
           @include backgroundImage(url("../img/pages/falcon/06.jpg"));
+
+          &-content {
+            @include carouselContent;
+          }
         }
 
         &-five {
           @include backgroundImage(url("../img/pages/falcon/07.jpg"));
+
+          &-content {
+            @include carouselContent;
+          }
         }
       }
     }
