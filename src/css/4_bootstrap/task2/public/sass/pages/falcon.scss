@@ -110,6 +110,12 @@
 
   &-falcon-section-four {
     @include backgroundImage(url("../img/pages/falcon/08.jpg"));
+
+    &-content {
+      @include carouselContent;
+
+      @include carouselTable;
+    }
   }
 
   &-falcon-section-five {
