@@ -165,7 +165,7 @@
   height: 100vh;
 }
 .main-falcon-falcon-section-three-carousel-items-one-content {
-  width: 65%;
+  width: 60%;
   padding-inline: 9rem 6rem;
   padding-top: 8rem;
   text-align: justify;
@@ -188,7 +188,7 @@
   height: 100vh;
 }
 .main-falcon-falcon-section-three-carousel-items-two-content {
-  width: 65%;
+  width: 60%;
   padding-inline: 9rem 6rem;
   padding-top: 8rem;
   text-align: justify;
@@ -201,7 +201,7 @@
   height: 100vh;
 }
 .main-falcon-falcon-section-three-carousel-items-three-content {
-  width: 65%;
+  width: 60%;
   padding-inline: 9rem 6rem;
   padding-top: 8rem;
   text-align: justify;
@@ -224,7 +224,7 @@
   height: 100vh;
 }
 .main-falcon-falcon-section-three-carousel-items-four-content {
-  width: 65%;
+  width: 60%;
   padding-inline: 9rem 6rem;
   padding-top: 8rem;
   text-align: justify;
@@ -237,10 +237,20 @@
   height: 100vh;
 }
 .main-falcon-falcon-section-three-carousel-items-five-content {
-  width: 65%;
+  width: 60%;
   padding-inline: 9rem 6rem;
   padding-top: 8rem;
   text-align: justify;
+}
+.main-falcon-falcon-section-three-carousel-items-five-content-table {
+  width: 100%;
+}
+.main-falcon-falcon-section-three-carousel-items-five-content-table tr {
+  margin: 1rem;
+  border-bottom: 0.1rem solid #fff;
+}
+.main-falcon-falcon-section-three-carousel-items-five-content-table tr td {
+  padding: 0.75rem;
 }
 .main-falcon-falcon-section-four {
   background-image: url("../img/pages/falcon/08.jpg");
