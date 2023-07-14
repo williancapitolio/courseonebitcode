@@ -80,9 +80,27 @@
 
 @media (max-width: (math.div(768, 16) * 1rem)) {
   .page {
+    &-subtitle {
+      @include pxToRem(font-size, 16);
+    }
     &-title {
       @include pxToRem(font-size, 25);
       width: auto;
     }
   }
+
+  #index-page {
+    height: 100%;
+    justify-content: start;
+    margin-top: 4rem;
+  }
 }
+
+/*
+display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  align-items: start;
+  font-weight: 500; 
+ */
