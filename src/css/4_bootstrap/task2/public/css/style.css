@@ -133,6 +133,7 @@
   align-items: center;
   justify-content: center;
   height: 80%;
+  text-align: center;
 }
 .header-section-falcon-title {
   font-size: 5.625rem;
@@ -185,10 +186,22 @@
   height: 100vh;
 }
 .main-falcon-falcon-section-three-carousel-items-one-content {
-  width: 55%;
+  width: 65%;
   padding-inline: 9rem 6rem;
   padding-top: 8rem;
   text-align: justify;
+}
+@media (max-width: 60.625rem) {
+  .main-falcon-falcon-section-three-carousel-items-one-content {
+    width: 75%;
+    padding-inline: 7rem 4rem;
+  }
+}
+@media (max-width: 49.75rem) {
+  .main-falcon-falcon-section-three-carousel-items-one-content {
+    width: 100%;
+    padding-inline: 2rem;
+  }
 }
 .main-falcon-falcon-section-three-carousel-items-one-content-table {
   width: 100%;
@@ -200,6 +213,24 @@
 .main-falcon-falcon-section-three-carousel-items-one-content-table tr td {
   padding: 0.75rem;
 }
+@media (max-width: 60.625rem) {
+  .main-falcon-falcon-section-three-carousel-items-one-content-table tr {
+    margin: 0.5rem;
+  }
+}
+@media (max-width: 44.375rem) {
+  .main-falcon-falcon-section-three-carousel-items-one-content-table tr {
+    margin: 0.75rem;
+  }
+  .main-falcon-falcon-section-three-carousel-items-one-content-table tr td {
+    padding: 0.5rem;
+  }
+}
+@media (max-width: 25rem) {
+  .main-falcon-falcon-section-three-carousel-items-one-content-table {
+    font-size: 0.75rem;
+  }
+}
 .main-falcon-falcon-section-three-carousel-items-two {
   background-image: url("../img/pages/falcon/04.jpg");
   background-repeat: no-repeat;
@@ -208,10 +239,22 @@
   height: 100vh;
 }
 .main-falcon-falcon-section-three-carousel-items-two-content {
-  width: 55%;
+  width: 65%;
   padding-inline: 9rem 6rem;
   padding-top: 8rem;
   text-align: justify;
+}
+@media (max-width: 60.625rem) {
+  .main-falcon-falcon-section-three-carousel-items-two-content {
+    width: 75%;
+    padding-inline: 7rem 4rem;
+  }
+}
+@media (max-width: 49.75rem) {
+  .main-falcon-falcon-section-three-carousel-items-two-content {
+    width: 100%;
+    padding-inline: 2rem;
+  }
 }
 .main-falcon-falcon-section-three-carousel-items-three {
   background-image: url("../img/pages/falcon/05.jpg");
@@ -221,10 +264,22 @@
   height: 100vh;
 }
 .main-falcon-falcon-section-three-carousel-items-three-content {
-  width: 55%;
+  width: 65%;
   padding-inline: 9rem 6rem;
   padding-top: 8rem;
   text-align: justify;
+}
+@media (max-width: 60.625rem) {
+  .main-falcon-falcon-section-three-carousel-items-three-content {
+    width: 75%;
+    padding-inline: 7rem 4rem;
+  }
+}
+@media (max-width: 49.75rem) {
+  .main-falcon-falcon-section-three-carousel-items-three-content {
+    width: 100%;
+    padding-inline: 2rem;
+  }
 }
 .main-falcon-falcon-section-three-carousel-items-three-content-table {
   width: 100%;
@@ -236,6 +291,24 @@
 .main-falcon-falcon-section-three-carousel-items-three-content-table tr td {
   padding: 0.75rem;
 }
+@media (max-width: 60.625rem) {
+  .main-falcon-falcon-section-three-carousel-items-three-content-table tr {
+    margin: 0.5rem;
+  }
+}
+@media (max-width: 44.375rem) {
+  .main-falcon-falcon-section-three-carousel-items-three-content-table tr {
+    margin: 0.75rem;
+  }
+  .main-falcon-falcon-section-three-carousel-items-three-content-table tr td {
+    padding: 0.5rem;
+  }
+}
+@media (max-width: 25rem) {
+  .main-falcon-falcon-section-three-carousel-items-three-content-table {
+    font-size: 0.75rem;
+  }
+}
 .main-falcon-falcon-section-three-carousel-items-four {
   background-image: url("../img/pages/falcon/06.jpg");
   background-repeat: no-repeat;
@@ -244,10 +317,22 @@
   height: 100vh;
 }
 .main-falcon-falcon-section-three-carousel-items-four-content {
-  width: 55%;
+  width: 65%;
   padding-inline: 9rem 6rem;
   padding-top: 8rem;
   text-align: justify;
+}
+@media (max-width: 60.625rem) {
+  .main-falcon-falcon-section-three-carousel-items-four-content {
+    width: 75%;
+    padding-inline: 7rem 4rem;
+  }
+}
+@media (max-width: 49.75rem) {
+  .main-falcon-falcon-section-three-carousel-items-four-content {
+    width: 100%;
+    padding-inline: 2rem;
+  }
 }
 .main-falcon-falcon-section-three-carousel-items-five {
   background-image: url("../img/pages/falcon/07.jpg");
@@ -257,10 +342,22 @@
   height: 100vh;
 }
 .main-falcon-falcon-section-three-carousel-items-five-content {
-  width: 55%;
+  width: 65%;
   padding-inline: 9rem 6rem;
   padding-top: 8rem;
   text-align: justify;
+}
+@media (max-width: 60.625rem) {
+  .main-falcon-falcon-section-three-carousel-items-five-content {
+    width: 75%;
+    padding-inline: 7rem 4rem;
+  }
+}
+@media (max-width: 49.75rem) {
+  .main-falcon-falcon-section-three-carousel-items-five-content {
+    width: 100%;
+    padding-inline: 2rem;
+  }
 }
 .main-falcon-falcon-section-three-carousel-items-five-content-table {
   width: 100%;
@@ -272,6 +369,24 @@
 .main-falcon-falcon-section-three-carousel-items-five-content-table tr td {
   padding: 0.75rem;
 }
+@media (max-width: 60.625rem) {
+  .main-falcon-falcon-section-three-carousel-items-five-content-table tr {
+    margin: 0.5rem;
+  }
+}
+@media (max-width: 44.375rem) {
+  .main-falcon-falcon-section-three-carousel-items-five-content-table tr {
+    margin: 0.75rem;
+  }
+  .main-falcon-falcon-section-three-carousel-items-five-content-table tr td {
+    padding: 0.5rem;
+  }
+}
+@media (max-width: 25rem) {
+  .main-falcon-falcon-section-three-carousel-items-five-content-table {
+    font-size: 0.75rem;
+  }
+}
 .main-falcon-falcon-section-four {
   background-image: url("../img/pages/falcon/08.jpg");
   background-repeat: no-repeat;
@@ -280,10 +395,22 @@
   height: 100vh;
 }
 .main-falcon-falcon-section-four-content {
-  width: 55%;
+  width: 65%;
   padding-inline: 9rem 6rem;
   padding-top: 8rem;
   text-align: justify;
+}
+@media (max-width: 60.625rem) {
+  .main-falcon-falcon-section-four-content {
+    width: 75%;
+    padding-inline: 7rem 4rem;
+  }
+}
+@media (max-width: 49.75rem) {
+  .main-falcon-falcon-section-four-content {
+    width: 100%;
+    padding-inline: 2rem;
+  }
 }
 .main-falcon-falcon-section-four-content-table {
   width: 100%;
@@ -294,6 +421,24 @@
 }
 .main-falcon-falcon-section-four-content-table tr td {
   padding: 0.75rem;
+}
+@media (max-width: 60.625rem) {
+  .main-falcon-falcon-section-four-content-table tr {
+    margin: 0.5rem;
+  }
+}
+@media (max-width: 44.375rem) {
+  .main-falcon-falcon-section-four-content-table tr {
+    margin: 0.75rem;
+  }
+  .main-falcon-falcon-section-four-content-table tr td {
+    padding: 0.5rem;
+  }
+}
+@media (max-width: 25rem) {
+  .main-falcon-falcon-section-four-content-table {
+    font-size: 0.75rem;
+  }
 }
 .main-falcon-falcon-section-five-carousel-items-one {
   background-image: url("../img/pages/falcon/09.jpg");
@@ -384,7 +529,61 @@
 .main-falcon-falcon-section-six-btns-btn:hover {
   color: #000 !important;
 }
+@media (max-width: 28.75rem) {
+  .main-falcon-falcon-section-six-btns {
+    flex-direction: column;
+  }
+}
 
+@media (max-width: 60.625rem) {
+  .main-falcon-falcon-section-one-data {
+    padding-inline: 2rem;
+  }
+  .main-falcon-falcon-section-one-data-numbers {
+    font-size: 4rem;
+  }
+  .main-falcon-falcon-section-two {
+    font-size: 1rem;
+  }
+  .main-falcon-falcon-section-two-text {
+    line-height: 2.5rem;
+  }
+}
+@media (max-width: 38.75rem) {
+  .main-falcon-falcon-section-one-data-numbers {
+    font-size: 3rem;
+  }
+  .main-falcon-falcon-section-one-data-subtitle {
+    font-size: 1rem;
+  }
+  .main-falcon-falcon-section-two-text {
+    padding-inline: 2rem;
+    width: 100%;
+    line-height: 2.5rem;
+  }
+}
+@media (max-width: 31.25rem) {
+  .main-falcon-falcon-section-one {
+    height: 60vh;
+    flex-direction: column;
+    padding-block: 1rem;
+  }
+}
+@media (max-width: 22.5rem) {
+  .header-section-falcon-title {
+    font-size: 3.5rem;
+  }
+  .main-falcon-falcon-section-two-text {
+    line-height: 2rem;
+  }
+  .main-falcon-falcon-section-three-carousel-items-two-content-paragraph,
+  .main-falcon-falcon-section-three-carousel-items-three-content-description,
+  .main-falcon-falcon-section-three-carousel-items-four-content-paragraph,
+  .main-falcon-falcon-section-three-carousel-items-five-content-paragraph,
+  .main-falcon-falcon-section-four-content-paragraph {
+    font-size: 0.75rem;
+  }
+}
 #header-human {
   background-image: url("../img/pages/human/01.jpg");
   background-repeat: no-repeat;
@@ -567,6 +766,11 @@
 }
 .main-human-human-section-five-btns-btn:hover {
   color: #000 !important;
+}
+@media (max-width: 28.75rem) {
+  .main-human-human-section-five-btns {
+    flex-direction: column;
+  }
 }
 
 .footer {

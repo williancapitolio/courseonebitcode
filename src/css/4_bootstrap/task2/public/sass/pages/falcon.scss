@@ -8,6 +8,8 @@
   align-items: center;
   justify-content: center;
   height: 80%;
+  text-align: center;
+
   &-title {
     font-size: 5.625rem;
   }
@@ -150,5 +152,77 @@
 
   &-falcon-section-six {
     @include sectionContact;
+  }
+}
+
+@media (max-width: (math.div(970, 16) * 1rem)) {
+  .main-falcon {
+    &-falcon-section-one {
+      &-data {
+        padding-inline: 2rem;
+
+        &-numbers {
+          font-size: 4rem;
+        }
+      }
+    }
+
+    &-falcon-section-two {
+      font-size: 1rem;
+
+      &-text {
+        line-height: 2.5rem;
+      }
+    }
+  }
+}
+
+@media (max-width: (math.div(620, 16) * 1rem)) {
+  .main-falcon {
+    &-falcon-section-one {
+      &-data {
+        &-numbers {
+          font-size: 3rem;
+        }
+
+        &-subtitle {
+          font-size: 1rem;
+        }
+      }
+    }
+
+    &-falcon-section-two {
+      &-text {
+        padding-inline: 2rem;
+        width: 100%;
+        line-height: 2.5rem;
+      }
+    }
+  }
+}
+
+@media (max-width: (math.div(500, 16) * 1rem)) {
+  .main-falcon-falcon-section-one {
+    height: 60vh;
+    flex-direction: column;
+    padding-block: 1rem;
+  }
+}
+
+@media (max-width: (math.div(360, 16) * 1rem)) {
+  .header-section-falcon-title {
+    font-size: 3.5rem;
+  }
+
+  .main-falcon-falcon-section-two-text {
+    line-height: 2rem;
+  }
+
+  .main-falcon-falcon-section-three-carousel-items-two-content-paragraph,
+  .main-falcon-falcon-section-three-carousel-items-three-content-description,
+  .main-falcon-falcon-section-three-carousel-items-four-content-paragraph,
+  .main-falcon-falcon-section-three-carousel-items-five-content-paragraph,
+  .main-falcon-falcon-section-four-content-paragraph {
+    font-size: .75rem;
   }
 }

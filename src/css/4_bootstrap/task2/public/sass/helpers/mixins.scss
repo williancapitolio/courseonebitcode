@@ -74,13 +74,29 @@
       }
     }
   }
+
+  @media (max-width: (math.div(460, 16) * 1rem)) {
+    &-btns {
+      flex-direction: column;
+    }
+  }
 }
 
 @mixin carouselContent {
-  width: 55%;
+  width: 65%;
   padding-inline: 9rem 6rem;
   padding-top: 8rem;
   text-align: justify;
+
+  @media (max-width: (math.div(970, 16) * 1rem)) {
+    width: 75%;
+    padding-inline: 7rem 4rem;
+  }
+
+  @media (max-width: (math.div(796, 16) * 1rem)) {
+    width: 100%;
+    padding-inline: 2rem;
+  }
 }
 
 @mixin carouselTable {
@@ -94,6 +110,32 @@
       td {
         padding: 0.75rem;
       }
+    }
+  }
+
+  @media (max-width: (math.div(970, 16) * 1rem)) {
+    &-table {
+      tr {
+        margin: 0.5rem;
+      }
+    }
+  }
+
+  @media (max-width: (math.div(710, 16) * 1rem)) {
+    &-table {
+      tr {
+        margin: 0.75rem;
+
+        td {
+          padding: 0.5rem;
+        }
+      }
+    }
+  }
+
+  @media (max-width: (math.div(400, 16) * 1rem)) {
+    &-table {
+      font-size: .75rem;
     }
   }
 }
