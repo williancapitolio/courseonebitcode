@@ -77,3 +77,12 @@
 @import "./pages/human.scss";
 
 @import "./common/footer.scss";
+
+@media (max-width: (math.div(768, 16) * 1rem)) {
+  .page {
+    &-title {
+      @include pxToRem(font-size, 25);
+      width: auto;
+    }
+  }
+}
