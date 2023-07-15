@@ -22,6 +22,10 @@
   padding-inline: 3rem;
   justify-content: center;
   align-items: $position;
+
+  @media (max-width: (math.div(380, 16) * 1rem)) {
+    padding-inline: 1.5rem;
+  }
 }
 
 @mixin humanSectionItems {
@@ -38,6 +42,20 @@
 
     &:hover {
       color: #000 !important;
+    }
+  }
+
+  @media (max-width: (math.div(562, 16) * 1rem)) {
+    &-title {
+      font-size: 2.5rem;
+    }
+  
+    &-subtitle {
+      margin-bottom: 1.5rem;
+    }
+  
+    &-btn {
+      padding: .5rem 1.5rem;
     }
   }
 }

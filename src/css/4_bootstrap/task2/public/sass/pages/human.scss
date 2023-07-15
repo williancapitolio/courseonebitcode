@@ -85,3 +85,40 @@
     @include sectionContact;
   }
 }
+
+@media (max-width: (math.div(820, 16) * 1rem)) {
+  .header {
+    &-human {
+      &-title {
+        @include pxToRem(font-size, 80);
+      }
+  
+      &-subtitle {
+        @include pxToRem(font-size, 24);
+      }
+    }
+  }
+}
+
+@media (max-width: (math.div(580, 16) * 1rem)) {
+  .header {
+    &-human {
+      &-title {
+        @include pxToRem(font-size, 30);
+      }
+  
+      &-subtitle {
+        @include pxToRem(font-size, 16);
+      }
+    }
+  }
+
+  .main-human-human-contact {
+    height: 35vh;
+  }
+
+  .main-human-human-contact-paragraph {
+    font-size: 1rem;
+    width: auto;
+  }
+}
