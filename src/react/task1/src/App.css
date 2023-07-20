@@ -1,13 +1,12 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.main {
-  padding: 2rem;
+  background-color: #1b1e23;
+  color: #fff;
 }
 
 .logoImg {
   width: 5rem;
+}
+
+button {
+  background-color: #676767;
 }
