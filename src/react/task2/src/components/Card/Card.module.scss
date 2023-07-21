@@ -1,6 +1,17 @@
 .card {
+  &.img {
+    width: 15rem;
+  }
 
-  &-img {
-    width: 2rem;
+  &.details {
+
+    &.title {
+    }
+
+    &.description {
+    }
+
+    &.button {
+    }
   }
 }
