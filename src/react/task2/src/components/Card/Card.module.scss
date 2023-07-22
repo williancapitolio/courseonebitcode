@@ -1,17 +1,47 @@
 .card {
+  background-color: #bdccd4;
+  width: 32rem;
+  display: flex;
+  padding: 2rem;
+  gap: 3rem;
+  border-radius: .5rem;
+
+  &:first-child {
+    width: 64rem;
+  }
+
   &Img {
     width: 15rem;
   }
 
   &Details {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: start;
 
     &Title {
+      font-weight: 900;
     }
 
     &Description {
+      text-align: justify;
+      line-height: 1.5rem;
     }
 
     &Btn {
+      padding: .75rem .5rem;
+      width: 8rem;
+      background-color: #000;
+      color: #fff;
+      border-radius: .5rem;
+      cursor: pointer;
+      transition: .125s;
+
+      &:hover {
+        background-color: #fff;
+      color: #000;
+      }
     }
   }
 }
