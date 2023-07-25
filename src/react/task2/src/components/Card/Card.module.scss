@@ -1,13 +1,13 @@
 .card {
   background-color: #bdccd4;
-  width: 32rem;
+  width: 36rem;
   display: flex;
   padding: 2rem;
   gap: 3rem;
   border-radius: .5rem;
 
   &:first-child {
-    width: 64rem;
+    width: 100%;
   }
 
   &Img {
