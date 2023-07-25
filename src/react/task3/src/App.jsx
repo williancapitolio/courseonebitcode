@@ -1,7 +1,18 @@
+import { Profile } from "./components/Profile"
+
 export const App = () => {
   return (
     <>
-      <h1>Hello World!</h1>
+      <Profile
+        avatar="https://avatars.githubusercontent.com/u/70084163?v=4"
+        name="John Doe"
+        bio="Fullstack JavaScript developer at Acme Inc."
+        phone="+551199999-9999"
+        email="johndoe@email.com"
+        githubUrl="GitHub"
+        linkedinUrl="LinkedIn"
+        twitterUrl="Twitter"
+      />
     </>
   )
 }
