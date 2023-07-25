@@ -4,7 +4,7 @@
   display: flex;
   padding: 2rem;
   gap: 3rem;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
 
   &:first-child {
     width: 100%;
@@ -30,17 +30,17 @@
     }
 
     &Btn {
-      padding: .75rem .5rem;
+      padding: 0.75rem 0.5rem;
       width: 8rem;
       background-color: #000;
       color: #fff;
-      border-radius: .5rem;
+      border-radius: 0.5rem;
       cursor: pointer;
-      transition: .125s;
+      transition: 0.125s;
 
       &:hover {
         background-color: #fff;
-      color: #000;
+        color: #000;
       }
     }
   }
