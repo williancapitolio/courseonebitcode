@@ -3,6 +3,7 @@ import { Profile } from "./components/Profile"
 export const App = () => {
   return (
     <>
+      <h1>Task 3</h1>
       <Profile
         avatar="https://avatars.githubusercontent.com/u/70084163?v=4"
         name="John Doe"

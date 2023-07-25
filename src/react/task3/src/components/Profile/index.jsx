@@ -13,7 +13,16 @@ export const Profile = ({
   return (
     <>
       <div className={styles.profile}>
-        <p className="profileFullname">{name}</p>
+        <img src={avatar} alt="Profile avatar" className={styles.profileAvatar} />
+        <p className={styles.profileName}>{name}</p>
+        <p className={styles.profileBio}>{bio}</p>
+        <p className={styles.profilePhone}>{phone}</p>
+        <p className={styles.profileEmail}>{email}</p>
+        <div className={styles.profileBtns}>
+          <button className={styles.profileBtn}>{githubUrl}</button>
+          <button className={styles.profileBtn}>{linkedinUrl}</button>
+          <button className={styles.profileBtn}>{twitterUrl}</button>
+        </div>
       </div>
     </>
   )
