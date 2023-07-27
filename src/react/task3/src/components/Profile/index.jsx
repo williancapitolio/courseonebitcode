@@ -15,13 +15,13 @@ export const Profile = ({
       <div className={styles.profile}>
         <img src={avatar} alt="Profile avatar" className={styles.profileAvatar} />
         <p className={styles.profileName}>{name}</p>
-        <p className={styles.profileBio}>{bio}</p>
-        <p className={styles.profilePhone}>{phone}</p>
-        <p className={styles.profileEmail}>{email}</p>
+        <p className={styles.profileData}>{bio}</p>
+        <p className={styles.profileData}>{phone}</p>
+        <p className={styles.profileData}>{email}</p>
         <div className={styles.profileBtns}>
-          <button className={styles.profileBtn}>{githubUrl}</button>
-          <button className={styles.profileBtn}>{linkedinUrl}</button>
-          <button className={styles.profileBtn}>{twitterUrl}</button>
+          <button className={styles.profileBtnsBtn}>{githubUrl}</button>
+          <button className={styles.profileBtnsBtn}>{linkedinUrl}</button>
+          <button className={styles.profileBtnsBtn}>{twitterUrl}</button>
         </div>
       </div>
     </>
