@@ -1,3 +1,7 @@
+@import '../../styles/variables.scss';
+
+@import '../../styles/mixins.scss';
+
 .profile {
   display: flex;
   flex-direction: column;
@@ -6,29 +10,24 @@
   margin: 2rem auto;
   width: 28rem;
   background-color: #fff;
-  border-radius: 4%;
+  border-radius: .75rem;
+  box-shadow: $boxShadown;
 
   &Avatar {
-    margin-block: 2rem;
+    margin-block: 2rem 1rem;
     border-radius: 100%;
     width: 10rem;
-    box-shadow: 0.3125rem 0.3125rem 0.625rem rgba(0, 0, 0, 0.3);
+    box-shadow: $boxShadown;
   }
 
   &Name {
     font-size: 1.5rem;
     font-weight: 700;
-    border-bottom: 0.125rem solid #5375dd;
-    width: 100%;
-    text-align: center;
-    padding-bottom: 1rem;
+    @include borderBottom;
   }
 
   &Data {
-    border-bottom: 0.125rem solid #5375dd;
-    width: 100%;
-    text-align: center;
-    padding: 1rem;
+    @include borderBottom;
   }
 
   &Btns {
@@ -40,16 +39,18 @@
     &Btn {
       cursor: pointer;
       transition: .3s;
-      background: linear-gradient(to right, #5375dd 0%, #abb9e4 100%);
+      background: $linearGradient;
       padding: .75rem 2rem;
       border: none;
       color: #fff;
       font-weight: 700;
-      border-radius: 5%;
+      border-radius: .75rem;
+      position: relative;
 
       &:hover {
-        padding: 2rem;
-        background: linear-gradient(to right, #abb9e4 0%, #5375dd 100%);
+        bottom: .2rem;
+        background: $linearGradient;
+        box-shadow: $boxShadown;
       }
     }
   }
