@@ -46,10 +46,11 @@
       font-weight: 700;
       border-radius: .75rem;
       position: relative;
+      text-decoration: none;
+      text-align: center;
 
       &:hover {
         bottom: .2rem;
-        background: $linearGradient;
         box-shadow: $boxShadown;
       }
     }

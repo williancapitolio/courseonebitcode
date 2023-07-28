@@ -10,9 +10,9 @@ export const App = () => {
         bio="Fullstack JavaScript developer at Acme Inc."
         phone="+551199999-9999"
         email="johndoe@email.com"
-        githubUrl="GitHub"
-        linkedinUrl="LinkedIn"
-        twitterUrl="Twitter"
+        githubUrl="https://github.com/"
+        linkedinUrl="https://www.linkedin.com/"
+        twitterUrl="https://twitter.com/"
       />
     </>
   )

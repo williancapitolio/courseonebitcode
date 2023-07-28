@@ -19,9 +19,9 @@ export const Profile = ({
         <p className={styles.profileData}>{phone}</p>
         <p className={styles.profileData}>{email}</p>
         <div className={styles.profileBtns}>
-          <button className={styles.profileBtnsBtn}>{githubUrl}</button>
-          <button className={styles.profileBtnsBtn}>{linkedinUrl}</button>
-          <button className={styles.profileBtnsBtn}>{twitterUrl}</button>
+          <a href={githubUrl} target="_blank" rel="noreferrer" className={styles.profileBtnsBtn}>GitHub</a>
+          <a href={linkedinUrl} target="_blank" rel="noreferrer" className={styles.profileBtnsBtn}>LinkedIn</a>
+          <a href={twitterUrl} target="_blank" rel="noreferrer" className={styles.profileBtnsBtn}>Twitter</a>
         </div>
       </div>
     </>
