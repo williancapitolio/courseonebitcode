@@ -1,0 +1,38 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem auto;
+  width: fit-content;
+  gap: 2rem;
+  text-align: center;
+
+  &Title {
+    font-size: 2rem;
+  }
+
+  &Btns {
+    display: flex;
+    gap: 2rem;
+
+    &Btn {
+      padding: .5rem 1rem;
+      font-size: 1rem;
+      border: .15rem solid #000;
+      border-radius: .5rem;
+      background-color: #1b1e23;
+      color: #fff;
+      cursor: pointer;
+
+      &:hover {
+        border-color: #0000b8;
+      }
+    }
+  }
+
+  &Result {
+    font-size: 1.25rem;
+    height: 2rem;
+  }
+}
