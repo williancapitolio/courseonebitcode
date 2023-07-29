@@ -15,7 +15,9 @@ export const PasswordGenerator = () => {
   const handleCopyPassword = () => {
     if (password.length > 0) {
       setCopyBtn('Copiado!')
-      navigator.clipboard.writeText(password)
+      navigator.clipboard.writeText(password).then(() => {
+        alert('Senha copiada para área de transferênia!')
+      })
 
     } else {
       alert('Gere a senha primeiro!')
