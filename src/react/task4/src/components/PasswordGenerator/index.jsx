@@ -7,13 +7,15 @@ export const PasswordGenerator = () => {
   const [copyBtn, setCopyBtn] = useState('Copiar')
 
   const handleGeneratePassword = () => {
+    const random = Math.random().toString(36).slice(-10)
+    setPassword(random)
     setGenerateBtn('Gerado!')
-    setPassword('_YBw#RF&WHUM')
   }
 
   const handleCopyPassword = () => {
     if (password.length > 0) {
       setCopyBtn('Copiado!')
+      navigator.clipboard.writeText(password)
 
     } else {
       alert('Gere a senha primeiro!')
