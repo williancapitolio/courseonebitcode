@@ -1,7 +1,12 @@
+import { FormComment } from "./components/FormComment";
+import { ListComment } from "./components/ListComment";
+
 export const App = () => {
   return (
     <>
-      <h1>Hello World to React + TypeScript</h1>
+      <FormComment />
+
+      <ListComment />
     </>
   );
 };

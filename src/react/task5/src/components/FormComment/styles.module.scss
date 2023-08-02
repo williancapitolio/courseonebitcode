@@ -1,0 +1,12 @@
+@import "../../styles/mixins.scss";
+
+.formComment {
+  @include flexCenter;
+  margin: 2rem auto;
+
+  &Title {
+  }
+
+  &Form {
+  }
+}
