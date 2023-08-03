@@ -3,10 +3,49 @@
 .formComment {
   @include flexCenter;
   margin: 2rem auto;
+  padding: 2rem;
+  gap: 2rem;
+  width: 45rem;
+  background-color: #32363d;
+  border-radius: 1rem;
+  box-shadow: 0.3125rem 0.3125rem 0.625rem rgba(0, 0, 0, 0.3);
 
   &Title {
   }
 
   &Form {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+
+    &Input{
+      padding: .5rem;
+    }
+
+    &Comment {
+      margin-top: 1rem;
+    }
+
+    &Textarea{
+      padding: .5rem;;
+      resize: none
+    }
+
+    &Btn{
+      padding: .5rem 1rem;
+      background-color: #2735b3;
+      font-size: 1rem;
+      cursor: pointer;
+      border: none;
+      width: 75%;
+      margin: 1rem auto 0 auto;
+      border-radius: 1rem;
+      transition: .3s;
+
+      &:hover {
+        background: linear-gradient(to right, #abb9e4 0%, #5375dd 100%);;
+      }
+    }
   }
 }
