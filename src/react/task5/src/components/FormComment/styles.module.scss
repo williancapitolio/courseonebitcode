@@ -9,10 +9,7 @@
   background-color: #32363d;
   border-radius: 1rem;
   box-shadow: 0.3125rem 0.3125rem 0.625rem rgba(0, 0, 0, 0.3);
-
-  &Title {
-  }
-
+  
   &Form {
     width: 75%;
     display: flex;
@@ -21,6 +18,7 @@
 
     &Input{
       padding: .5rem;
+      color: #000;
     }
 
     &Comment {
@@ -28,8 +26,9 @@
     }
 
     &Textarea{
-      padding: .5rem;;
-      resize: none
+      padding: .5rem;
+      resize: none;
+      color: #000;
     }
 
     &Btn{
