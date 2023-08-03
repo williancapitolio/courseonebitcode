@@ -1,13 +1,18 @@
-/* import { useState } from "react";
+import { useState } from "react";
+
 import styles from "./styles.module.scss";
 
-export const FormComment = () => {
+export const FormComment = ({
+  onAdd,
+}: {
+  onAdd: ({ email, comment }: { email: string; comment: string }) => void;
+}) => {
   const [email, setEmail] = useState("");
   const [comment, setComment] = useState("");
 
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
-    console.log({email, comment})
+    onAdd({ email, comment });
     setEmail("");
     setComment("");
   };
@@ -22,7 +27,7 @@ export const FormComment = () => {
         </label>
         <input
           className={styles.formCommentFormInput}
-          type="email"
+          type="text"
           name="email"
           id="email"
           placeholder="Digite seu melhor e-mail"
@@ -39,11 +44,11 @@ export const FormComment = () => {
           id="comment"
           placeholder="Deixe um comentário"
           value={comment}
-          onChange={e => setComment(e.target.value)}
+          onChange={(e) => setComment(e.target.value)}
         />
 
         <button className={styles.formCommentFormBtn}>Comentar!</button>
       </form>
     </section>
   );
-}; */
+};
