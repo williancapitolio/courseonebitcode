@@ -10,15 +10,21 @@ export const App = () => {
     <>
       <FormComment onAdd={addComment} />
 
-      {commentsList.map(({ id, email, comment }) => (
-        <ListComment
-          key={id}
-          id={id}
-          email={email}
-          comment={comment}
-          onRemove={removeComment}
-        />
-      ))}
+      {commentsList.length > 0 ? (
+        commentsList.map(({ id, email, comment }) => (
+          <ListComment
+            key={id}
+            id={id}
+            email={email}
+            comment={comment}
+            onRemove={removeComment}
+          />
+        ))
+      ) : (
+        <div style={{ width: "100%" }}>
+          <h2 style={{ textAlign: "center" }}>Sem comentários</h2>
+        </div>
+      )}
     </>
   );
 };
