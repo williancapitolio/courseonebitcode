@@ -21,9 +21,7 @@ export const App = () => {
           />
         ))
       ) : (
-        <div style={{ width: "100%" }}>
-          <h2 style={{ textAlign: "center" }}>Sem comentários</h2>
-        </div>
+        <h2 style={{ textAlign: "center" }}>Sem comentários</h2>
       )}
     </>
   );
