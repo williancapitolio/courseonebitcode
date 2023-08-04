@@ -15,12 +15,17 @@
     display: flex;
     flex-direction: column;
     gap: 1rem;
+
+    &Email, &Comment {
+      word-wrap: break-word;
+    }
   }
 
   &Btn {
     padding: 0.5rem 1rem;
-    background-color: #ff0000;
+    background-color: #ce0202;
     font-size: 1rem;
+    font-weight: 700;
     cursor: pointer;
     border: none;
     border-radius: 1rem;
@@ -29,6 +34,27 @@
 
     &:hover {
       background: linear-gradient(to right, #f5a4a4 0%, #f01c1c 100%);
+    }
+  }
+}
+
+@media (max-width: 50rem) {
+  .listComment {
+    justify-content: space-between;
+    padding: 1rem;
+    width: 90%;
+  }
+}
+
+@media (max-width: 30rem) {
+  .listComment {
+    justify-content: start;
+    flex-direction: column;
+    font-size: .85rem;
+
+    &Btn {
+      width: 80%;
+      align-self: center;
     }
   }
 }
