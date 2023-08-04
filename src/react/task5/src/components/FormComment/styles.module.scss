@@ -18,7 +18,17 @@
 
     &Input{
       padding: .5rem;
-      color: #000;
+      background-color: #32363d;
+      border: none;
+      border: .2rem solid transparent;
+      border-bottom: .2rem solid #2735b3;
+      border-radius: .2rem;
+      transition: .3s;
+
+      &:focus {
+        outline: none;
+        border: .2rem solid #2735b3;
+      }
     }
 
     &Comment {
@@ -28,7 +38,17 @@
     &Textarea{
       padding: .5rem;
       resize: none;
-      color: #000;
+      background-color: #32363d;
+      border: none;
+      border: .2rem solid transparent;
+      border-bottom: .2rem solid #2735b3;
+      border-radius: .2rem;
+      transition: .3s;
+
+      &:focus {
+        outline: none;
+        border: .2rem solid #2735b3;
+      }
     }
 
     &Btn{

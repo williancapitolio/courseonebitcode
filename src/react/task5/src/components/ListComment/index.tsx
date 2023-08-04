@@ -13,9 +13,13 @@ export const ListComment = ({
 }) => {
   return (
     <section className={styles.listComment}>
-      <p>{email}</p>
-      <p>{comment}</p>
-      <button onClick={() => onRemove(id)}>Apagar</button>
+      <div className={styles.listCommentDiv}>
+        <p className={styles.listCommentDivEmail}>E-mail: {email}</p>
+        <p className={styles.listCommentDivComment}>Comentário: {comment}</p>
+      </div>
+      <button className={styles.listCommentBtn} onClick={() => onRemove(id)}>
+        Apagar
+      </button>
     </section>
   );
 };

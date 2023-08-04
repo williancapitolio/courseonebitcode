@@ -19,7 +19,7 @@ export const FormComment = ({
 
   return (
     <section className={styles.formComment}>
-      <h2 className={styles.formCommentTitle}>Seção de Comentários</h2>
+      <h2 className={styles.formCommentTitle}>Adicionar Comentário</h2>
 
       <form className={styles.formCommentForm} onSubmit={handleSubmit}>
         <label htmlFor="email" className={styles.formCommentFormEmail}>
