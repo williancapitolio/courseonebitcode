@@ -1,18 +1,21 @@
 import { useState } from "react";
 
+import { useGetFullDate } from "../../hooks/useGetFullDate";
+
 import styles from "./styles.module.scss";
 
 export const FormComment = ({
   onAdd,
 }: {
-  onAdd: ({ email, comment }: { email: string; comment: string }) => void;
+  onAdd: ({ email, comment, date }: { email: string; comment: string, date: string }) => void;
 }) => {
   const [email, setEmail] = useState("");
   const [comment, setComment] = useState("");
+  const { date } = useGetFullDate();
 
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
-    onAdd({ email, comment });
+    onAdd({ email, comment, date });
     setEmail("");
     setComment("");
   };

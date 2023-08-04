@@ -12,13 +12,15 @@ export const useCommentsList = () => {
   const addComment = ({
     email,
     comment,
+    date
   }: {
     email: string;
     comment: string;
+    date: string;
   }) => {
     const id = Math.floor(Math.random() * 1000000);
     setCommentsList((state: CommentsType[]) => {
-      const newState = [...state, { id, email, comment }];
+      const newState = [...state, { id, email, comment, date }];
       localStorage.setItem("comments", JSON.stringify(newState));
       return newState;
     });

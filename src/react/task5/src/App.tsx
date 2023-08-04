@@ -11,12 +11,13 @@ export const App = () => {
       <FormComment onAdd={addComment} />
 
       {commentsList.length > 0 ? (
-        commentsList.map(({ id, email, comment }) => (
+        commentsList.map(({ id, email, comment, date }) => (
           <ListComment
             key={id}
             id={id}
             email={email}
             comment={comment}
+            date={date}
             onRemove={removeComment}
           />
         ))
