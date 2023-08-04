@@ -9,25 +9,25 @@
   background-color: #32363d;
   border-radius: 1rem;
   box-shadow: 0.3125rem 0.3125rem 0.625rem rgba(0, 0, 0, 0.3);
-  
+
   &Form {
     width: 75%;
     display: flex;
     flex-direction: column;
-    gap: .5rem;
+    gap: 0.5rem;
 
-    &Input{
-      padding: .5rem;
+    &Input {
+      padding: 0.5rem;
       background-color: #32363d;
       border: none;
-      border: .2rem solid transparent;
-      border-bottom: .2rem solid #2735b3;
-      border-radius: .2rem;
-      transition: .3s;
+      border: 0.2rem solid transparent;
+      border-bottom: 0.2rem solid #2735b3;
+      border-radius: 0.2rem;
+      transition: 0.3s;
 
       &:focus {
         outline: none;
-        border: .2rem solid #2735b3;
+        border: 0.2rem solid #2735b3;
       }
     }
 
@@ -35,24 +35,24 @@
       margin-top: 1rem;
     }
 
-    &Textarea{
-      padding: .5rem;
+    &Textarea {
+      padding: 0.5rem;
       resize: none;
       background-color: #32363d;
       border: none;
-      border: .2rem solid transparent;
-      border-bottom: .2rem solid #2735b3;
-      border-radius: .2rem;
-      transition: .3s;
+      border: 0.2rem solid transparent;
+      border-bottom: 0.2rem solid #2735b3;
+      border-radius: 0.2rem;
+      transition: 0.3s;
 
       &:focus {
         outline: none;
-        border: .2rem solid #2735b3;
+        border: 0.2rem solid #2735b3;
       }
     }
 
-    &Btn{
-      padding: .5rem 1rem;
+    &Btn {
+      padding: 0.5rem 1rem;
       background-color: #2735b3;
       font-size: 1rem;
       cursor: pointer;
@@ -60,10 +60,28 @@
       width: 75%;
       margin: 1rem auto 0 auto;
       border-radius: 1rem;
-      transition: .3s;
+      transition: 0.3s;
 
       &:hover {
-        background: linear-gradient(to right, #abb9e4 0%, #5375dd 100%);;
+        background: linear-gradient(to right, #abb9e4 0%, #5375dd 100%);
+      }
+    }
+  }
+}
+
+@media (max-width: 50rem) {
+  .formComment {
+    width: 90%;
+    padding: 1rem .5rem;
+
+    &Title {
+      text-align: center;
+      font-size: 1.25rem;
+    }
+
+    &Form {
+      &Btn {
+        width: 100%;
       }
     }
   }
