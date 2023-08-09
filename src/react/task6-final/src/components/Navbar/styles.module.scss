@@ -1,0 +1,25 @@
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+
+  &Title {
+    font-size: 1.25rem;
+  }
+  
+  &Nav{
+    display: flex;
+    gap: 2rem;
+
+    &Link{
+      border-bottom: .2rem solid transparent;
+      transition: all 0.25s ease-in-out;
+
+      &:hover {
+        border-bottom: .1rem solid #fff;
+      }
+    }
+  }
+}
