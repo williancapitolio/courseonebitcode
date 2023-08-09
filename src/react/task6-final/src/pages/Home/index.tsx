@@ -1,7 +1,11 @@
+import styles from "./styles.module.scss"
+
 export const Home = () => {
   return (
     <>
-      <h2>Home</h2>
+      <main className={styles.wrapper}>
+        <h2 className={styles.wrapperTitle}>Dashboard</h2>
+      </main>
     </>
   );
 };
