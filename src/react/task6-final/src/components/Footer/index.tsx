@@ -1,7 +1,9 @@
+import styles from "./styles.module.scss";
+
 export const Footer = () => {
   return (
-    <>
-      <h2>Footer</h2>
-    </>
+    <footer className={styles.wrapper}>
+      <span>Feito com React e React Router Dom</span>
+    </footer>
   );
 };
