@@ -1,5 +1,6 @@
 import { Card } from "../../components/Card";
-import { Table } from "../../components/Table";
+import { TableRecent } from "../../components/Table/TableRecent";
+import { TableRunningOut } from "../../components/Table/TableRunningOut";
 import { Title } from "../../components/Title";
 
 import styles from "./styles.module.scss";
@@ -15,13 +16,8 @@ export const Home = () => {
         <Card title="Itens acabando" value={1} />
       </div>
       <div className={styles.wrapperTables}>
-        <Table situation="Recentes" item="7 Wonders" />
-        <Table
-          situation="Acabando"
-          item="7 Wonders"
-          hasAmount={true}
-          amount={2}
-        />
+        <TableRecent item="O Senhor dos Anéis" />
+        <TableRunningOut item="O Senhor dos Anéis" qtde={2} />
       </div>
     </section>
   );

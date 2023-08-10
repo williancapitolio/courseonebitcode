@@ -1,0 +1,32 @@
+@import "../../../styles/mixins.scss";
+
+.wrapper {
+  width: 50%;
+
+  &Head {
+    &Line {
+      &Title {
+      }
+      &Action {
+      }
+    }
+  }
+
+  &Body {
+    &Line {
+      &Item {
+      }
+      &Action {
+        text-align: center;
+
+        &Btn {
+          @include btnStyle();
+        }
+      }
+    }
+  }
+}
+
+.firstTh {
+  text-align: start;
+}
