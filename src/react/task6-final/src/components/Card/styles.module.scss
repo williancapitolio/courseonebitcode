@@ -1,0 +1,28 @@
+@import "../../styles/variables.scss";
+
+.wrapper {
+  background-color: $backGroundSecondary;
+  width: 17.5rem;
+  height: 7.5rem;
+  padding: 0.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: $boxShadown;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+  &Title {
+    font-size: 0.85rem;
+    font-weight: 300;
+  }
+
+  &Value {
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  &:hover {
+    box-shadow: $boxShadownHover;
+  }
+}

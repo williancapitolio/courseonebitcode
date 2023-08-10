@@ -1,11 +1,18 @@
-@mixin btnStyle($bgColor: #fff) {
+@mixin btnStyle($btnColor: #fff) {
   padding: 0.5rem 1rem;
   color: #000;
-  font-size: 0.9rem;
+  font-size: 0.75rem;
   font-weight: 700;
-  background-color: $bgColor;
+  background-color: $btnColor;
   cursor: pointer;
   border: none;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   transition: 0.3s;
+  border: 0.1rem solid $btnColor;
+
+  &:hover {
+    border: 0.1rem solid $btnColor;
+    background-color: transparent;
+    color: $btnColor;
+  }
 }

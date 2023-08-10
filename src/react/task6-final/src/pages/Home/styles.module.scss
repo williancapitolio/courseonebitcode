@@ -1,8 +1,13 @@
 .wrapper {
-  margin-bottom: 3.875rem;
-  padding: 1rem 2rem;
+  &Cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+  }
 
-  &Title {
-    font-size: 1.75rem;
+  &Tables {
+    margin-top: 2rem;
+    display: flex;
+    gap: 2rem;
   }
 }

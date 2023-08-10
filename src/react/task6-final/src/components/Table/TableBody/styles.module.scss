@@ -1,0 +1,16 @@
+@import "../../../styles/mixins.scss";
+
+.wrapper {
+  &Item {
+  }
+  &Amount {
+  }
+  &Action {
+    display: flex;
+    justify-content: center;
+
+    &Btn {
+      @include btnStyle();
+    }
+  }
+}
