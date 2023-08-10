@@ -5,16 +5,20 @@ type itemsType = {
   price: number;
   cat: string;
   desc: string;
+  createdAt: string;
+  updatedAt: string;
 };
 
 export const items: itemsType[] = [
   {
     id: 1,
     name: "O Senhor dos Anéis",
-    qtde: 2,
+    qtde: 10,
     price: 100,
     cat: "Livros",
     desc: "Livro de O Senhor dos Anéis",
+    createdAt: "04/10/2023",
+    updatedAt: "",
   },
   {
     id: 2,
@@ -23,6 +27,8 @@ export const items: itemsType[] = [
     price: 170,
     cat: "Livros",
     desc: "Livro de Guerra dos Tronos",
+    createdAt: "05/10/2023",
+    updatedAt: "",
   },
   {
     id: 3,
@@ -31,6 +37,8 @@ export const items: itemsType[] = [
     price: 50,
     cat: "Jogos",
     desc: "Jogo Resident Evil 4, melhor jogo de ps2",
+    createdAt: "05/10/2023",
+    updatedAt: "",
   },
   {
     id: 4,
@@ -39,13 +47,17 @@ export const items: itemsType[] = [
     price: 10,
     cat: "Jogos",
     desc: "Stardew Valley, um jogo de simulador de fazenda",
+    createdAt: "08/10/2023",
+    updatedAt: "",
   },
   {
     id: 5,
     name: "Baki",
-    qtde: 6,
+    qtde: 7,
     price: 25,
     cat: "Animes",
     desc: "Anime do Baki o Lutador",
+    createdAt: "08/10/2023",
+    updatedAt: "",
   },
 ];
