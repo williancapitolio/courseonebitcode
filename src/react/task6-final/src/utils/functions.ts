@@ -5,11 +5,10 @@ export const dateFormatterToday = (date = new Date(), locale = "en-US") => {
 };
 
 export const calcDifferenceBetweenTwoDays = (date: string) => {
-  const date1 = new Date(date);
-  const date2 = new Date(dateFormatterToday());
-
-  const diffTime = Math.abs(+date2 - +date1);
-
+  const createdDate = new Date(date);
+  const todayDate = new Date(dateFormatterToday());
+  
+  const diffTime = Math.abs(+todayDate - +createdDate);
   const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
   
   return diffDays;
