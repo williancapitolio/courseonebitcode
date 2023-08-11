@@ -23,8 +23,8 @@ export const calcTotalInventory = items.reduce((acc, item) => {
 
 export const calcRecentItems = items.filter((item) => {
   if (calcDifferenceBetweenTwoDays(item.createdAt) < 10) return item;
-}).length;
+});
 
 export const calcItemsRunningOut = items.filter((item) => {
   if (item.qtde < 10) return item;
-}).length;
+});

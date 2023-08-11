@@ -1,15 +1,19 @@
 @import "../../../styles/mixins.scss";
 
 .wrapper {
-  width: 50%;
+  width: 100%;
+  border: 1px solid #fff;
 
   &Head {
     &Line {
       &Title {
+        border: 1px solid #fff;
       }
       &Qtde {
+        border: 1px solid #fff;
       }
       &Action {
+        border: 1px solid #fff;
       }
     }
   }
@@ -17,11 +21,14 @@
   &Body {
     &Line {
       &Item {
+        border: 1px solid #fff;
       }
       &Qtde {
+        border: 1px solid #fff;
         text-align: center;
       }
       &Action {
+        border: 1px solid #fff;
         text-align: center;
 
         &Btn {

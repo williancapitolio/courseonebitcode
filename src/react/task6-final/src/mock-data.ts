@@ -1,4 +1,4 @@
-type itemsType = {
+export type itemsType = {
   id: number;
   name: string;
   qtde: number;
@@ -6,7 +6,7 @@ type itemsType = {
   cat: string;
   desc: string;
   createdAt: string;
-  updatedAt: string;
+  updatedAt?: string;
 };
 
 export const items: itemsType[] = [

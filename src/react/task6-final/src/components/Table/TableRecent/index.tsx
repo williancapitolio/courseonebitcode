@@ -1,10 +1,8 @@
 import styles from "./styles.module.scss";
 
-type tableRecentProps = {
-  item: string;
-};
+import { itemsType } from "../../../mock-data.ts";
 
-export const TableRecent = ({ item }: tableRecentProps) => {
+export const TableRecent = ({ name }: itemsType) => {
   return (
     <table className={styles.wrapper}>
       <thead className={styles.wrapperHead}>
@@ -17,7 +15,7 @@ export const TableRecent = ({ item }: tableRecentProps) => {
       </thead>
       <tbody className={styles.wrapperBody}>
         <tr className={styles.wrapperBodyLine}>
-          <td className={styles.wrapperBodyLineItem}>{item}</td>
+          <td className={styles.wrapperBodyLineItem}>{name}</td>
           <td className={styles.wrapperBodyLineAction}>
             <button className={styles.wrapperBodyLineActionBtn}>Ver</button>
           </td>
