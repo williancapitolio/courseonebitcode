@@ -10,9 +10,6 @@ import {
   calcItemsRunningOut,
 } from "../../utils/functions.ts";
 
-/* import { items } from "../../mock-data.ts";
-import { itemsType } from "../../mock-data.ts"; */
-
 import styles from "./styles.module.scss";
 
 export const Home = () => {
