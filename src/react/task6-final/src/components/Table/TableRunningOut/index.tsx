@@ -1,11 +1,8 @@
 import styles from "./styles.module.scss";
 
-type tableRunningOutProps = {
-  item: string;
-  qtde: number
-};
+import { itemsType } from "../../../mock-data.ts";
 
-export const TableRunningOut = ({ name, qtde }: tableRunningOutProps) => {
+export const TableRunningOut = ({ name, qtde }: itemsType) => {
   return (
     <table className={styles.wrapper}>
       <thead className={styles.wrapperHead}>
