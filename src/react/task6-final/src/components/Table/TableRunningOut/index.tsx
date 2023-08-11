@@ -1,6 +1,6 @@
 import styles from "./styles.module.scss";
 
-import { itemsType } from "../../../mock-data.ts";
+import { itemsType } from "../../../types/itemsType.ts";
 
 export const TableRunningOut = ({ name, qtde }: itemsType) => {
   return (

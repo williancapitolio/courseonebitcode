@@ -1,14 +1,18 @@
+import { Link } from "react-router-dom";
+
 import styles from "./styles.module.scss";
 
-import { itemsType } from "../../../mock-data.ts";
+import { itemsType } from "../../../types/itemsType.ts";
 
-export const TableRecent = ({ name }: itemsType) => {
+export const TableRecent = ({ id, name }: itemsType) => {
   return (
     <tbody className={styles.wrapper}>
       <tr className={styles.wrapperBodyLine}>
         <td className={styles.wrapperBodyLineItem}>{name}</td>
         <td className={styles.wrapperBodyLineAction}>
-          <button className={styles.wrapperBodyLineActionBtn}>Ver</button>
+          <Link to={`/items/${id}`}>
+            <button className={styles.wrapperBodyLineActionBtn}>Ver</button>
+          </Link>
         </td>
       </tr>
     </tbody>
