@@ -32,7 +32,11 @@ export const Home = () => {
                 >
                   Itens Recentes
                 </th>
-                <th className={styles.wrapperTablesTableRecentTableHeadLineAction}>Ação</th>
+                <th
+                  className={styles.wrapperTablesTableRecentTableHeadLineAction}
+                >
+                  Ação
+                </th>
               </tr>
             </thead>
             {calcRecentItems.map(
@@ -52,20 +56,47 @@ export const Home = () => {
           </table>
         </div>
         <div className={styles.wrapperTablesTableRunningOut}>
-          {calcItemsRunningOut.map(
-            ({ id, name, qtde, price, cat, desc, createdAt }) => (
-              <TableRunningOut
-                key={id}
-                id={id}
-                name={name}
-                qtde={qtde}
-                price={price}
-                cat={cat}
-                desc={desc}
-                createdAt={createdAt}
-              />
-            )
-          )}
+          <table className={styles.wrapperTablesTableRunningOutTable}>
+            <thead className={styles.wrapperTablesTableRunningOutTableHead}>
+              <tr
+                className={styles.wrapperTablesTableRunningOutTableHeadLine}
+              >
+                <th
+                  className={`${styles.wrapperTablesTableRunningOutTableHeadLineTitle} ${styles.firstTh}`}
+                >
+                  Itens Acabando
+                </th>
+                <th
+                  className={
+                    styles.wrapperTablesTableRunningOutTableHeadLineQtde
+                  }
+                >
+                  Qtde.
+                </th>
+                <th
+                  className={
+                    styles.wrapperTablesTableRunningOutTableHeadLineAction
+                  }
+                >
+                  Ação
+                </th>
+              </tr>
+            </thead>
+            {calcItemsRunningOut.map(
+              ({ id, name, qtde, price, cat, desc, createdAt }) => (
+                <TableRunningOut
+                  key={id}
+                  id={id}
+                  name={name}
+                  qtde={qtde}
+                  price={price}
+                  cat={cat}
+                  desc={desc}
+                  createdAt={createdAt}
+                />
+              )
+            )}
+          </table>
         </div>
       </div>
     </section>

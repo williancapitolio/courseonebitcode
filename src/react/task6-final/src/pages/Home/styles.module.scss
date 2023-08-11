@@ -10,7 +10,7 @@
   &Tables {
     margin-top: 2rem;
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
     width: 100%;
 
     &TableRecent {
@@ -38,6 +38,30 @@
 
     &TableRunningOut {
       width: 50%;
+
+      &Table {
+        width: 100%;
+      
+        &Head {
+          &Line {
+            background-color: $backGroundSecondary;
+            box-shadow: $boxShadown;
+            height: 3rem;
+      
+            &Title {
+              padding-inline: .5rem;
+            }
+      
+            &Qtde {
+              padding-inline: .5rem;
+            }
+      
+            &Action {
+              padding-inline: .5rem;
+            }
+          }
+        }
+      }
     }
   }
 }
