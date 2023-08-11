@@ -1,34 +1,43 @@
+@import "../../../styles/variables.scss";
+
 @import "../../../styles/mixins.scss";
 
 .wrapper {
   width: 100%;
-  border: 1px solid #fff;
 
   &Head {
     &Line {
+      background-color: $backGroundSecondary;
+      box-shadow: $boxShadown;
+      height: 3rem;
+
       &Title {
-        border: 1px solid #fff;
+        padding-inline: .5rem;
       }
+
       &Qtde {
-        border: 1px solid #fff;
+        padding-inline: .5rem;
       }
+
       &Action {
-        border: 1px solid #fff;
+        padding-inline: .5rem;
       }
     }
   }
 
   &Body {
     &Line {
+      height: 3rem;
+
       &Item {
-        border: 1px solid #fff;
+        padding-inline: .5rem;
       }
       &Qtde {
-        border: 1px solid #fff;
+        padding-inline: .5rem;
         text-align: center;
       }
       &Action {
-        border: 1px solid #fff;
+        padding-inline: .5rem;
         text-align: center;
 
         &Btn {

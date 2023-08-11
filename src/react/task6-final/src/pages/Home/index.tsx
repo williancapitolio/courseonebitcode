@@ -24,20 +24,32 @@ export const Home = () => {
       </div>
       <div className={styles.wrapperTables}>
         <div className={styles.wrapperTablesTableRecent}>
-          {calcRecentItems.map(
-            ({ id, name, qtde, price, cat, desc, createdAt }) => (
-              <TableRecent
-                key={id}
-                id={id}
-                name={name}
-                qtde={qtde}
-                price={price}
-                cat={cat}
-                desc={desc}
-                createdAt={createdAt}
-              />
-            )
-          )}
+          <table className={styles.wrapperTablesTableRecentTable}>
+            <thead className={styles.wrapperTablesTableRecentTableHead}>
+              <tr className={styles.wrapperTablesTableRecentTableHeadLine}>
+                <th
+                  className={`${styles.wrapperTablesTableRecentTableHeadLineTitle} ${styles.firstTh}`}
+                >
+                  Itens Recentes
+                </th>
+                <th className={styles.wrapperTablesTableRecentTableHeadLineAction}>Ação</th>
+              </tr>
+            </thead>
+            {calcRecentItems.map(
+              ({ id, name, qtde, price, cat, desc, createdAt }) => (
+                <TableRecent
+                  key={id}
+                  id={id}
+                  name={name}
+                  qtde={qtde}
+                  price={price}
+                  cat={cat}
+                  desc={desc}
+                  createdAt={createdAt}
+                />
+              )
+            )}
+          </table>
         </div>
         <div className={styles.wrapperTablesTableRunningOut}>
           {calcItemsRunningOut.map(

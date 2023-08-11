@@ -1,3 +1,5 @@
+@import "../../styles/variables.scss";
+
 .wrapper {
   &Cards {
     display: flex;
@@ -13,10 +15,33 @@
 
     &TableRecent {
       width: 50%;
+
+      &Table {
+        width: 100%;
+
+        &Head {
+          &Line {
+            background-color: $backGroundSecondary;
+            box-shadow: $boxShadown;
+            height: 3rem;
+
+            &Title {
+              padding-inline: 0.5rem;
+            }
+            &Action {
+              padding-inline: 0.5rem;
+            }
+          }
+        }
+      }
     }
 
     &TableRunningOut {
       width: 50%;
     }
   }
+}
+
+.firstTh {
+  text-align: start;
 }
