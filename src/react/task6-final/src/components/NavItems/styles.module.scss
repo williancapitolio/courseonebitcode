@@ -4,14 +4,10 @@
   display: flex;
   gap: 2rem;
 
-  &Link{
+  &:nth-child(n) {
   }
-  
-  &All{}
-
-  &New{}
 }
 
 .active {
-  background-color: red;
+  background-color: red !important;
 }

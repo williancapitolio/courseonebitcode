@@ -10,23 +10,17 @@ type NavItemsType = {
 export const NavItems = ({ isAllActive, isNewActive }: NavItemsType) => {
   return (
     <nav className={styles.wrapper}>
-      <Link to={"/items"}>
-        <span
-          className={`${styles.wrapperLink} ${styles.wrapperAll} ${
-            isAllActive && "active"
-          }`}
-        >
-          Todos os itens
-        </span>
+      <Link
+        to={"/items"}
+        className={`${isAllActive ? "active" : "inactive"}`}
+      >
+        Todos os itens
       </Link>
-      <Link to={"/items/new"}>
-        <span
-          className={`${styles.wrapperLink} ${styles.wrapperAll} ${
-            isNewActive && "active"
-          }`}
-        >
-          Novo item
-        </span>
+      <Link
+        to={"/items/new"}
+        className={`${isNewActive ? "active" : "inactive"}`}
+      >
+        Novo item
       </Link>
     </nav>
   );
