@@ -2,7 +2,7 @@ import { Link, useParams } from "react-router-dom";
 
 import styles from "./styles.module.scss";
 
-import { items } from "../../../mock-data.ts";
+import { items } from "../../mock-data.ts";
 
 export const Item = () => {
   const { itemId } = useParams();
