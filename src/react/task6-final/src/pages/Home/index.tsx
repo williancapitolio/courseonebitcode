@@ -3,16 +3,18 @@ import { TableRecent } from "../../components/Table/TableRecent";
 import { TableRunningOut } from "../../components/Table/TableRunningOut";
 import { Title } from "../../components/Title";
 
-import {
-  calcItemsDiversity,
-  calcTotalInventory,
-  calcRecentItems,
-  calcItemsRunningOut,
-} from "../../utils/functions.ts";
+import { useGetDashboardData } from "../../hooks/useGetDashboardData/index.ts";
 
 import styles from "./styles.module.scss";
 
 export const Home = () => {
+  const {
+    calcItemsDiversity,
+    calcTotalInventory,
+    calcRecentItems,
+    calcItemsRunningOut,
+  } = useGetDashboardData();
+
   return (
     <section className={styles.wrapper}>
       <Title title="Dashboard" />
@@ -58,9 +60,7 @@ export const Home = () => {
         <div className={styles.wrapperTablesTableRunningOut}>
           <table className={styles.wrapperTablesTableRunningOutTable}>
             <thead className={styles.wrapperTablesTableRunningOutTableHead}>
-              <tr
-                className={styles.wrapperTablesTableRunningOutTableHeadLine}
-              >
+              <tr className={styles.wrapperTablesTableRunningOutTableHeadLine}>
                 <th
                   className={`${styles.wrapperTablesTableRunningOutTableHeadLineTitle} ${styles.firstTh}`}
                 >
