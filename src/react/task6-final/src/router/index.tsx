@@ -3,6 +3,7 @@ import { Layout } from "../pages/Layout";
 import { Home } from "../pages/Home";
 import { Items } from "../pages/Items";
 import { Item } from "../pages/Item";
+import { NewItem } from "../pages/NewItem";
 
 export const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ export const router = createBrowserRouter([
       {
         path: "items/:itemId",
         element: <Item />,
+      },
+      {
+        path: "items/new",
+        element: <NewItem />,
       },
     ],
   },
