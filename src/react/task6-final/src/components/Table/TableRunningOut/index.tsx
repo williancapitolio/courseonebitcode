@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 export const TableRunningOut = ({ id, name, qtde }: itemsType) => {
   return (
-    <tbody className={styles.wrapperBody}>
+    <tbody className={styles.wrapper}>
       <tr className={styles.wrapperBodyLine}>
         <td className={styles.wrapperBodyLineItem}>{name}</td>
         <td className={styles.wrapperBodyLineQtde}>{qtde}</td>

@@ -1,5 +1,19 @@
+@import "../../styles/variables.scss";
+
 .wrapper {
-  &Title {
-    font-size: 1.75rem;
+  &Table {
+    width: 100%;
+
+    &Head {
+      &Line {
+        background-color: $backGroundSecondary;
+        box-shadow: $boxShadown;
+        height: 3rem;
+
+        &Item {
+          padding-inline: 0.5rem;
+        }
+      }
+    }
   }
 }

@@ -4,6 +4,7 @@ import { Home } from "../pages/Home";
 import { Items } from "../pages/Items";
 import { Item } from "../pages/Item";
 import { NewItem } from "../pages/NewItem";
+import { UpdateItem } from "../pages/UpdateItem";
 
 export const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ export const router = createBrowserRouter([
       {
         path: "items/new",
         element: <NewItem />,
+      },
+      {
+        path: "items/update/:itemId",
+        element: <UpdateItem />,
       },
     ],
   },

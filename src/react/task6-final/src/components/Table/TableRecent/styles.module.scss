@@ -6,6 +6,12 @@
   &BodyLine {
     height: 3rem;
 
+    &:hover {
+      background-color: $backGroundTertiary;
+      box-shadow: $boxShadown;
+      cursor: pointer;
+    }
+
     &Item {
       padding-inline: 0.5rem;
     }
