@@ -3,11 +3,8 @@
   padding-bottom: 1rem;
   display: flex;
   gap: 2rem;
+  margin-bottom: 1.5rem;
 
   &:nth-child(n) {
   }
-}
-
-.active {
-  background-color: red !important;
 }

@@ -12,13 +12,13 @@ export const NavItems = ({ isAllActive, isNewActive }: NavItemsType) => {
     <nav className={styles.wrapper}>
       <Link
         to={"/items"}
-        className={`${isAllActive ? "active" : "inactive"}`}
+        className={`${isAllActive ? "navItemActive" : "navItemInactive"}`}
       >
         Todos os itens
       </Link>
       <Link
         to={"/items/new"}
-        className={`${isNewActive ? "active" : "inactive"}`}
+        className={`${isNewActive ? "navItemActive" : "navItemInactive"}`}
       >
         Novo item
       </Link>

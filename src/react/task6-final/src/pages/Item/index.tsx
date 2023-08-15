@@ -1,5 +1,8 @@
 import { Link, useParams } from "react-router-dom";
 
+import { NavItems } from "../../components/NavItems";
+import { Title } from "../../components/Title";
+
 import styles from "./styles.module.scss";
 
 import { items } from "../../mock-data.ts";
@@ -20,6 +23,11 @@ export const Item = () => {
   return (
     <>
       <section className={styles.wrapper}>
+      <Title title={"Stock Items"} />
+        <NavItems 
+          isAllActive={false}
+          isNewActive={false}
+        />
         <p>{item.name}</p>
       </section>
     </>
