@@ -43,7 +43,6 @@ export const Item = () => {
             </div>
             <div className={styles.wrapperBodyCardsCard}>
               <span className={styles.wrapperBodyCardsCardItem}>
-                {" "}
                 Quantidade em estoque: {item.qtde}
               </span>
             </div>

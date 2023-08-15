@@ -44,11 +44,11 @@ export const items: itemsType[] = [
     id: 4,
     name: "Stardew Valley",
     qtde: 3,
-    price: 10,
+    price: 10.99,
     cat: "Jogos",
     desc: "Stardew Valley, um jogo de simulador de fazenda",
     createdAt: "08/10/2023",
-    updatedAt: "",
+    updatedAt: "08/10/2023",
   },
   {
     id: 5,

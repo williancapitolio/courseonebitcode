@@ -1,2 +1,62 @@
+@import "../../styles/variables.scss";
+
+@import "../../styles/mixins.scss";
+
 .wrapper {
+  display: flex;
+  flex-direction: column;
+
+  &Head {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: 1.5rem;
+
+    &Title {
+      font-size: 1.25rem;
+    }
+
+    &Update {
+      @include btnStyle($btnEdit);
+    }
+
+    &Delete {
+      @include btnStyle($btnRemove);
+    }
+  }
+
+  &Body {
+    margin-bottom: 1.5rem;
+    &Cards {
+      display: flex;
+      gap: 2rem;
+
+      &Card {
+        background-color: $backGroundSecondary;
+        padding: 1rem 2rem;
+        box-shadow: $boxShadown;
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+        &Item {
+          font-weight: 600;
+        }
+
+        &:hover {
+          box-shadow: $boxShadownHover;
+        }
+      }
+    }
+  }
+
+  &Description {
+    margin-bottom: 1.5rem;
+  }
+
+  &Footer {
+    display: flex;
+    gap: 2rem;
+    
+    &Date {
+    }
+  }
 }
