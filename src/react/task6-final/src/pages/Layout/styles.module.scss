@@ -1,4 +1,12 @@
-.wrapper {
-  margin-bottom: 3.875rem;
+.header {
+  flex-basis: 100%;
+}
+
+.main {
   padding: 1rem 2rem;
+  flex: 1 0 auto;
+}
+
+.footer {
+  flex-basis: 100%;
 }

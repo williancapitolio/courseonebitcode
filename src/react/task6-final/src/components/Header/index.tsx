@@ -3,7 +3,7 @@ import styles from "./styles.module.scss";
 
 export const Header = () => {
   return (
-    <header className={styles.wrapper}>
+    <div className={styles.wrapper}>
       <Link className={styles.wrapperTitle} to="/">
         REACT STOCK
       </Link>
@@ -15,6 +15,6 @@ export const Header = () => {
           Itens
         </Link>
       </nav>
-    </header>
+    </div>
   );
 };

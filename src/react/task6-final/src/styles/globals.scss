@@ -25,21 +25,27 @@ a {
   text-decoration: none;
 }
 
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 .navItemActive {
-  border-bottom: .1rem solid transparent;
+  border-bottom: 0.1rem solid transparent;
   transition: all 0.25s ease-in-out;
 
   &:hover {
-    border-bottom: .1rem solid #fff;
+    border-bottom: 0.1rem solid #fff;
   }
 }
 
 .navItemInactive {
   color: #ffffff80;
-  border-bottom: .1rem solid transparent;
+  border-bottom: 0.1rem solid transparent;
   transition: all 0.25s ease-in-out;
 
   &:hover {
-    border-bottom: .1rem solid #ffffff80;
+    border-bottom: 0.1rem solid #ffffff80;
   }
 }

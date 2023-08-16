@@ -8,11 +8,15 @@ import styles from "./styles.module.scss";
 export const Layout = () => {
   return (
     <>
-      <Header />
-      <main className={styles.wrapper}>
+      <header className={styles.header}>
+        <Header />
+      </header>
+      <main className={styles.main}>
         <Outlet />
       </main>
-      <Footer />
+      <footer className={styles.footer}>
+        <Footer />
+      </footer>
     </>
   );
 };
