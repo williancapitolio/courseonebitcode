@@ -1,3 +1,4 @@
+import { FormItem } from "../../components/FormItem";
 import { NavItems } from "../../components/NavItems";
 import { Title } from "../../components/Title";
 
@@ -12,6 +13,7 @@ export const NewItem = () => {
           isAllActive={false}
           isNewActive={true}
         />
+        <FormItem />
       </section>
     </>
   );

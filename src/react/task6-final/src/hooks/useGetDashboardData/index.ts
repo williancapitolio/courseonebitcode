@@ -30,6 +30,7 @@ export const useGetDashboardData = () => {
   });
 
   return {
+    dateFormatterToday,
     calcItemsDiversity,
     calcTotalInventory,
     calcRecentItems,
