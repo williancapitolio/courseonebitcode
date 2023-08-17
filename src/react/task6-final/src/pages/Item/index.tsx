@@ -6,11 +6,15 @@ import { Title } from "../../components/Title";
 import styles from "./styles.module.scss";
 
 import { items } from "../../mock-data.ts";
+import { Modal } from "../../components/Modal/index.tsx";
+import { useCallModal } from "../../hooks/useCallModal/index.tsx";
 
 export const Item = () => {
   const { itemId } = useParams();
 
   const item = items.find((it) => it.id === Number(itemId));
+
+  const { openModal, setOpenModal, handleModal } = useCallModal();
 
   if (!item)
     return (
@@ -32,7 +36,15 @@ export const Item = () => {
         <div className={styles.wrapperHead}>
           <h3 className={styles.wrapperHeadTitle}>{item.name}</h3>
           <button className={styles.wrapperHeadUpdate}>Atualizar</button>
-          <button className={styles.wrapperHeadDelete}>Excluir</button>
+          <button className={styles.wrapperHeadDelete} onClick={() => setOpenModal(true)}>Excluir</button>
+          <Modal
+            isOpen={openModal}
+            title="Confirmação"
+            body={`Tem certeza que deseja excluir o item ${item.name}?`}
+            handleModal={handleModal}
+            handleAction={() => console.log("batata")}
+            btnActionText="Confirmar"
+          />
         </div>
         <div className={styles.wrapperBody}>
           <div className={styles.wrapperBodyCards}>
