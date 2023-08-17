@@ -1,0 +1,86 @@
+@import "../../styles/variables.scss";
+
+@import "../../styles/mixins.scss";
+
+.wrapper {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding-bottom: 1rem;
+  gap: 2rem;
+
+  &Title {
+    margin-bottom: 1rem;
+
+    &Content {
+      position: absolute;
+      left: 0;
+      padding-left: 2rem;
+      font-size: 1.25rem;
+    }
+  }
+
+  &Union {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: space-between;
+
+    &Div {
+      display: flex;
+      flex-direction: column;
+      width: 25%;
+
+      &Label {
+      }
+
+      &Input {
+        background-color: $backGroundSecondary;
+        border: 0.2rem solid transparent;
+        padding: 0.5rem;
+        margin-top: 0.5rem;
+        border-radius: 0.5rem;
+        width: 100%;
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      &Option {
+      }
+    }
+  }
+
+  &Desc {
+    display: flex;
+    flex-direction: column;
+
+    &Label {
+    }
+
+    &Textarea {
+      background-color: $backGroundSecondary;
+      border: 0.2rem solid transparent;
+      padding: 0.5rem;
+      margin-top: 0.5rem;
+      border-radius: 0.5rem;
+      resize: none;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  &Btn {
+    @include btnStyle($btnOk);
+    width: 6rem;
+  }
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}

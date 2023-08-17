@@ -35,8 +35,15 @@ export const Item = () => {
         <NavItems isAllActive={false} isNewActive={false} />
         <div className={styles.wrapperHead}>
           <h3 className={styles.wrapperHeadTitle}>{item.name}</h3>
-          <button className={styles.wrapperHeadUpdate}>Atualizar</button>
-          <button className={styles.wrapperHeadDelete} onClick={() => setOpenModal(true)}>Excluir</button>
+          <Link to={`/items/update/${item.id}`}>
+            <button className={styles.wrapperHeadUpdate}>Atualizar</button>
+          </Link>
+          <button
+            className={styles.wrapperHeadDelete}
+            onClick={() => setOpenModal(true)}
+          >
+            Excluir
+          </button>
           <Modal
             isOpen={openModal}
             title="Confirmação"

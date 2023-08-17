@@ -38,27 +38,89 @@ export const FormItem = () => {
 
   return (
     <form onSubmit={handleSubmit} className={styles.wrapper}>
-      <label htmlFor="name">Nome</label>
-      <input type="text" name="name" id="name" onChange={handleChange} />
+      <div className={styles.wrapperTitle}>
+        <h3 className={styles.wrapperTitleContent}>Adicionar Item</h3>
+      </div>
+      <div className={styles.wrapperUnion}>
+        <div className={styles.wrapperUnionDiv}>
+          <label htmlFor="name" className={styles.wrapperUnionDivLabel}>
+            Nome
+          </label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            onChange={handleChange}
+            className={styles.wrapperUnionDivInput}
+          />
+        </div>
 
-      <label htmlFor="qtde">Quantidade</label>
-      <input type="number" name="qtde" id="qtde" onChange={handleChange} />
+        <div className={styles.wrapperUnionDiv}>
+          <label htmlFor="qtde" className={styles.wrapperUnionDivLabel}>
+            Quantidade
+          </label>
+          <input
+            type="number"
+            name="qtde"
+            id="qtde"
+            onChange={handleChange}
+            className={styles.wrapperUnionDivInput}
+          />
+        </div>
 
-      <label htmlFor="price">Preço</label>
-      <input type="number" name="price" id="price" onChange={handleChange} />
+        <div className={styles.wrapperUnionDiv}>
+          <label htmlFor="price" className={styles.wrapperUnionDivLabel}>
+            Preço
+          </label>
+          <input
+            type="number"
+            name="price"
+            id="price"
+            onChange={handleChange}
+            className={styles.wrapperUnionDivInput}
+          />
+        </div>
 
-      <label htmlFor="cat">Categoria</label>
-      <select name="cat" id="cat" onChange={handleChange}>
-        <option value="">Selecione uma categoria...</option>
-        {items.map(({ cat }) => (
-          <option value={cat}>{cat}</option>
-        ))}
-      </select>
+        <div className={styles.wrapperUnionDiv}>
+          <label htmlFor="cat" className={styles.wrapperUnionDivLabel}>
+            Categoria
+          </label>
+          <select
+            name="cat"
+            id="cat"
+            onChange={handleChange}
+            className={styles.wrapperUnionDivInput}
+          >
+            <option value="" className={styles.wrapperUnionDivOption}>
+              Selecione uma categoria...
+            </option>
+            {items.map(({ id, cat }) => (
+              <option
+                key={id}
+                value={cat}
+                className={styles.wrapperUnionDivOption}
+              >
+                {cat}
+              </option>
+            ))}
+          </select>
+        </div>
+      </div>
 
-      <label htmlFor="desc">Descrição</label>
-      <textarea name="desc" id="desc" onChange={handleChange} />
+      <div className={styles.wrapperDesc}>
+        <label htmlFor="desc" className={styles.wrapperDescLabel}>
+          Descrição
+        </label>
+        <textarea
+          name="desc"
+          id="desc"
+          onChange={handleChange}
+          className={styles.wrapperDescTextarea}
+          rows={8}
+        />
+      </div>
 
-      <button>Salvar</button>
+      <button className={styles.wrapperBtn}>Salvar</button>
     </form>
   );
 };

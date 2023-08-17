@@ -24,7 +24,7 @@ export const TableAll = ({ id, name, qtde, cat }: TableAppProps) => {
           <Link to={`/items/${id}`}>
             <button className={styles.wrapperLineActionView}>Ver</button>
           </Link>
-          <Link to={`items/update/${id}`}>
+          <Link to={`/items/update/${id}`}>
             <button className={styles.wrapperLineActionUpdate}>
               Atualizar
             </button>
