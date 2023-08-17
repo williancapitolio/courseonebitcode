@@ -1,12 +1,18 @@
 import { Link } from "react-router-dom";
 
-import styles from "./styles.module.scss";
+import { useCallModal } from "../../../hooks/useCallModal";
+
+import { Modal } from "../../Modal/index.tsx";
 
 import { itemsType } from "../../../types/itemsType.ts";
+
+import styles from "./styles.module.scss";
 
 type TableAppProps = Omit<itemsType, "price" | "desc" | "createdAt">;
 
 export const TableAll = ({ id, name, qtde, cat }: TableAppProps) => {
+  const { openModal, setOpenModal, handleModal } = useCallModal();
+
   return (
     <tbody className={styles.wrapper}>
       <tr className={styles.wrapperLine}>
@@ -23,7 +29,20 @@ export const TableAll = ({ id, name, qtde, cat }: TableAppProps) => {
               Atualizar
             </button>
           </Link>
-          <button className={styles.wrapperLineActionDelete}>Excluir</button>
+          <button
+            className={styles.wrapperLineActionDelete}
+            onClick={() => setOpenModal(true)}
+          >
+            Excluir
+          </button>
+          <Modal
+            isOpen={openModal}
+            title="Confirmação"
+            body={`Tem certeza que deseja excluir o item ${name}?`}
+            handleModal={handleModal}
+            handleAction={() => console.log("batata")}
+            btnActionText="Confirmar"
+          />
         </td>
       </tr>
     </tbody>

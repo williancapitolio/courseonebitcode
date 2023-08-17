@@ -7,5 +7,5 @@ export const useCallModal = () => {
     setOpenModal(!openModal);
   };
 
-  return { openModal, handleModal };
+  return { openModal, setOpenModal, handleModal };
 };
