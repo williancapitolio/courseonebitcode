@@ -4,11 +4,11 @@ import { useCallModal } from "../../../hooks/useCallModal";
 
 import { Modal } from "../../Modal/index.tsx";
 
-import { itemsType } from "../../../types/itemsType.ts";
+import { ItemsType } from "../../../types/ItemsType.ts";
 
 import styles from "./styles.module.scss";
 
-type TableAppProps = Omit<itemsType, "price" | "desc" | "createdAt">;
+type TableAppProps = Omit<ItemsType, "price" | "desc" | "createdAt">;
 
 export const TableAll = ({ id, name, qtde, cat }: TableAppProps) => {
   const { openModal, setOpenModal, handleModal } = useCallModal();

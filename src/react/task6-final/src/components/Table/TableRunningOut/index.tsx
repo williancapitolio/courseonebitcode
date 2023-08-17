@@ -1,9 +1,9 @@
 import styles from "./styles.module.scss";
 
-import { itemsType } from "../../../types/itemsType.ts";
+import { ItemsType } from "../../../types/ItemsType.ts";
 import { Link } from "react-router-dom";
 
-export const TableRunningOut = ({ id, name, qtde }: itemsType) => {
+export const TableRunningOut = ({ id, name, qtde }: ItemsType) => {
   return (
     <tbody className={styles.wrapper}>
       <tr className={styles.wrapperBodyLine}>

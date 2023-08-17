@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 
 import styles from "./styles.module.scss";
 
-import { itemsType } from "../../../types/itemsType.ts";
+import { ItemsType } from "../../../types/ItemsType.ts";
 
-export const TableRecent = ({ id, name }: itemsType) => {
+export const TableRecent = ({ id, name }: ItemsType) => {
   return (
     <tbody className={styles.wrapper}>
       <tr className={styles.wrapperBodyLine}>

@@ -1,4 +1,4 @@
-export type itemsType = {
+export type ItemsType = {
   id: number;
   name: string;
   qtde: number;
