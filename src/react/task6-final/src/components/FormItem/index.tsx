@@ -2,6 +2,8 @@ import { useState } from "react";
 
 /* import { useGetDashboardData } from "../../hooks/useGetDashboardData"; */
 
+import { items } from "../../mock-data.ts";
+
 import { ItemsType } from "../../types/ItemsType";
 
 import styles from "./styles.module.scss";
@@ -39,7 +41,24 @@ export const FormItem = () => {
       <label htmlFor="name">Nome</label>
       <input type="text" name="name" id="name" onChange={handleChange} />
 
-      <button>Clique</button>
+      <label htmlFor="qtde">Quantidade</label>
+      <input type="number" name="qtde" id="qtde" onChange={handleChange} />
+
+      <label htmlFor="price">Preço</label>
+      <input type="number" name="price" id="price" onChange={handleChange} />
+
+      <label htmlFor="cat">Categoria</label>
+      <select name="cat" id="cat" onChange={handleChange}>
+        <option value="">Selecione uma categoria...</option>
+        {items.map(({ cat }) => (
+          <option value={cat}>{cat}</option>
+        ))}
+      </select>
+
+      <label htmlFor="desc">Descrição</label>
+      <textarea name="desc" id="desc" onChange={handleChange} />
+
+      <button>Salvar</button>
     </form>
   );
 };
