@@ -25,12 +25,21 @@ export const UpdateItem = () => {
       </>
     );
 
+  const {name, qtde, price, cat, desc} = item;
+
   return (
     <>
       <section className={styles.wrapper}>
         <Title title={"Stock Items"} />
         <NavItems isAllActive={false} isNewActive={false} />
-        <FormItem />
+        <FormItem
+          title={`Editar Item - ${name}`}
+          name={name}
+          qtde={qtde}
+          price={price}
+          cat={cat}
+          desc={desc}
+        />
       </section>
     </>
   );
