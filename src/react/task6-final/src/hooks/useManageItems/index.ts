@@ -9,32 +9,42 @@ export const useManageItems = () => {
     return JSON.parse(storedItems);
   });
 
+  const dateNow = (date = new Date(), locale = "pt-BR") => {
+    return new Intl.DateTimeFormat(locale).format(date);
+  };
+
   const createItem = ({ name, qtde, price, cat, desc }: ItemsType) => {
     const id = Math.floor(Math.random() * 100000);
-    const createdAt = (date = new Date(), locale = "pt-BR") => {
-      return new Intl.DateTimeFormat(locale).format(date);
-    };
 
     setItems((state: ItemsType[]) => {
       const newState = [
         ...state,
-        { id, name, qtde, price, cat, desc, createdAt },
+        { id, name, qtde, price, cat, desc, createdAt: dateNow },
       ];
       localStorage.setItem("items-list", JSON.stringify(newState));
       return newState;
     });
   };
 
-  /* const readItemById = (id: number) => {
-    const itemFound = items.find((i: ItemsType) => i.id === id);
-    if (!itemFound) return null
-    return itemFound
-  }; */
+  const updateItem = ({ id, name, qtde, price, cat, desc }: ItemsType) => {
+    setItems((state: ItemsType[]) => {
+      const itemFound = state.find((i) => i.id === id);
+      if (itemFound) {
+        itemFound.name = name;
+        itemFound.qtde = qtde;
+        itemFound.price = price;
+        itemFound.cat = cat;
+        itemFound.desc = desc;
+        itemFound.updatedAt = dateNow;
 
-  /* const updateItem = ({ id, name, qtde, price, cat, desc }: ItemsType) => {
-    const localItem = localStorage.getItem("items-list");
-    const itemFound: ItemsType = localItem.find((i: ItemsType) => i.id === id);
-  }; */
+        const index = state.indexOf(itemFound);
+        state[index] = itemFound;
+
+        localStorage.setItem("items-list", JSON.stringify(state));
+        return state;
+      }
+    });
+  };
 
   const deleteItem = (id: number) => {
     setItems((state: ItemsType[]) => {
@@ -44,5 +54,5 @@ export const useManageItems = () => {
     });
   };
 
-  return { items, createItem, deleteItem };
+  return { items, createItem, updateItem, deleteItem };
 };
