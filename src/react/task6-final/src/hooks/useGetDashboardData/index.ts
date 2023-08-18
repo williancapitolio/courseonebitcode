@@ -1,6 +1,10 @@
-import { items } from "../../mock-data.ts";
+import { useManageItems } from "../useManageItems/index.ts";
+
+import { ItemsType } from "../../types/ItemsType.ts";
 
 export const useGetDashboardData = () => {
+  const { items } = useManageItems();
+
   const dateFormatterToday = (date = new Date(), locale = "en-US") => {
     return new Intl.DateTimeFormat(locale).format(date);
   };
@@ -17,7 +21,7 @@ export const useGetDashboardData = () => {
 
   const calcItemsDiversity = [...new Set(items.map((item) => item.cat))].length;
 
-  const calcTotalInventory = items.reduce((acc, item) => {
+  const calcTotalInventory: number = items.reduce((acc: number, item: ItemsType): number => {
     return acc + item.qtde;
   }, 0);
 

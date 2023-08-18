@@ -3,7 +3,7 @@ import { useState } from "react";
 import { ItemsType } from "../../types/ItemsType";
 
 export const useManageItems = () => {
-  const [items, setItems] = useState(() => {
+  const [items, setItems] = useState<[] | ItemsType[]>(() => {
     const storedItems = localStorage.getItem("items-list");
     if (!storedItems) return [];
     return JSON.parse(storedItems);
@@ -27,8 +27,10 @@ export const useManageItems = () => {
   };
 
   const updateItem = ({ id, name, qtde, price, cat, desc }: ItemsType) => {
+    const itemFound = items.find((i) => i.id === id);
+    if (!itemFound) return;
+    
     setItems((state: ItemsType[]) => {
-      const itemFound = state.find((i) => i.id === id);
       if (itemFound) {
         itemFound.name = name;
         itemFound.qtde = qtde;
@@ -36,13 +38,12 @@ export const useManageItems = () => {
         itemFound.cat = cat;
         itemFound.desc = desc;
         itemFound.updatedAt = dateNow;
-
-        const index = state.indexOf(itemFound);
-        state[index] = itemFound;
-
-        localStorage.setItem("items-list", JSON.stringify(state));
-        return state;
       }
+      const index = state.indexOf(itemFound);
+      state[index] = itemFound;
+
+      localStorage.setItem("items-list", JSON.stringify(state));
+      return state;
     });
   };
 
