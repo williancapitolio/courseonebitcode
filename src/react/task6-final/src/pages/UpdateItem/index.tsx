@@ -1,15 +1,15 @@
 import { Link, useParams } from "react-router-dom";
+import { useManageItems } from "../../hooks/useManageItems";
 
-import { FormItem } from "../../components/FormItem";
+import { FormItem } from "../../components/Form/FormItem/index.tsx";
 import { NavItems } from "../../components/NavItems";
 import { Title } from "../../components/Title";
 
 import styles from "./styles.module.scss";
 
-import { items } from "../../mock-data.ts";
-
 export const UpdateItem = () => {
   const { itemId } = useParams();
+  const { items } = useManageItems();
 
   const item = items.find((it) => it.id === Number(itemId));
 
@@ -25,21 +25,22 @@ export const UpdateItem = () => {
       </>
     );
 
-  const {name, qtde, price, cat, desc} = item;
+  const { name, qtde, price, cat, desc } = item;
+
+  const props = {
+    name,
+    qtde,
+    price,
+    cat,
+    desc,
+  };
 
   return (
     <>
       <section className={styles.wrapper}>
         <Title title={"Stock Items"} />
         <NavItems isAllActive={false} isNewActive={false} />
-        <FormItem
-          title={`Editar Item - ${name}`}
-          name={name}
-          qtde={qtde}
-          price={price}
-          cat={cat}
-          desc={desc}
-        />
+        <FormItem {...props} />
       </section>
     </>
   );

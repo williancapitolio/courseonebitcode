@@ -1,9 +1,9 @@
+import { useGetDashboardData } from "../../hooks/useGetDashboardData/index.ts";
+
 import { Card } from "../../components/Card";
 import { TableRecent } from "../../components/Table/TableRecent";
 import { TableRunningOut } from "../../components/Table/TableRunningOut";
 import { Title } from "../../components/Title";
-
-import { useGetDashboardData } from "../../hooks/useGetDashboardData/index.ts";
 
 import styles from "./styles.module.scss";
 
@@ -42,7 +42,7 @@ export const Home = () => {
               </tr>
             </thead>
             {calcRecentItems.map(
-              ({ id, name, qtde, price, cat, desc, createdAt }) => (
+              ({ id, name, qtde, price, cat, desc, createdAtFormat }) => (
                 <TableRecent
                   key={id}
                   id={id}
@@ -51,7 +51,7 @@ export const Home = () => {
                   price={price}
                   cat={cat}
                   desc={desc}
-                  createdAt={createdAt}
+                  createdAt={createdAtFormat}
                 />
               )
             )}
@@ -83,7 +83,7 @@ export const Home = () => {
               </tr>
             </thead>
             {calcItemsRunningOut.map(
-              ({ id, name, qtde, price, cat, desc, createdAt }) => (
+              ({ id, name, qtde, price, cat, desc, createdAtFormat }) => (
                 <TableRunningOut
                   key={id}
                   id={id}
@@ -92,7 +92,7 @@ export const Home = () => {
                   price={price}
                   cat={cat}
                   desc={desc}
-                  createdAt={createdAt}
+                  createdAt={createdAtFormat}
                 />
               )
             )}

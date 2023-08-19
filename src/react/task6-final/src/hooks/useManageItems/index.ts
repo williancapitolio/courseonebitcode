@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import { ItemsType } from "../../types/ItemsType";
+import { useManageDates } from "../useManageDates";
 
 export const useManageItems = () => {
   const [items, setItems] = useState<[] | ItemsType[]>(() => {
@@ -9,9 +10,7 @@ export const useManageItems = () => {
     return JSON.parse(storedItems);
   });
 
-  const dateNow = (date = new Date(), locale = "pt-BR") => {
-    return new Intl.DateTimeFormat(locale).format(date);
-  };
+  const { dateFormatEn, dateFormat } = useManageDates();
 
   const createItem = ({ name, qtde, price, cat, desc }: ItemsType) => {
     const id = Math.floor(Math.random() * 100000);
@@ -19,7 +18,18 @@ export const useManageItems = () => {
     setItems((state: ItemsType[]) => {
       const newState = [
         ...state,
-        { id, name, qtde, price, cat, desc, createdAt: dateNow },
+        {
+          id,
+          name,
+          qtde,
+          price,
+          cat,
+          desc,
+          createdAt: dateFormatEn,
+          updatedAt: "",
+          createdAtFormat: dateFormat,
+          updatedAtFormat: "",
+        },
       ];
       localStorage.setItem("items-list", JSON.stringify(newState));
       return newState;
@@ -27,9 +37,9 @@ export const useManageItems = () => {
   };
 
   const updateItem = ({ id, name, qtde, price, cat, desc }: ItemsType) => {
-    const itemFound = items.find((i) => i.id === id);
+    const itemFound = items.find((i: ItemsType) => i.id === id);
     if (!itemFound) return;
-    
+
     setItems((state: ItemsType[]) => {
       if (itemFound) {
         itemFound.name = name;
@@ -37,7 +47,8 @@ export const useManageItems = () => {
         itemFound.price = price;
         itemFound.cat = cat;
         itemFound.desc = desc;
-        itemFound.updatedAt = dateNow;
+        itemFound.updatedAt = dateFormatEn;
+        itemFound.updatedAtFormat = dateFormat;
       }
       const index = state.indexOf(itemFound);
       state[index] = itemFound;

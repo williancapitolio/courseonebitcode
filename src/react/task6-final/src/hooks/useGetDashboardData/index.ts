@@ -1,40 +1,47 @@
 import { useManageItems } from "../useManageItems/index.ts";
 
 import { ItemsType } from "../../types/ItemsType.ts";
+import { useManageDates } from "../useManageDates/index.ts";
 
 export const useGetDashboardData = () => {
   const { items } = useManageItems();
 
-  const dateFormatterToday = (date = new Date(), locale = "en-US") => {
-    return new Intl.DateTimeFormat(locale).format(date);
+  const { dateFormatEn } = useManageDates();
+
+  const calcItemsDiversity = [
+    ...new Set(items.map((item: ItemsType) => item.cat)),
+  ].length;
+
+  const calcTotalInventory: number =
+    items.length > 0
+      ? (items as ItemsType[]).reduce(
+          (acc: number, item: ItemsType): number => {
+            return acc + item.qtde;
+          },
+          0
+        )
+      : 0;
+
+  const diffInDays = (dateOne: Date, dateTwo: Date) => {
+    const oneDayInMs = 24 * 60 * 60 * 1000;
+    return Math.round(
+      Math.abs((dateOne.getTime() - dateTwo.getTime()) / oneDayInMs)
+    );
   };
 
-  const calcDifferenceBetweenTwoDays = (date: string) => {
-    const createdDate = new Date(date);
-    const todayDate = new Date(dateFormatterToday());
+  const limit = 10;
+  const today = new Date(dateFormatEn);
 
-    const diffTime = Math.abs(+todayDate - +createdDate);
-    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-
-    return diffDays;
-  };
-
-  const calcItemsDiversity = [...new Set(items.map((item) => item.cat))].length;
-
-  const calcTotalInventory: number = items.reduce((acc: number, item: ItemsType): number => {
-    return acc + item.qtde;
-  }, 0);
-
-  const calcRecentItems = items.filter((item) => {
-    if (calcDifferenceBetweenTwoDays(item.createdAt) < 10) return item;
+  const calcRecentItems: ItemsType[] = items.filter((item) => {
+    const created = new Date(item.createdAt as string);
+    diffInDays(today, created) < limit;
   });
 
-  const calcItemsRunningOut = items.filter((item) => {
+  const calcItemsRunningOut = items.filter((item: ItemsType) => {
     if (item.qtde < 10) return item;
   });
 
   return {
-    dateFormatterToday,
     calcItemsDiversity,
     calcTotalInventory,
     calcRecentItems,

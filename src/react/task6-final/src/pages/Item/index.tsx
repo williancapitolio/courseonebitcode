@@ -1,16 +1,16 @@
 import { Link, useParams } from "react-router-dom";
+import { useManageItems } from "../../hooks/useManageItems";
+import { useCallModal } from "../../hooks/useCallModal/index.tsx";
 
 import { NavItems } from "../../components/NavItems";
 import { Title } from "../../components/Title";
+import { Modal } from "../../components/Modal/index.tsx";
 
 import styles from "./styles.module.scss";
 
-import { items } from "../../mock-data.ts";
-import { Modal } from "../../components/Modal/index.tsx";
-import { useCallModal } from "../../hooks/useCallModal/index.tsx";
-
 export const Item = () => {
   const { itemId } = useParams();
+  const {items} = useManageItems()
 
   const item = items.find((it) => it.id === Number(itemId));
 
@@ -67,7 +67,7 @@ export const Item = () => {
             </div>
             <div className={styles.wrapperBodyCardsCard}>
               <span className={styles.wrapperBodyCardsCardItem}>
-                Preço: R$ {item.price.toFixed(2)}
+                Preço: R$ {Number(item.price).toFixed(2)}
               </span>
             </div>
           </div>
@@ -75,11 +75,11 @@ export const Item = () => {
         <p className={styles.wrapperDescription}>{item.desc}</p>
         <div className={styles.wrapperFooter}>
           <span className={styles.wrapperFooterDate}>
-            Cadastrado em: {item.createdAt}
+            Cadastrado em: {item.createdAtFormat}
           </span>
           {item.updatedAt && (
             <span className={styles.wrapperFooterDate}>
-              Atualizado em: {item.updatedAt}
+              Atualizado em: {item.updatedAtFormat}
             </span>
           )}
         </div>

@@ -1,12 +1,14 @@
+import { useManageItems } from "../../hooks/useManageItems";
+
 import { NavItems } from "../../components/NavItems";
 import { TableAll } from "../../components/Table/TableAll";
 import { Title } from "../../components/Title";
 
 import styles from "./styles.module.scss";
 
-import { items } from "../../mock-data.ts";
-
 export const Items = () => {
+  const { items } = useManageItems();
+
   return (
     <section className={styles.wrapper}>
       <Title title={"Stock Items"} />

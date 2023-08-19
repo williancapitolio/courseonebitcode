@@ -5,6 +5,8 @@ export type ItemsType = {
   price: number;
   cat: string;
   desc: string;
-  createdAt?: string | Date | number | ((date?: Date, locale?: string) => string);
-  updatedAt?: string | Date | number | ((date?: Date, locale?: string) => string);
+  createdAt?: string;
+  updatedAt?: string;
+  createdAtFormat?: string;
+  updatedAtFormat?: string;
 };

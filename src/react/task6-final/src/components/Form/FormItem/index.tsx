@@ -1,27 +1,13 @@
 import { useState } from "react";
 
-/* import { useGetDashboardData } from "../../hooks/useGetDashboardData"; */
-
-import { items } from "../../mock-data.ts";
-
-import { ItemsType } from "../../types/ItemsType";
+import { ItemsType } from "../../../types/ItemsType.ts";
 
 import styles from "./styles.module.scss";
+import { useManageItems } from "../../../hooks/useManageItems/index.ts";
 
 type InputType = Omit<ItemsType, "id" | "createdAt" | "updatedAt">;
 
-type FormProps = {
-  title: string;
-} & InputType;
-
-export const FormItem = ({
-  title,
-  name,
-  qtde,
-  price,
-  cat,
-  desc,
-}: FormProps) => {
+export const FormItem = () => {
   const [inputs, setInputs] = useState({
     name: "",
     qtde: 0,
@@ -30,9 +16,9 @@ export const FormItem = ({
     desc: "",
   });
 
-  /* const { dateFormatterToday } = useGetDashboardData(); */
+  const { items, createItem } = useManageItems();
 
-  const uniqueCats = [...new Set(items.map((item) => item.cat))]
+  const uniqueCats = [...new Set(items.map((item) => item.cat))];
 
   const handleChange = (ev: Event | React.SyntheticEvent) => {
     setInputs((prev: InputType) => ({
@@ -45,14 +31,13 @@ export const FormItem = ({
   const handleSubmit = (ev: Event | React.SyntheticEvent) => {
     ev.preventDefault();
     console.log(inputs);
-    /* const id = Math.floor(Math.random() * 100000); */
-    /* const { name, qtde, price, cat, desc } = inputs; */
+    createItem(inputs);
   };
 
   return (
     <form onSubmit={handleSubmit} className={styles.wrapper}>
       <div className={styles.wrapperTitle}>
-        <h3 className={styles.wrapperTitleContent}>{title}</h3>
+        <h3 className={styles.wrapperTitleContent}>Adicionar Item</h3>
       </div>
       <div className={styles.wrapperUnion}>
         <div className={styles.wrapperUnionDiv}>
@@ -65,7 +50,6 @@ export const FormItem = ({
             id="name"
             onChange={handleChange}
             className={styles.wrapperUnionDivInput}
-            value={name}
           />
         </div>
 
@@ -79,7 +63,6 @@ export const FormItem = ({
             id="qtde"
             onChange={handleChange}
             className={styles.wrapperUnionDivInput}
-            value={qtde}
           />
         </div>
 
@@ -93,7 +76,6 @@ export const FormItem = ({
             id="price"
             onChange={handleChange}
             className={styles.wrapperUnionDivInput}
-            value={price}
           />
         </div>
 
@@ -108,12 +90,11 @@ export const FormItem = ({
             className={styles.wrapperUnionDivInput}
           >
             <option value="" className={styles.wrapperUnionDivOption}>
-              {cat}
+            Selecione uma categoria...
             </option>
             {uniqueCats.map((cat, index) => (
               <option
                 key={index}
-                value={cat}
                 className={styles.wrapperUnionDivOption}
               >
                 {cat}
@@ -133,7 +114,6 @@ export const FormItem = ({
           onChange={handleChange}
           className={styles.wrapperDescTextarea}
           rows={8}
-          value={desc}
         />
       </div>
 

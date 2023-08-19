@@ -1,4 +1,4 @@
-import { FormItem } from "../../components/FormItem";
+import { FormItem } from "../../components/Form/FormItem";
 import { NavItems } from "../../components/NavItems";
 import { Title } from "../../components/Title";
 
@@ -10,14 +10,7 @@ export const NewItem = () => {
       <section className={styles.wrapper}>
         <Title title={"Stock Items"} />
         <NavItems isAllActive={false} isNewActive={true} />
-        <FormItem
-          title="Adicionar Item"
-          name=""
-          qtde={0}
-          price={0}
-          cat="Selecione uma categoria..."
-          desc=""
-        />
+        <FormItem />
       </section>
     </>
   );

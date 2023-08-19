@@ -1,7 +1,8 @@
-import styles from "./styles.module.scss";
+import { Link } from "react-router-dom";
 
 import { ItemsType } from "../../../types/ItemsType.ts";
-import { Link } from "react-router-dom";
+
+import styles from "./styles.module.scss";
 
 export const TableRunningOut = ({ id, name, qtde }: ItemsType) => {
   return (

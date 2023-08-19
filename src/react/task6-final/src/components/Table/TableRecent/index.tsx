@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 
-import styles from "./styles.module.scss";
-
 import { ItemsType } from "../../../types/ItemsType.ts";
+
+import styles from "./styles.module.scss";
 
 export const TableRecent = ({ id, name }: ItemsType) => {
   return (
