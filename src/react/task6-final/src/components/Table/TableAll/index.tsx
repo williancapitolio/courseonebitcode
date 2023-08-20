@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { useManageItems } from "../../../hooks/useManageItems";
 import { useCallModal } from "../../../hooks/useCallModal";
@@ -12,12 +12,15 @@ import styles from "./styles.module.scss";
 type TableAppProps = Omit<ItemsType, "price" | "desc" | "createdAt">;
 
 export const TableAll = ({ id, name, qtde, cat }: TableAppProps) => {
+  const navigate = useNavigate();
+  
   const { deleteItem } = useManageItems();
   const { openModal, setOpenModal, handleModal } = useCallModal();
 
   const handleAction = () => {
     deleteItem(id);
     setOpenModal(false);
+    navigate("/items");
   };
 
   return (

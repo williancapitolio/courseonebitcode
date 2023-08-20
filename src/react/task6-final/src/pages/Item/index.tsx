@@ -1,4 +1,4 @@
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
 import { useManageItems } from "../../hooks/useManageItems";
 import { useCallModal } from "../../hooks/useCallModal";
@@ -10,6 +10,7 @@ import { Modal } from "../../components/Modal";
 import styles from "./styles.module.scss";
 
 export const Item = () => {
+  const navigate = useNavigate();
   const { itemId } = useParams();
 
   const { items, deleteItem } = useManageItems();
@@ -32,6 +33,7 @@ export const Item = () => {
   const handleAction = () => {
     deleteItem(item.id);
     setOpenModal(false);
+    navigate("/items");
   };
 
   return (

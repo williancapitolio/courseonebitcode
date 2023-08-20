@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import { ItemsType } from "../../../types/ItemsType.ts";
 
@@ -16,6 +17,8 @@ export const FormItem = () => {
     desc: "",
   });
 
+  const navigate = useNavigate();
+
   const { items, createItem } = useManageItems();
 
   const uniqueCats = [...new Set(items.map((item) => item.cat))];
@@ -30,12 +33,11 @@ export const FormItem = () => {
 
   const handleSubmit = (ev: Event | React.SyntheticEvent) => {
     ev.preventDefault();
-    console.log(inputs);
     const id = Math.floor(Math.random() * 100000);
-    const {name, qtde, price, cat, desc} = inputs
-    
-    createItem({id, name, qtde, price, cat, desc});
-    console.log("fdsf")
+    const { name, qtde, price, cat, desc } = inputs;
+
+    createItem({ id, name, qtde, price, cat, desc });
+    navigate("/items");
   };
 
   return (
@@ -94,13 +96,10 @@ export const FormItem = () => {
             className={styles.wrapperUnionDivInput}
           >
             <option value="" className={styles.wrapperUnionDivOption}>
-            Selecione uma categoria...
+              Selecione uma categoria...
             </option>
             {uniqueCats.map((cat, index) => (
-              <option
-                key={index}
-                className={styles.wrapperUnionDivOption}
-              >
+              <option key={index} className={styles.wrapperUnionDivOption}>
                 {cat}
               </option>
             ))}
