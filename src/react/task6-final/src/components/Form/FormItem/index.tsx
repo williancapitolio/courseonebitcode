@@ -31,7 +31,11 @@ export const FormItem = () => {
   const handleSubmit = (ev: Event | React.SyntheticEvent) => {
     ev.preventDefault();
     console.log(inputs);
-    createItem(inputs);
+    const id = Math.floor(Math.random() * 100000);
+    const {name, qtde, price, cat, desc} = inputs
+    
+    createItem({id, name, qtde, price, cat, desc});
+    console.log("fdsf")
   };
 
   return (

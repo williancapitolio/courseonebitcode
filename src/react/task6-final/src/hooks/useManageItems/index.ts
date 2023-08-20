@@ -12,9 +12,7 @@ export const useManageItems = () => {
 
   const { dateFormatEn, dateFormat } = useManageDates();
 
-  const createItem = ({ name, qtde, price, cat, desc }: ItemsType) => {
-    const id = Math.floor(Math.random() * 100000);
-
+  const createItem = ({ id, name, qtde, price, cat, desc }: ItemsType) => {
     setItems((state: ItemsType[]) => {
       const newState = [
         ...state,

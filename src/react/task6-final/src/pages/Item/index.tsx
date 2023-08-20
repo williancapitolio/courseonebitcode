@@ -1,20 +1,21 @@
 import { Link, useParams } from "react-router-dom";
+
 import { useManageItems } from "../../hooks/useManageItems";
-import { useCallModal } from "../../hooks/useCallModal/index.tsx";
+import { useCallModal } from "../../hooks/useCallModal";
 
 import { NavItems } from "../../components/NavItems";
 import { Title } from "../../components/Title";
-import { Modal } from "../../components/Modal/index.tsx";
+import { Modal } from "../../components/Modal";
 
 import styles from "./styles.module.scss";
 
 export const Item = () => {
   const { itemId } = useParams();
-  const {items} = useManageItems()
+  const { items } = useManageItems();
 
   const item = items.find((it) => it.id === Number(itemId));
 
-  const { openModal, setOpenModal, handleModal } = useCallModal();
+  const { openModal, setOpenModal, handleModal, handleAction } = useCallModal();
 
   if (!item)
     return (
@@ -49,7 +50,7 @@ export const Item = () => {
             title="Confirmação"
             body={`Tem certeza que deseja excluir o item ${item.name}?`}
             handleModal={handleModal}
-            handleAction={() => console.log("batata")}
+            handleAction={handleAction(item.id)}
             btnActionText="Confirmar"
           />
         </div>

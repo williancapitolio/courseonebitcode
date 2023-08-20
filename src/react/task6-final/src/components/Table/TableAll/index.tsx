@@ -11,7 +11,7 @@ import styles from "./styles.module.scss";
 type TableAppProps = Omit<ItemsType, "price" | "desc" | "createdAt">;
 
 export const TableAll = ({ id, name, qtde, cat }: TableAppProps) => {
-  const { openModal, setOpenModal, handleModal } = useCallModal();
+  const { openModal, setOpenModal, handleModal, handleAction } = useCallModal();
 
   return (
     <tbody className={styles.wrapper}>
@@ -40,7 +40,7 @@ export const TableAll = ({ id, name, qtde, cat }: TableAppProps) => {
             title="Confirmação"
             body={`Tem certeza que deseja excluir o item ${name}?`}
             handleModal={handleModal}
-            handleAction={() => console.log("batata")}
+            handleAction={handleAction}
             btnActionText="Confirmar"
           />
         </td>

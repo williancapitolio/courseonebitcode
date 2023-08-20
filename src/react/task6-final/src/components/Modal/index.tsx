@@ -5,7 +5,10 @@ type ModalType = {
   title: string;
   body: string;
   handleModal: () => void;
-  handleAction: () => void;
+  id: number;
+  handleAction: (
+    id: number
+  ) => void & React.MouseEventHandler<HTMLButtonElement>;
   btnActionText?: string;
 };
 
@@ -14,6 +17,7 @@ export const Modal = ({
   title,
   body,
   handleModal,
+  id,
   handleAction,
   btnActionText = "Confirmar",
 }: ModalType) => {
@@ -37,7 +41,7 @@ export const Modal = ({
             </button>
             <button
               className={styles.wrapperBodyBtnsAction}
-              onClick={handleAction}
+              onClick={handleAction(id)}
             >
               {btnActionText}
             </button>
