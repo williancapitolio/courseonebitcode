@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import { ItemsType } from "../../types/ItemsType";
 import { useManageDates } from "../useManageDates";
@@ -9,6 +10,8 @@ export const useManageItems = () => {
     if (!storedItems) return [];
     return JSON.parse(storedItems);
   });
+
+  const navigate = useNavigate();
 
   const { dateFormatEn, dateFormat } = useManageDates();
 
@@ -30,6 +33,7 @@ export const useManageItems = () => {
         },
       ];
       localStorage.setItem("items-list", JSON.stringify(newState));
+      navigate("/items");
       return newState;
     });
   };
@@ -52,6 +56,7 @@ export const useManageItems = () => {
       state[index] = itemFound;
 
       localStorage.setItem("items-list", JSON.stringify(state));
+      navigate("/items");
       return state;
     });
   };
@@ -60,6 +65,7 @@ export const useManageItems = () => {
     setItems((state: ItemsType[]) => {
       const newState = state.filter((item) => item.id !== id);
       localStorage.setItem("items-list", JSON.stringify(newState));
+      navigate("/items");
       return newState;
     });
   };

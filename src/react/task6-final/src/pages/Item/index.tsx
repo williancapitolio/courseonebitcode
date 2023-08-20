@@ -11,11 +11,11 @@ import styles from "./styles.module.scss";
 
 export const Item = () => {
   const { itemId } = useParams();
-  const { items } = useManageItems();
+
+  const { items, deleteItem } = useManageItems();
+  const { openModal, setOpenModal, handleModal } = useCallModal();
 
   const item = items.find((it) => it.id === Number(itemId));
-
-  const { openModal, setOpenModal, handleModal, handleAction } = useCallModal();
 
   if (!item)
     return (
@@ -28,6 +28,11 @@ export const Item = () => {
         </section>
       </>
     );
+
+  const handleAction = () => {
+    deleteItem(item.id);
+    setOpenModal(false);
+  };
 
   return (
     <>
@@ -50,7 +55,7 @@ export const Item = () => {
             title="Confirmação"
             body={`Tem certeza que deseja excluir o item ${item.name}?`}
             handleModal={handleModal}
-            handleAction={handleAction(item.id)}
+            handleAction={handleAction}
             btnActionText="Confirmar"
           />
         </div>

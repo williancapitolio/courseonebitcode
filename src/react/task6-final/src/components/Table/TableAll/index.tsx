@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 
+import { useManageItems } from "../../../hooks/useManageItems";
 import { useCallModal } from "../../../hooks/useCallModal";
 
 import { Modal } from "../../Modal/index.tsx";
@@ -11,7 +12,13 @@ import styles from "./styles.module.scss";
 type TableAppProps = Omit<ItemsType, "price" | "desc" | "createdAt">;
 
 export const TableAll = ({ id, name, qtde, cat }: TableAppProps) => {
-  const { openModal, setOpenModal, handleModal, handleAction } = useCallModal();
+  const { deleteItem } = useManageItems();
+  const { openModal, setOpenModal, handleModal } = useCallModal();
+
+  const handleAction = () => {
+    deleteItem(id);
+    setOpenModal(false);
+  };
 
   return (
     <tbody className={styles.wrapper}>
