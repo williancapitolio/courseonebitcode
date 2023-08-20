@@ -31,13 +31,17 @@ export const FormItem = () => {
     }));
   };
 
+  const handleNavigate = () => {
+    navigate("/items");
+  };
+
   const handleSubmit = (ev: Event | React.SyntheticEvent) => {
     ev.preventDefault();
     const id = Math.floor(Math.random() * 100000);
     const { name, qtde, price, cat, desc } = inputs;
 
     createItem({ id, name, qtde, price, cat, desc });
-    navigate("/items");
+    handleNavigate();
   };
 
   return (

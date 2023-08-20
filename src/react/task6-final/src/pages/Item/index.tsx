@@ -30,10 +30,14 @@ export const Item = () => {
       </>
     );
 
+  const handleNavigate = () => {
+    navigate("/items");
+  };
+
   const handleAction = () => {
     deleteItem(item.id);
     setOpenModal(false);
-    navigate("/items");
+    handleNavigate();
   };
 
   return (

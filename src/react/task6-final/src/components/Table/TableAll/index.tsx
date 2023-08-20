@@ -13,14 +13,18 @@ type TableAppProps = Omit<ItemsType, "price" | "desc" | "createdAt">;
 
 export const TableAll = ({ id, name, qtde, cat }: TableAppProps) => {
   const navigate = useNavigate();
-  
+
   const { deleteItem } = useManageItems();
   const { openModal, setOpenModal, handleModal } = useCallModal();
+
+  const handleNavigate = () => {
+    navigate("/items");
+  };
 
   const handleAction = () => {
     deleteItem(id);
     setOpenModal(false);
-    navigate("/items");
+    handleNavigate();
   };
 
   return (
