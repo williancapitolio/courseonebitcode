@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import { useNavigate } from "react-router-dom";
+
 import { useManageCats } from "../../../hooks/useManageCats";
 
 import styles from "./styles.module.scss";
@@ -7,12 +9,19 @@ import styles from "./styles.module.scss";
 export const FormCat = () => {
   const [cat, setCat] = useState("");
 
+  const navigate = useNavigate();
+
   const { createCat } = useManageCats();
+
+  const handleNavigate = () => {
+    navigate("/items");
+  };
 
   const handleSubmit = (ev: React.SyntheticEvent) => {
     ev.preventDefault();
     createCat({ cat });
     setCat("");
+    setTimeout(handleNavigate, 50);
   };
 
   return (
