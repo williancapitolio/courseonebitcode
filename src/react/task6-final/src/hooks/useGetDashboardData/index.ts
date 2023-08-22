@@ -31,10 +31,13 @@ export const useGetDashboardData = () => {
 
   const limit = 10;
   const today = new Date(dateFormatEn);
+  const calcRecentItems: ItemsType[] = [];
 
-  const calcRecentItems: ItemsType[] = items.filter((item) => {
+  items.filter((item) => {
     const created = new Date(item.createdAt as string);
-    diffInDays(today, created) < limit;
+    if (diffInDays(today, created) < limit) {
+      calcRecentItems.push(item);
+    }
   });
 
   const calcItemsRunningOut = items.filter((item: ItemsType) => {
