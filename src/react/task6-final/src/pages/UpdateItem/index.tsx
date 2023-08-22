@@ -18,7 +18,7 @@ export const UpdateItem = () => {
       <>
         <section className={styles.wrapper}>
           <Title title={"Stock Items"} />
-          <NavItems isAllActive={false} isNewActive={false} />
+          <NavItems isAllActive={false} isNewActive={false} isCatActive={false} />
           <h2>Produto não encontrado!</h2>
           <Link to="/">Voltar</Link>
         </section>
@@ -39,7 +39,7 @@ export const UpdateItem = () => {
     <>
       <section className={styles.wrapper}>
         <Title title={"Stock Items"} />
-        <NavItems isAllActive={false} isNewActive={false} />
+        <NavItems isAllActive={false} isNewActive={false} isCatActive={false} />
         <FormItem {...props} />
       </section>
     </>

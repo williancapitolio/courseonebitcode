@@ -5,6 +5,7 @@ import { Items } from "../pages/Items";
 import { Item } from "../pages/Item";
 import { NewItem } from "../pages/NewItem";
 import { UpdateItem } from "../pages/UpdateItem";
+import { NewCat } from "../pages/NewCat";
 
 export const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ export const router = createBrowserRouter([
       {
         path: "items/update/:itemId",
         element: <UpdateItem />,
+      },
+      {
+        path: "items/cat",
+        element: <NewCat />,
       },
     ],
   },

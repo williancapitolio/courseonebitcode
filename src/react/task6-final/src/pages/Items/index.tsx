@@ -12,7 +12,7 @@ export const Items = () => {
   return (
     <section className={styles.wrapper}>
       <Title title={"Stock Items"} />
-      <NavItems isAllActive={true} isNewActive={false} />
+      <NavItems isAllActive={true} isNewActive={false} isCatActive={false} />
       <table className={styles.wrapperTable}>
         <thead className={styles.wrapperTableHead}>
           <tr className={styles.wrapperTableHeadLine}>

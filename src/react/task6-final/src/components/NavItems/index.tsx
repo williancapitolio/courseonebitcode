@@ -5,9 +5,10 @@ import styles from "./styles.module.scss";
 type NavItemsType = {
   isAllActive: boolean;
   isNewActive: boolean;
+  isCatActive: boolean;
 };
 
-export const NavItems = ({ isAllActive, isNewActive }: NavItemsType) => {
+export const NavItems = ({ isAllActive, isNewActive, isCatActive }: NavItemsType) => {
   return (
     <nav className={styles.wrapper}>
       <Link
@@ -21,6 +22,12 @@ export const NavItems = ({ isAllActive, isNewActive }: NavItemsType) => {
         className={`${isNewActive ? "navItemActive" : "navItemInactive"}`}
       >
         Novo item
+      </Link>
+      <Link
+        to={"/items/cat"}
+        className={`${isCatActive ? "navItemActive" : "navItemInactive"}`}
+      >
+        Nova categoria
       </Link>
     </nav>
   );
