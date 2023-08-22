@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-import { ItemsType } from "../../../types/ItemsType.ts";
+import { useManageItems } from "../../../hooks/useManageItems";
+import { useManageCats } from "../../../hooks/useManageCats";
+
+import { ItemsType } from "../../../types/ItemsType";
 
 import styles from "./styles.module.scss";
-import { useManageItems } from "../../../hooks/useManageItems/index.ts";
 
 type InputType = Omit<ItemsType, "id" | "createdAt" | "updatedAt">;
 
@@ -19,9 +21,9 @@ export const FormItem = () => {
 
   const navigate = useNavigate();
 
-  const { items, createItem } = useManageItems();
+  const { createItem } = useManageItems();
 
-  const uniqueCats = [...new Set(items.map((item) => item.cat))];
+  const { catsList } = useManageCats();
 
   const handleChange = (ev: Event | React.SyntheticEvent) => {
     setInputs((prev: InputType) => ({
@@ -102,7 +104,7 @@ export const FormItem = () => {
             <option value="" className={styles.wrapperUnionDivOption}>
               Selecione uma categoria...
             </option>
-            {uniqueCats.map((cat, index) => (
+            {catsList.map(({ cat }, index) => (
               <option key={index} className={styles.wrapperUnionDivOption}>
                 {cat}
               </option>
