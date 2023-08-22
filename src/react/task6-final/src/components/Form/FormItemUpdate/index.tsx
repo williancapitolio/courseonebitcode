@@ -1,19 +1,31 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import { useManageItems } from "../../../hooks/useManageItems";
+import { useManageCats } from "../../../hooks/useManageCats";
 
 import { ItemsType } from "../../../types/ItemsType.ts";
 
 import styles from "./styles.module.scss";
 
-type InputProps = Omit<ItemsType, "id" | "createdAt" | "updatedAt">;
+type InputProps = Omit<
+  ItemsType,
+  "id" | "createdAt" | "updatedAt" | "createdAtFormat" | "updatedAtFormat"
+>;
+
+type FormType = Omit<
+ItemsType,
+"createdAt" | "updatedAt" | "createdAtFormat" | "updatedAtFormat"
+>;
 
 export const FormItemUpdate = ({
+  id,
   name,
   qtde,
   price,
   cat,
   desc,
-}: InputProps) => {
+}: FormType) => {
   const [inputs, setInputs] = useState({
     name: "",
     qtde: 0,
@@ -22,22 +34,29 @@ export const FormItemUpdate = ({
     desc: "",
   });
 
-  const { items, updateItem } = useManageItems();
+  const navigate = useNavigate();
 
-  const uniqueCats = [...new Set(items.map((item) => item.cat))];
+  const { updateItem } = useManageItems();
+
+  const { catsList } = useManageCats();
 
   const handleChange = (ev: Event | React.SyntheticEvent) => {
-    setInputs((prev: ItemsType) => ({
+    setInputs((prev: InputProps) => ({
       ...prev,
       [(ev.target as HTMLInputElement).name]: (ev.target as HTMLInputElement)
         .value,
     }));
   };
 
+  const handleNavigate = () => {
+    navigate("/items");
+  };
+
   const handleSubmit = (ev: Event | React.SyntheticEvent) => {
     ev.preventDefault();
-    console.log(inputs);
-    updateItem(inputs);
+    const { name, qtde, price, cat, desc } = inputs;
+    updateItem({ id, name, qtde, price, cat, desc });
+    setTimeout(handleNavigate, 50);
   };
 
   return (
@@ -101,7 +120,7 @@ export const FormItemUpdate = ({
             <option value="" className={styles.wrapperUnionDivOption}>
               {cat}
             </option>
-            {uniqueCats.map((cat, index) => (
+            {catsList.map(({ cat }, index) => (
               <option
                 key={index}
                 value={cat}

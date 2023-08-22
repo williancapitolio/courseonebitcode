@@ -1,7 +1,7 @@
 import { Link, useParams } from "react-router-dom";
 import { useManageItems } from "../../hooks/useManageItems";
 
-import { FormItem } from "../../components/Form/FormItem/index.tsx";
+import { FormItemUpdate } from "../../components/Form/FormItemUpdate";
 import { NavItems } from "../../components/NavItems";
 import { Title } from "../../components/Title";
 
@@ -25,9 +25,10 @@ export const UpdateItem = () => {
       </>
     );
 
-  const { name, qtde, price, cat, desc } = item;
+  const { id, name, qtde, price, cat, desc } = item;
 
   const props = {
+    id,
     name,
     qtde,
     price,
@@ -40,7 +41,7 @@ export const UpdateItem = () => {
       <section className={styles.wrapper}>
         <Title title={"Stock Items"} />
         <NavItems isAllActive={false} isNewActive={false} isCatActive={false} />
-        <FormItem {...props} />
+        <FormItemUpdate {...props} />
       </section>
     </>
   );
