@@ -16,7 +16,7 @@ export const useGetDashboardData = () => {
     items.length > 0
       ? (items as ItemsType[]).reduce(
           (acc: number, item: ItemsType): number => {
-            return acc + item.qtde;
+            return acc + Number(item.qtde);
           },
           0
         )

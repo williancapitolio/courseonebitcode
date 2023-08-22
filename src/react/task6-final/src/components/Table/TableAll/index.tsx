@@ -24,7 +24,7 @@ export const TableAll = ({ id, name, qtde, cat }: TableAppProps) => {
   const handleAction = () => {
     deleteItem(id);
     setOpenModal(false);
-    handleNavigate();
+    /* setTimeout(handleNavigate, 50); */
   };
 
   return (

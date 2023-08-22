@@ -41,7 +41,7 @@ export const FormItem = () => {
     const { name, qtde, price, cat, desc } = inputs;
 
     createItem({ id, name, qtde, price, cat, desc });
-    handleNavigate();
+    setTimeout(handleNavigate, 50);
   };
 
   return (

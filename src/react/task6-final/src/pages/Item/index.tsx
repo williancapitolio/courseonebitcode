@@ -37,7 +37,7 @@ export const Item = () => {
   const handleAction = () => {
     deleteItem(item.id);
     setOpenModal(false);
-    handleNavigate();
+    setTimeout(handleNavigate, 50);
   };
 
   return (

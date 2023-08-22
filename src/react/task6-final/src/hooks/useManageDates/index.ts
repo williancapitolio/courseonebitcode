@@ -2,7 +2,7 @@ export const useManageDates = () => {
   const createdAtEn = () => {
     const newDate = new Date();
     //AAAA-MM-DD
-    const dateFormatEn = `${newDate.getFullYear()}-${newDate.getMonth()}-${newDate.getDate()}`;
+    const dateFormatEn = `${newDate.getFullYear()}-${1 + newDate.getMonth()}-${newDate.getDate()}`;
 
     return { dateFormatEn };
   };
