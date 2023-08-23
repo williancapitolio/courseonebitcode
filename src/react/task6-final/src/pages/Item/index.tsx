@@ -23,7 +23,7 @@ export const Item = () => {
       <>
         <section className={styles.wrapper}>
           <Title title={"Stock Items"} />
-          <NavItems isAllActive={false} isNewActive={false} />
+          <NavItems isAllActive={false} isNewActive={false} isCatActive={false} />
           <h2>Produto não encontrado!</h2>
           <Link to="/">Voltar</Link>
         </section>
@@ -44,7 +44,7 @@ export const Item = () => {
     <>
       <section className={styles.wrapper}>
         <Title title={"Stock Items"} />
-        <NavItems isAllActive={false} isNewActive={false} />
+        <NavItems isAllActive={false} isNewActive={false} isCatActive={false} />
         <div className={styles.wrapperHead}>
           <h3 className={styles.wrapperHeadTitle}>{item.name}</h3>
           <Link to={`/items/update/${item.id}`}>
