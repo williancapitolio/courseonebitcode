@@ -62,7 +62,7 @@ export const FormItemUpdate = ({
   return (
     <form onSubmit={handleSubmit} className={styles.wrapper}>
       <div className={styles.wrapperTitle}>
-        <h3 className={styles.wrapperTitleContent}>Editar Item - {name}</h3>
+        <h3 className={styles.wrapperTitleContent}>Atualizar Item - {name}</h3>
       </div>
       <div className={styles.wrapperUnion}>
         <div className={styles.wrapperUnionDiv}>
@@ -117,11 +117,10 @@ export const FormItemUpdate = ({
             onChange={handleChange}
             className={styles.wrapperUnionDivInput}
           >
-            <option value={cat} className={styles.wrapperUnionDivOption}>
+            <option defaultValue={cat} className={styles.wrapperUnionDivOption}>
               {cat}
             </option>
             {catsList
-              .filter(({ cat }) => cat !== inputs.cat)
               .map(({ cat }, index) => (
                 <option
                   key={index}
