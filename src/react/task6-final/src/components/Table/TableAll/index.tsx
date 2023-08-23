@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 
-import { useManageItems } from "../../../hooks/useManageItems";
 import { useCallModal } from "../../../hooks/useCallModal";
 
 import { Modal } from "../../Modal/index.tsx";
@@ -9,16 +8,18 @@ import { ItemsType } from "../../../types/ItemsType.ts";
 
 import styles from "./styles.module.scss";
 
-type TableAppProps = Omit<ItemsType, "price" | "desc" | "createdAt">;
+type TableAppProps = Omit<ItemsType, "price" | "desc" | "createdAt"> & {
+  handleAction: (id: number) => void;
+};
 
-export const TableAll = ({ id, name, qtde, cat }: TableAppProps) => {
-  const { deleteItem } = useManageItems();
+export const TableAll = ({
+  id,
+  name,
+  qtde,
+  cat,
+  handleAction,
+}: TableAppProps) => {
   const { openModal, setOpenModal, handleModal } = useCallModal();
-
-  const handleAction = () => {
-    deleteItem(id);
-    setOpenModal(false);
-  };
 
   return (
     <tbody className={styles.wrapper}>
@@ -43,11 +44,12 @@ export const TableAll = ({ id, name, qtde, cat }: TableAppProps) => {
             Excluir
           </button>
           <Modal
+            id={id}
             isOpen={openModal}
             title="Confirmação"
             body={`Tem certeza que deseja excluir o item ${name}?`}
             handleModal={handleModal}
-            handleAction={handleAction}
+            handleAction={() => handleAction(id)}
             btnActionText="Confirmar"
           />
         </td>

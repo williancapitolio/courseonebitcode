@@ -1,4 +1,5 @@
 import { useManageItems } from "../../hooks/useManageItems";
+import { useCallModal } from "../../hooks/useCallModal";
 
 import { NavItems } from "../../components/NavItems";
 import { TableAll } from "../../components/Table/TableAll";
@@ -7,7 +8,13 @@ import { Title } from "../../components/Title";
 import styles from "./styles.module.scss";
 
 export const Items = () => {
-  const { items } = useManageItems();
+  const { items, deleteItem } = useManageItems();
+  const { setOpenModal } = useCallModal();
+
+  const handleAction = (id: number) => {
+    deleteItem(id);
+    setOpenModal(false);
+  };
 
   return (
     <section className={styles.wrapper}>
@@ -24,7 +31,7 @@ export const Items = () => {
           </tr>
         </thead>
         {items.map(({ id, name, qtde, cat }) => (
-          <TableAll key={id} id={id} name={name} qtde={qtde} cat={cat} />
+          <TableAll key={id} id={id} name={name} qtde={qtde} cat={cat} handleAction={handleAction} />
         ))}
       </table>
     </section>

@@ -1,15 +1,17 @@
 import styles from "./styles.module.scss";
 
 type ModalType = {
+  id: number
   isOpen: boolean;
   title: string;
   body: string;
   handleModal: () => void;
-  handleAction: () => void;
+  handleAction: (id: number) => void;
   btnActionText?: string;
 };
 
 export const Modal = ({
+  id,
   isOpen,
   title,
   body,
@@ -37,7 +39,7 @@ export const Modal = ({
             </button>
             <button
               className={styles.wrapperBodyBtnsAction}
-              onClick={handleAction}
+              onClick={() => handleAction(id)}
             >
               {btnActionText}
             </button>

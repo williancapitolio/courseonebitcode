@@ -34,8 +34,8 @@ export const Item = () => {
     navigate("/items");
   };
 
-  const handleAction = () => {
-    deleteItem(item.id);
+  const handleAction = (id: number) => {
+    deleteItem(id);
     setOpenModal(false);
     setTimeout(handleNavigate, 50);
   };
@@ -57,6 +57,7 @@ export const Item = () => {
             Excluir
           </button>
           <Modal
+          id={item.id}
             isOpen={openModal}
             title="Confirmação"
             body={`Tem certeza que deseja excluir o item ${item.name}?`}
