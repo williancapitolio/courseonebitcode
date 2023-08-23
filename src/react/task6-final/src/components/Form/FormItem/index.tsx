@@ -12,11 +12,11 @@ type InputType = Omit<ItemsType, "id" | "createdAt" | "updatedAt">;
 
 export const FormItem = () => {
   const [inputs, setInputs] = useState({
-    name: "",
+    name: "Não informado",
     qtde: 0,
     price: 0,
-    cat: "",
-    desc: "",
+    cat: "Não informado",
+    desc: "Não informado",
   });
 
   const navigate = useNavigate();

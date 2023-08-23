@@ -8,8 +8,10 @@ export const useGetDashboardData = () => {
 
   const { dateFormatEn } = useManageDates();
 
+  const removeDefaultValue = items.filter((i) => i.cat !== "Não informado");
+
   const calcItemsDiversity = [
-    ...new Set(items.map((item: ItemsType) => item.cat)),
+    ...new Set(removeDefaultValue.map((item: ItemsType) => item.cat)),
   ].length;
 
   const calcTotalInventory: number =

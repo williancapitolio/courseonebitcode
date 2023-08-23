@@ -14,8 +14,8 @@ type InputProps = Omit<
 >;
 
 type FormType = Omit<
-ItemsType,
-"createdAt" | "updatedAt" | "createdAtFormat" | "updatedAtFormat"
+  ItemsType,
+  "createdAt" | "updatedAt" | "createdAtFormat" | "updatedAtFormat"
 >;
 
 export const FormItemUpdate = ({
@@ -27,11 +27,11 @@ export const FormItemUpdate = ({
   desc,
 }: FormType) => {
   const [inputs, setInputs] = useState({
-    name: "",
-    qtde: 0,
-    price: 0,
-    cat: "",
-    desc: "",
+    name,
+    qtde,
+    price,
+    cat,
+    desc,
   });
 
   const navigate = useNavigate();
@@ -75,7 +75,7 @@ export const FormItemUpdate = ({
             id="name"
             onChange={handleChange}
             className={styles.wrapperUnionDivInput}
-            value={name}
+            defaultValue={name}
           />
         </div>
 
@@ -89,7 +89,7 @@ export const FormItemUpdate = ({
             id="qtde"
             onChange={handleChange}
             className={styles.wrapperUnionDivInput}
-            value={qtde}
+            defaultValue={qtde}
           />
         </div>
 
@@ -103,7 +103,7 @@ export const FormItemUpdate = ({
             id="price"
             onChange={handleChange}
             className={styles.wrapperUnionDivInput}
-            value={price}
+            defaultValue={price}
           />
         </div>
 
@@ -117,18 +117,20 @@ export const FormItemUpdate = ({
             onChange={handleChange}
             className={styles.wrapperUnionDivInput}
           >
-            <option value="" className={styles.wrapperUnionDivOption}>
+            <option value={cat} className={styles.wrapperUnionDivOption}>
               {cat}
             </option>
-            {catsList.map(({ cat }, index) => (
-              <option
-                key={index}
-                value={cat}
-                className={styles.wrapperUnionDivOption}
-              >
-                {cat}
-              </option>
-            ))}
+            {catsList
+              .filter(({ cat }) => cat !== inputs.cat)
+              .map(({ cat }, index) => (
+                <option
+                  key={index}
+                  defaultValue={cat}
+                  className={styles.wrapperUnionDivOption}
+                >
+                  {cat}
+                </option>
+              ))}
           </select>
         </div>
       </div>
@@ -143,7 +145,7 @@ export const FormItemUpdate = ({
           onChange={handleChange}
           className={styles.wrapperDescTextarea}
           rows={8}
-          value={desc}
+          defaultValue={desc}
         />
       </div>
 
