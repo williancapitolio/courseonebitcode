@@ -1,4 +1,4 @@
-import { Link, useLoaderData, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
 import { useManageItems } from "../../hooks/useManageItems";
 import { useCallModal } from "../../hooks/useCallModal";
@@ -7,27 +7,23 @@ import { NavItems } from "../../components/NavItems";
 import { Title } from "../../components/Title";
 import { Modal } from "../../components/Modal";
 
-import { ItemsType } from "../../types/ItemsType";
-
 import styles from "./styles.module.scss";
 
 export const Item = () => {
-  const item = useLoaderData() as ItemsType;
   const navigate = useNavigate();
+  const { itemId } = useParams();
 
-  const { deleteItem } = useManageItems();
+  const { items, deleteItem } = useManageItems();
   const { openModal, setOpenModal, handleModal } = useCallModal();
+
+  const item = items.find((it) => it.id === Number(itemId));
 
   if (!item)
     return (
       <>
         <section className={styles.wrapper}>
           <Title title={"Stock Items"} />
-          <NavItems
-            isAllActive={false}
-            isNewActive={false}
-            isCatActive={false}
-          />
+          <NavItems isAllActive={false} isNewActive={false} isCatActive={false} />
           <h2>Produto não encontrado!</h2>
           <Link to="/">Voltar</Link>
         </section>
@@ -61,7 +57,7 @@ export const Item = () => {
             Excluir
           </button>
           <Modal
-            id={item.id}
+          id={item.id}
             isOpen={openModal}
             title="Confirmação"
             body={`Tem certeza que deseja excluir o item ${item.name}?`}

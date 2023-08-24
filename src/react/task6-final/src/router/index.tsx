@@ -8,8 +8,6 @@ import { NewItem } from "../pages/NewItem";
 import { UpdateItem } from "../pages/UpdateItem";
 import { NewCat } from "../pages/NewCat";
 
-import { itemLoader } from "../loaders/itemLoader";
-
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -26,8 +24,6 @@ export const router = createBrowserRouter([
       {
         path: "items/:itemId",
         element: <Item />,
-        loader: itemLoader,
-        errorElement: <div>Error</div>
       },
       {
         path: "items/new",
