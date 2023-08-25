@@ -15,7 +15,7 @@ export const NavItems = ({ isAllActive, isNewActive, isCatActive }: NavItemsType
         to={"/items"}
         className={`${isAllActive ? "navItemActive" : "navItemInactive"}`}
       >
-        Todos os itens
+        Todos itens
       </Link>
       <Link
         to={"/items/new"}
