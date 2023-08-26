@@ -1,4 +1,6 @@
-# Exercício 6 - Final - Gestor de Estoque
+# Exercício 6 - Final
+
+## Gestor de Estoque
 
 Crie uma aplicação SPA de gestão de estoque com React, React Router e Vite. A aplicação deverá atender aos seguintes requisitos:
 
